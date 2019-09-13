@@ -1,0 +1,285 @@
+.main-content{
+	.search{
+		float: left;
+		width: 101px;
+		margin-top: 2%;
+	}
+	.all-div{
+		float: left;
+		//width: 87px;
+		text-align: center;
+		padding: 10px 4px;
+	}
+	.all-btn{
+		//padding: 24% 25%;
+		background-color: #faf9f9;
+		color: black;
+		width:100%;
+	}
+	.title{
+		width:max-content;
+		padding-top: 1%;
+		float:left;
+
+	}
+	
+	.loading {
+		padding-top: 100%;
+		color: #946e3f;
+		font-weight: bold;
+	}
+	.arrow-btn{
+		float: right;
+		font-size: 16px;
+		font-weight: bold;
+	}
+	// .mb{
+	// 	margin-bottom: -13%;
+	// }
+	.suspended-div{
+		float:left;
+		//width: 105px;
+		text-align: center;
+		padding: 10px 4px;
+	}
+	.suspended-btn{
+		//padding: 11% 16%;
+		background-color: #836f8b;
+	}
+	.pending-div{
+		float:left;
+	//	width: 85px;
+		text-align: center;
+		padding: 10px 4px;
+	}
+	.pending-btn{
+		//padding: 14% 17%;
+		color:black;
+		background-color: rgb(196,201,140);
+	}
+	.req-div{
+		float:left;
+	//	width: 146px;
+		text-align: center;
+		padding: 10px 4px;
+	}
+	.req-btn{
+	//	padding: 8% 13%;
+		color:black;
+	}
+	.publish-div{
+		float:left;
+	//	width: 88px;
+		text-align: center;
+		padding: 10px 4px;
+	}
+	.publish-btn{
+	//	padding: 13% 29%;
+		
+	}
+	.title{
+		font-size: 17px;
+		width:231px;
+		float: left
+	}
+	.content-div{
+		padding: 10px 7px;
+		background: #f7f7f7;
+    	margin: 2% 2%;
+	}
+	.but-div{
+		float:right;
+		padding: 0px 30px;
+	}
+	.togglebutton label input[type=checkbox]:checked + .toggle {
+		background-color: #E91E63 !important;
+	}
+	.beach-name{
+		float: left;
+		font-weight: bold;
+		font-size: 18px;
+		color: #5d5a5a;
+	}
+	.beach{
+		margin-bottom: 2%;
+	}
+	.p-10{
+		padding: 10px;
+		margin: 0px 0px;
+	}
+	.beach-remove{
+		float:right;
+		color:red;
+	}
+	.count-div{
+		font-size: 12px;
+		font-weight: bolder;
+	}
+	.photo-div{
+		padding-left: 1px;
+		width: 150px;
+		border-radius: 9px;
+		height: 150px;
+		background: #f1f1f1;
+		text-align: center;
+		vertical-align: middle;
+		display: table-cell;
+		.image{
+			width: 100%;
+			max-width: 100%;
+			height: auto;
+			width: 100%;
+			max-width: 100%;
+			height: auto;
+			max-height: 150px;
+			max-width: 150px;
+			border-radius: 8px;
+			padding: 5px;
+			max-width: 100%!important;
+			max-height: 100%!important;
+			width: auto!important;
+			height: auto!important;
+		}
+	}
+	.status-div{
+		float:right;
+	}
+	.table-head{
+		width: 208px;
+		color:grey;
+	}
+	.table-div{
+		margin-left: 6%;
+	}
+	.count-label{
+		font-size: 12px;
+		font-weight: bold;
+		color: #4c4b4b;
+	}
+	.status-label{
+		font-size: 11px;
+		color: black;
+		font-weight: 500;
+		margin-bottom: 9%;
+	}
+	.right-div{
+		margin: -10% 0%;
+		width: 147px;
+	}
+	.right-btn{
+		padding: 6% 8%;
+		width:100%
+	}
+	.see-btn-div{
+		margin-left: 6%;
+	}
+	.facility-check{
+		visibility: hidden;
+    	position: absolute;
+	}
+	.top-right-div{
+		float:right;
+	}
+	.image-div{
+		height: 157px;
+		width: 157px;
+		float: left;
+		margin-left: 2%;
+		//margin-bottom: 3%;
+		cursor: pointer;
+		position: relative;
+		margin-top: 2%;
+	}
+	.tab-title{
+		
+			width: 80%;
+			//margin-left: 10%;
+			margin-right: 0;
+			float: left;
+		
+	}
+	.nav-pills > li + li {
+		margin-left: 0px !important;
+	}
+	.mt-0 :first-child{
+		margin-top:0px;
+	}
+
+	@media only screen and (max-width: 767px){
+		.title{
+			padding-top: 2%;
+			width: 81px;
+			font-size: 13px
+		}
+		.top-right-div{
+			float:none;
+		}
+		.all-div{
+			width:100%;
+			padding: 0px 5px;
+		}
+		.suspended-div{
+			width:50%;
+			padding: 0px 5px;
+		}
+		.suspended-btn{
+			width:100%
+		}
+		.pending-div{
+			width:50%;
+			padding: 0px 5px;
+		}
+		.pending-btn{
+			width:100%
+		}
+		.req-div{
+			width:50%;
+			padding: 0px 5px;
+		}
+		.req-btn{
+			width:100%
+		}
+		.publish-div{
+			width:50%;
+			padding: 0px 5px;
+		}
+		.publish-btn{
+			width:100%
+		}
+		.search{
+			float: right;
+			margin-right: 3%;
+			width:116px;
+			margin-bottom: 3%;
+		}
+		.table-head{
+			width:115px
+		}
+		.right-div{
+			width: 100%;
+    		margin: -14px 0px;
+		}
+		.status-label{
+			margin-bottom: 4%;
+    		margin-top: 7%;
+		}
+		.status-div{
+			float:none
+		}
+		.right-btn{
+			padding: 4% 8%;
+		}
+		.see-btn-div{
+			margin: 13px 50px;
+		}
+		.table-div{
+			margin: 13px 18px;
+		}
+	}
+	@media only screen and (min-width: 768px) and (max-width: 1030px){
+		.table-div{
+			margin-left: 3%;
+		}
+	}
+	
+}

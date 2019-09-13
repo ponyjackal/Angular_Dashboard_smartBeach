@@ -1,0 +1,463 @@
+<div class="main-content">
+    <div class="container-fluid">
+        <div class="col-md-8">
+            <div class="card">
+                <div class="card-header card-header-icon" data-background-color="rose">
+                    <i class="material-icons">perm_contact_calendar</i>
+                </div>
+                <div class="card-content card-medium-height">
+                    <h4 class="card-title" translate>SETTINGS.BEACH_SCHEDULE.SCHEDULE_PERIOD</h4>
+                    <div class="row" *ngFor="let working_date of working_dates; let index = index">
+                        <div class="col-md-12">
+                            <h4 class="text-rose">{{currentYear + index}}</h4>
+                            <div class="col-md-12">
+                                <div class="col-md-4 form-group label-floating">
+                                    <span class="control-label text-rose" translate>SETTINGS.BEACH_SCHEDULE.FROM</span><br>
+                                    <button mat-raised-button (click)="date_picker_start.open()" class="btn btn-round btn-rose-border">
+                                        <input 
+                                            class="text-center text-rose select-btn" 
+                                            matInput 
+                                            [min]="working_date.min"
+                                            [max]="working_date.end.value"
+                                            [matDatepicker]="date_picker_start" 
+                                            [(formControl)]="working_date.start" readonly
+                                            (ngModelChange)="changedPeriod = true || loaded"
+                                        >
+                                        <mat-datepicker #date_picker_start></mat-datepicker>
+                                    </button>
+                                </div>
+                                <div class="col-md-4 form-group label-floating">
+                                    <span class="control-label text-rose" translate>SETTINGS.BEACH_SCHEDULE.TO</span><br>
+                                    <button mat-raised-button (click)="date_picker_end.open()" class="btn btn-round btn-rose-border">
+                                        <input class="text-center text-rose select-btn" 
+                                            matInput 
+                                            [min]="working_date.start.value"
+                                            [max]="working_date.max"
+                                            [matDatepicker]="date_picker_end" 
+                                            [(formControl)]="working_date.end" 
+                                            (ngModelChange)="changedPeriod = true || loaded"
+                                            readonly
+                                        >
+                                        <mat-datepicker #date_picker_end ></mat-datepicker>
+                                    </button>
+                                </div>
+                                <div class="col-md-4 form-group label-floating" style="margin-top: 10px;" *ngIf="index === (working_dates.length-1)">
+                                    <button class="btn btn-round btn-rose btn-just-icon" (click)="addNewYear()">
+                                        <i class="material-icons">add</i> 
+                                    </button>&nbsp;&nbsp;&nbsp;&nbsp;
+                                    <label class="description" translate>SETTINGS.BEACH_SCHEDULE.ADD_NEW_YEAR</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="pull-right">
+                            <button type="button" class="btn btn-fill btn-rose" [disabled]="!changedPeriod" (click)="saveWorkingDates()" translate>SAVE</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 no-mobile">
+            <div class="card">
+                <div class="card-header card-header-icon" data-background-color="rose">
+                    <i class="material-icons">priority_high</i>
+                </div>
+                <div class="card-content card-medium-height">
+                    <h4 class="card-title card-description" translate>SETTINGS.BEACH_SCHEDULE.ABOUT_SCHEDULE_PERIOD</h4>
+                    <h4 class="card-description">
+                        <p translate>SETTINGS.BEACH_SCHEDULE.DESCRIPTION1</p>
+                    </h4>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-8">
+            <div class="card">
+                <div class="card-header card-header-icon" data-background-color="rose">
+                    <i class="material-icons">access_time</i>
+                </div>
+                <div class="card-content card-small-height">
+                    <h4 class="card-title" translate>SETTINGS.BEACH_SCHEDULE.WORKING_HOURS</h4>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <h4 class="text-rose">{{currentYear}}</h4>
+                            <div class="col-md-4 form-group label-floating">
+                                <span class="control-label text-rose" translate>SETTINGS.BEACH_SCHEDULE.FROM</span><br>
+                                <simple-timepicker [time]="working_hours.start" (setTime)="setStartTime($event)"></simple-timepicker>
+                            </div>
+                            <div class="col-md-4 form-group label-floating">
+                                <span class="control-label text-rose" translate>SETTINGS.BEACH_SCHEDULE.TO</span><br>
+                                <simple-timepicker [time]="working_hours.end" (setTime)="setEndTime($event)"></simple-timepicker>
+                            </div>
+                           
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="col-md-offset-4 pull-right">
+                            <button type="button" class="btn btn-fill btn-rose" [disabled]="!changedHours" (click)="saveWorkingHours()" translate>SAVE</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 no-mobile">
+            <div class="card">
+                <div class="card-header card-header-icon" data-background-color="rose">
+                    <i class="material-icons">priority_high</i>
+                </div>
+                <div class="card-content card-medium-height">
+                    <h4 class="card-title card-description" translate>SETTINGS.BEACH_SCHEDULE.ABOUT_WORKING_HOURS</h4>
+                    <h4 class="card-description">
+                        <p translate>SETTINGS.BEACH_SCHEDULE.DESCRIPTION2</p>
+                    </h4>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-8">
+            <div class="card">
+                <div class="card-header card-header-icon" data-background-color="rose">
+                    <i class="material-icons">attach_money</i>
+                </div>
+                <div class="card-content card-big-height">
+                    <div class="col-md-6 card-title">
+                        <h4 translate>SETTINGS.BEACH_SCHEDULE.PRICES</h4>
+                    </div>
+                    <div class="col-md-4 card-title card-description form-group label-floating">
+                        <div class="row">
+                            <label class="col-md-6 input-by text-right" translate>SETTINGS.BEACH_SCHEDULE.SELECT_CURRENCY</label>
+                            <div class="col-md-6">
+                                <div class="form-group label-floating is-empty">
+                                    <label class="control-label"></label>
+                                    <input type="text" class="form-control" (ngModelChange)="changedPrice = true" [(ngModel)]="currency" name="currency">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- <label class="col-sm-12" translate>SETTINGS.BEACH_SCHEDULE.SELECT_TYPE</label> -->
+                    <div class="row">
+                        <ul class="col-md-12 col-sm-12 nav nav-pills nav-pills-rose">
+                            <li class="col-md-3 col-md-offset-1 col-sm-3 col-xs-12 active">
+                                <a href="#pill1" data-toggle="tab" translate>SETTINGS.BEACH_SCHEDULE.SUNBED_AND_UMBRELLA</a>
+                            </li>
+                            <li class="col-md-3 col-sm-3 col-xs-12">
+                                <a href="#pill2" data-toggle="tab" translate>SETTINGS.BEACH_SCHEDULE.BALDAQUINS</a>
+                            </li>
+                            <li class="col-md-3 col-sm-3 col-xs-12">
+                                <a href="#pill3" data-toggle="tab" translate>SETTINGS.BEACH_SCHEDULE.SUNBED_WIDTHOUT_UMBRELLA</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="tab-content">
+                        <div class="tab-pane active" id="pill1">
+                            <div class="row" *ngFor="let working_date of working_dates; let i = index;">
+                                <div class="col-md-12">
+                                    <h4 class="text-rose">{{currentYear + i}}</h4>
+                                    <div class="col-md-12" *ngFor="let period of periods_prices.periods[i];let j = index;">
+                                        <div class="row">
+                                            <div class="col-md-4 form-group label-floating">
+                                                <span class="control-label text-rose" translate>SETTINGS.BEACH_SCHEDULE.FROM</span><br>
+                                                <button mat-raised-button (click)="date_picker_start.open()" class="btn btn-round btn-rose-border">
+                                                    <input class="text-center text-rose"
+                                                        matInput 
+                                                        [min]="period.min.value"
+                                                        [max]="period.end.value"
+                                                        [matDatepicker]="date_picker_start" 
+                                                        [(formControl)]="period.start"
+                                                        [ngModel]="period.start.value"
+                                                        (ngModelChange)="changedPrice = true || loaded"
+                                                        readonly
+                                                    >
+                                                    <mat-datepicker #date_picker_start></mat-datepicker>
+                                                </button> 
+                                            </div>
+                                            <div class="col-md-4 form-group label-floating">
+                                                <span class="control-label text-rose" translate>SETTINGS.BEACH_SCHEDULE.TO</span><br>
+                                                <button mat-raised-button (click)="date_picker_end.open()" class="btn btn-round btn-rose-border">
+                                                    <input class="text-center text-rose" 
+                                                        matInput 
+                                                        [min]="period.start.value"
+                                                        [max]="period.max.value"
+                                                        [matDatepicker]="date_picker_end" 
+                                                        [(formControl)]="period.end"
+                                                        [ngModel]="period.end.value"
+                                                        (ngModelChange)="changedPrice = true || loaded"
+                                                        readonly
+                                                    >
+                                                    <mat-datepicker #date_picker_end></mat-datepicker>
+                                                </button> 
+                                            </div>
+                                           
+                                                     
+                                            
+                                        </div>
+                                        <div class="row">
+                                                <div class="col-md-4 col-sm-8 form-group label-floating price-check">         
+                                                        <input class="checkbox"  (change)="onUmbrellaCheck($event,period)" type="checkbox"><span class="same-label">Apply same price</span>
+                                                </div> 
+                                                <div *ngIf = "umbrellaChecked" class="col-md-4 col-sm-8 form-group label-floating ">        
+                                                        <input type="text" class="form-control" type="text" (input)="onTypePrice($event,period,periods_prices,'umbrella')">
+                                                </div> 
+                                        </div>
+                                        <div class="col-xs-4 form-group label-floating">
+                                            <h4 class="text-rose text-center" translate>SETTINGS.BEACH_SCHEDULE.FRONT</h4>
+                                            <div class="row" *ngFor="let item of [1, 2, 3, 4, 5, 6, 0]">
+                                                <div>
+                                                        <span class="col-md-5 input-by text-right" translate>SETTINGS.BEACH_SCHEDULE.DAYS.{{item}}</span>
+                                                </div>
+                                                
+
+                                                <div class="col-md-4 form-group label-floating is-empty price mob-price">
+                                                    <input class="form-control" type="text" (ngModelChange)="changedPrice = true || loaded" [(ngModel)]="periods_prices[period.key].umbrella.front[item]" name="umbrella_front_daily_{{i}}_{{j}}">
+                                                </div>
+                                                <div class="currency">
+                                                        <span class="col-md-3 input-by">{{currency}}</span>
+                                                </div>
+                                               
+                                            </div>
+                                        </div>
+                                        <div class="col-xs-4 form-group label-floating">
+                                            <h4 class="text-rose text-center" translate>SETTINGS.BEACH_SCHEDULE.MIDDLE</h4>
+                                            <div class="row" *ngFor="let item of [1, 2, 3, 4, 5, 6, 0]">
+                                             <div>
+                                                    <span class="col-md-5 input-by text-right" translate>SETTINGS.BEACH_SCHEDULE.DAYS.{{item}}</span>
+                                             </div>
+                                                <div class="col-md-4 form-group label-floating is-empty price mob-price">
+                                                    <input class="form-control" type="text" (ngModelChange)="changedPrice = true || loaded" [(ngModel)]="periods_prices[period.key].umbrella.middle[item]" name="umbrella_middle_daily_{{i}}_{{j}}">
+                                                </div>
+                                                <div class="currency">
+                                                        <span class="col-md-3 input-by">{{currency}}</span>
+                                                </div>
+                                                
+                                            </div>
+                                        </div>
+                                        <div class="col-xs-4 form-group label-floating">
+                                            <h4 class="text-rose text-center" translate>SETTINGS.BEACH_SCHEDULE.BACK</h4>
+                                            <div class="row" *ngFor="let item of [1, 2, 3, 4, 5, 6, 0]">
+                                              <div>
+                                                    <span class="col-md-5 input-by text-right" translate>SETTINGS.BEACH_SCHEDULE.DAYS.{{item}}</span>
+                                              </div>
+                                                <div class="col-md-4 form-group label-floating is-empty price mob-price">
+                                                    <input class="form-control" type="text" (ngModelChange)="changedPrice = true || loaded" [(ngModel)]="periods_prices[period.key].umbrella.back[item]" name="umbrella_back_daily_{{i}}_{{j}}">
+                                                </div>
+                                                <div class="currency">
+                                                        <span class="col-md-3 input-by">{{currency}}</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4 form-group label-floating">
+                                        <button class="btn btn-round btn-rose btn-just-icon" (click)="addNewPeriodForPrice(i)">
+                                            <i class="material-icons">add</i>
+                                        </button>&nbsp;&nbsp;&nbsp;&nbsp;
+                                        <label class="description" translate>SETTINGS.BEACH_SCHEDULE.ADD_NEW_PERIOD</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab-pane" id="pill2">
+                            <div class="row" *ngFor="let working_date of working_dates; let i = index;">
+                                <div class="col-md-12">
+                                    <h4 class="text-rose">{{currentYear + i}}</h4>
+                                    <div class="col-md-12" *ngFor="let period of periods_prices.periods[i];let j = index;">
+                                        <div class="row">
+                                            <div class="col-md-4 form-group label-floating">
+                                                <span class="control-label text-rose" translate>SETTINGS.BEACH_SCHEDULE.FROM</span><br>
+                                                <button mat-raised-button (click)="date_picker_start.open()" class="btn btn-round btn-rose-border">
+                                                    <input class="text-center text-rose"
+                                                        matInput 
+                                                        [min]="period.min.value"
+                                                        [max]="period.end.value"
+                                                        [matDatepicker]="date_picker_start" 
+                                                        [(formControl)]="period.start"
+                                                        [ngModel]="period.start.value"
+                                                        (ngModelChange)="changedPrice = true || loaded"
+                                                        readonly
+                                                    >
+                                                    <mat-datepicker #date_picker_start></mat-datepicker>
+                                                </button> 
+                                            </div>
+                                            <div class="col-md-4 form-group label-floating">
+                                                <span class="control-label text-rose" translate>SETTINGS.BEACH_SCHEDULE.TO</span><br>
+                                                <button mat-raised-button (click)="date_picker_end.open()" class="btn btn-round btn-rose-border">
+                                                    <input class="text-center text-rose" 
+                                                        matInput 
+                                                        [min]="period.start.value"
+                                                        [max]="period.max.value"
+                                                        [matDatepicker]="date_picker_end" 
+                                                        [(formControl)]="period.end"
+                                                        [ngModel]="period.end.value"
+                                                        (ngModelChange)="changedPrice = true || loaded"
+                                                        readonly
+                                                    >
+                                                    <mat-datepicker #date_picker_end></mat-datepicker>
+                                                </button> 
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                                <div class="col-md-4 col-sm-8 form-group label-floating price-check">         
+                                                        <input class="checkbox"  (change)="onBaldaquinCheck($event,period)" type="checkbox"><span class="same-label">Apply same price</span>
+                                                </div> 
+                                                <div *ngIf = "baldaquinChecked" class="col-md-4 col-sm-8 form-group label-floating ">        
+                                                        <input type="text" class="form-control" type="text" (input)="onTypePrice($event,period,periods_prices,'baldaquin')">
+                                                </div> 
+                                        </div>
+                                        <div class="col-md-4 form-group label-floating">
+                                            <h4 class="text-rose text-center" translate>SETTINGS.BEACH_SCHEDULE.FRONT</h4>
+                                            <div class="row" *ngFor="let item of [1, 2, 3, 4, 5, 6, 0]">
+                                                <span class="col-md-5 input-by text-right" translate>SETTINGS.BEACH_SCHEDULE.DAYS.{{item}}</span>
+                                                <div class="col-md-4 form-group label-floating is-empty price">
+                                                    <input class="form-control" type="text" (ngModelChange)="changedPrice = true || loaded" [(ngModel)]="periods_prices[period.key].baldaquin.front[item]" name="baldaquin_front_daily_{{i}}_{{j}}">
+                                                </div>
+                                                <span class="col-md-3 input-by">{{currency}}</span>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4 form-group label-floating">
+                                            <h4 class="text-rose text-center" translate>SETTINGS.BEACH_SCHEDULE.MIDDLE</h4>
+                                            <div class="row" *ngFor="let item of [1, 2, 3, 4, 5, 6, 0]">
+                                                <span class="col-md-5 input-by text-right" translate>SETTINGS.BEACH_SCHEDULE.DAYS.{{item}}</span>
+                                                <div class="col-md-4 form-group label-floating is-empty price">
+                                                    <input class="form-control" type="text" (ngModelChange)="changedPrice = true || loaded" [(ngModel)]="periods_prices[period.key].baldaquin.middle[item]" name="baldaquin_middle_daily_{{i}}_{{j}}">
+                                                </div>
+                                                <span class="col-md-3 input-by">{{currency}}</span>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4 form-group label-floating">
+                                            <h4 class="text-rose text-center" translate>SETTINGS.BEACH_SCHEDULE.BACK</h4>
+                                            <div class="row" *ngFor="let item of [1, 2, 3, 4, 5, 6, 0]">
+                                                <span class="col-md-5 input-by text-right" translate>SETTINGS.BEACH_SCHEDULE.DAYS.{{item}}</span>
+                                                <div class="col-md-4 form-group label-floating is-empty price">
+                                                    <input class="form-control" type="text" (ngModelChange)="changedPrice = true || loaded" [(ngModel)]="periods_prices[period.key].baldaquin.back[item]" name="baldaquin_back_daily_{{i}}_{{j}}">
+                                                </div>
+                                                <span class="col-md-3 input-by">{{currency}}</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4 form-group label-floating">
+                                        <button class="btn btn-round btn-rose btn-just-icon" (click)="addNewPeriodForPrice(i)">
+                                            <i class="material-icons">add</i> 
+                                        </button>&nbsp;&nbsp;&nbsp;&nbsp;
+                                        <label class="description" translate>SETTINGS.BEACH_SCHEDULE.ADD_NEW_PERIOD</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab-pane" id="pill3">
+                            <div class="row" *ngFor="let working_date of working_dates; let i = index;">
+                                <div class="col-md-12">
+                                    <h4 class="text-rose">{{currentYear + i}}</h4>
+                                    <div class="col-md-12" *ngFor="let period of periods_prices.periods[i];let j = index;">
+                                        <div class="row">
+                                            <div class="col-md-4 form-group label-floating">
+                                                <span class="control-label text-rose" translate>SETTINGS.BEACH_SCHEDULE.FROM</span><br>
+                                                <button mat-raised-button (click)="date_picker_start.open()" class="btn btn-round btn-rose-border">
+                                                    <input class="text-center text-rose"
+                                                        matInput 
+                                                        [min]="period.min.value"
+                                                        [max]="period.end.value"
+                                                        [ngModel]="period.start.value"
+                                                        [matDatepicker]="date_picker_start" 
+                                                        [(formControl)]="period.start"
+                                                        (ngModelChange)="changedPrice = true || loaded"
+                                                        readonly
+                                                    >
+                                                    <mat-datepicker #date_picker_start></mat-datepicker>
+                                                </button> 
+                                            </div>
+                                            <div class="col-md-4 form-group label-floating">
+                                                <span class="control-label text-rose" translate>SETTINGS.BEACH_SCHEDULE.TO</span><br>
+                                                <button mat-raised-button (click)="date_picker_end.open()" class="btn btn-round btn-rose-border">
+                                                    <input class="text-center text-rose" 
+                                                        matInput 
+                                                        [min]="period.start.value"
+                                                        [max]="period.max.value"
+                                                        [matDatepicker]="date_picker_end" 
+                                                        [ngModel]="period.end.value"
+                                                        [(formControl)]="period.end"
+                                                        (ngModelChange)="changedPrice = true || loaded"
+                                                        readonly
+                                                    >
+                                                    <mat-datepicker #date_picker_end></mat-datepicker>
+                                                </button> 
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                                <div class="col-md-4 col-sm-8 form-group label-floating price-check">         
+                                                        <input class="checkbox"  (change)="onSunbedCheck($event,period)" type="checkbox"><span class="same-label">Apply same price</span>
+                                                </div> 
+                                                <div *ngIf = "sunbedChecked" class="col-md-4 col-sm-8 form-group label-floating ">        
+                                                        <input type="text" class="form-control" type="text" (input)="onTypePrice($event,period,periods_prices,'sunbed')">
+                                                </div> 
+                                        </div>
+                                        <div class="row">
+                                            
+                                            <div class="col-md-4 form-group label-floating">
+                                                    <h4 class="text-rose text-center" translate>SETTINGS.BEACH_SCHEDULE.FRONT</h4>
+                                                    <div class="row" *ngFor="let item of [1, 2, 3, 4, 5, 6, 0]">
+                                                        <span class="col-md-5 input-by text-right" translate>SETTINGS.BEACH_SCHEDULE.DAYS.{{item}}</span>
+                                                        <div class="col-md-4 form-group label-floating is-empty price">
+                                                            <input class="form-control" type="text" (ngModelChange)="changedPrice = true || loaded" [(ngModel)]="periods_prices[period.key].sunbed.front[item]" name="sunbed_front_daily_{{i}}_{{j}}">
+                                                        </div>
+                                                        <span class="col-md-3 input-by">{{currency}}</span>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-4 form-group label-floating">
+                                                    <h4 class="text-rose text-center" translate>SETTINGS.BEACH_SCHEDULE.MIDDLE</h4>
+                                                    <div class="row" *ngFor="let item of [1, 2, 3, 4, 5, 6, 0]">
+                                                        <span class="col-md-5 input-by text-right" translate>SETTINGS.BEACH_SCHEDULE.DAYS.{{item}}</span>
+                                                        <div class="col-md-4 form-group label-floating is-empty price">
+                                                            <input class="form-control" type="text" (ngModelChange)="changedPrice = true || loaded" [(ngModel)]="periods_prices[period.key].sunbed.middle[item]" name="sunbed_middle_daily_{{i}}_{{j}}">
+                                                        </div>
+                                                        <span class="col-md-3 input-by">{{currency}}</span>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-4 form-group label-floating">
+                                                    <h4 class="text-rose text-center" translate>SETTINGS.BEACH_SCHEDULE.BACK</h4>
+                                                    <div class="row" *ngFor="let item of [1, 2, 3, 4, 5, 6, 0]">
+                                                        <span class="col-md-5 input-by text-right" translate>SETTINGS.BEACH_SCHEDULE.DAYS.{{item}}</span>
+                                                        <div class="col-md-4 form-group label-floating is-empty price">
+                                                            <input class="form-control" type="text" (ngModelChange)="changedPrice = true || loaded" [(ngModel)]="periods_prices[period.key].sunbed.back[item]" name="sunbed_back_daily_{{i}}_{{j}}">
+                                                        </div>
+                                                        <span class="col-md-3 input-by">{{currency}}</span>
+                                                    </div>
+                                                </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4 form-group label-floating">
+                                        <button class="btn btn-round btn-rose btn-just-icon" (click)="addNewPeriodForPrice(i)">
+                                            <i class="material-icons">add</i> 
+                                        </button>&nbsp;&nbsp;&nbsp;&nbsp;
+                                        <label class="description" translate>SETTINGS.BEACH_SCHEDULE.ADD_NEW_PERIOD</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="col-md-offset-4 pull-right">
+                            <button type="button" class="btn btn-fill btn-rose" [disabled]="!changedPrice" (click)="savePrices()">SAVE</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 no-mobile">
+            <div class="card">
+                <div class="card-header card-header-icon" data-background-color="rose">
+                    <i class="material-icons">priority_high</i>
+                </div>
+                <div class="card-content card-big-height">
+                    <h4 class="card-title">&nbsp;</h4>
+                    <h5 class="card-description">
+                        <p translate>SETTINGS.BEACH_SCHEDULE.DESCRIPTION3</p>
+                        <p translate>SETTINGS.BEACH_SCHEDULE.DESCRIPTION4</p>
+                        <p translate>SETTINGS.BEACH_SCHEDULE.DESCRIPTION5</p>
+                    </h5>
+                </div>
+            </div>
+        </div>
+    </div>
+    <mat-form-field style="width:100%" class="hide">
+        <input class="text-center text-rose" matInput/>
+    </mat-form-field>
+</div>
+    

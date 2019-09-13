@@ -1,0 +1,68 @@
+<div class="wrapper wrapper-full-page">
+    <nav class="navbar navbar-primary navbar-transparent navbar-fixed-top">
+        <div class="container">
+            <!-- <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#menu-example">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="/#/dashboard">MD Pro Angular</a>
+            </div> -->
+            <div class="collapse navbar-collapse" id="menu-example">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a routerLink="/">
+                            <i class="material-icons">dashboard</i>
+                            {{'PAGES.DASHBOARD' | translate}}
+                        </a>
+                    </li>
+                    <li class="">
+                        <a routerLink="/register">
+                            <i class="material-icons">person_add</i>
+                            {{'PAGES.REGISTER' | translate}}
+                        </a>
+                    </li>
+                    <li class="">
+                        <a routerLink="/login">
+                            <i class="material-icons">fingerprint</i>
+                            {{'PAGES.LOGIN' | translate}}
+                        </a>
+                    </li>
+                    <li class=" active ">
+                        <a routerLink="/lock">
+                            <i class="material-icons">lock_open</i> 
+                            {{'PAGES.LOCK' | translate}}
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="full-page lock-page" filter-color="black">
+        <!--   you can change the color of the filter page using: data-color="blue | green | orange | red | purple" -->
+        <div class="content">
+            <form method="#" action="#">
+                <div class="card card-profile card-hidden">
+                    <div class="card-avatar">
+                        <a href="#pablo">
+                            <img class="avatar" src="assets/img/faces/avatar.jpg" alt="...">
+                        </a>
+                    </div>
+                    <div class="card-content">
+                        <h4 class="card-title">Tania Andrew</h4>
+                        <div class="form-group label-floating">
+                            <label class="control-label" translate>PAGES.ENTER_PASSWORD</label>
+                            <input type="password" class="form-control">
+                        </div>
+                    </div>
+                    <div class="card-footer">
+                        <button type="button" class="btn btn-rose btn-round" translate>PAGES.UNLOCK</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class="full-page-background" style="background-image: url(assets/img/lock.jpeg) "></div>
+    </div>
+</div>

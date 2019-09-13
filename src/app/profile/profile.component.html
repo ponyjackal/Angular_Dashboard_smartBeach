@@ -1,0 +1,107 @@
+<div class="main-content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-8">
+                <div class="card" id="beach-info-card">
+                    <div class="card-header card-header-icon" data-background-color="rose">
+                        <i class="material-icons">priority_high</i>
+                    </div>
+                    <div class="card-content card-small-height">
+                        <h4 class="card-title" translate>PROFILE.TITLE</h4>
+                        <form [formGroup]="profile">
+                            <div class="col-md-4 form-group label-floating input-box">
+                                <label class="control-label input" translate>PAGES.YOUR_NAME</label>
+                                <input type="text"
+                                    [(ngModel)]="currentUser.name"
+                                    class="form-control"
+                                    formControlName="yourName">
+                            </div>
+                            <div class="col-md-4 form-group label-floating  input-box">
+                                <label class="control-label" translate>PAGES.COMPANY_NAME</label>
+                                <input type="text"
+                                    [(ngModel)]="currentUser.company"                                    
+                                    class="form-control"
+                                    formControlName="companyName">
+                            </div>
+                            <div class="col-md-4 form-group label-floating  input-box">
+                                <label class="control-label" translate>PAGES.EMAIL_ADDRESS</label>
+                                <input type="text"
+                                    id="email"
+                                    [(ngModel)]="currentUser.email" 
+                                    class="form-control" 
+                                    formControlName="email"
+                                    pattern="^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$">
+                            </div>
+                            <div class="col-md-6 form-group label-floating  input-box">
+                                <label class="control-label" translate>PROFILE.ADDRESS</label>
+                                <input type="text"
+                                    [(ngModel)]="currentUser.company_address"
+                                    class="form-control"
+                                    formControlName="companyAddress">
+                            </div>
+                            <div class="col-md-6 form-group label-floating  input-box">
+                                <label class="control-label" translate>PAGES.PHONE_NUMBER</label>
+                                <input type="text" 
+                                    [(ngModel)]="currentUser.phone" 
+                                    class="form-control" 
+                                    formControlName="number"
+                                    pattern="^[0-9+-]{10,15}$"
+                                    maxlength="15"
+                                    minlength="10">
+                            </div>                            
+                            <div class="col-md-4 form-group label-floating  input-box">
+                                <label class="control-label" translate>PROFILE.COUNTRY</label>
+                                <select name="country"
+                                    [(ngModel)]="currentUser.company_country"
+                                    class="form-control"
+                                    formControlName="companyCountry"
+                                    *ngIf="!loading">
+                                    <option value=""></option>
+                                    <option *ngFor="let country of countries" [value]="country.name">{{country.name}}</option>
+                                </select>
+                            </div>
+                            <div class="col-md-4 form-group label-floating  input-box">
+                                <label class="control-label" translate>PROFILE.CITY</label>                                
+                                <input type="text"
+                                    [(ngModel)]="currentUser.company_city"
+                                    class="form-control"
+                                    formControlName="companyCity">                                    
+                            </div>                            
+                            <div class="col-md-4 form-group label-floating  input-box">
+                                <label class="control-label" translate>PROFILE.POSTAL_CODE</label>
+                                <input type="text"
+                                    [(ngModel)]="currentUser.company_zipcode" 
+                                    class="form-control"
+                                    formControlName="companyZipcode">
+                            </div>
+                            <div class="col-md-6 form-group label-floating  input-box">
+                                <a type="button" id="beach-info-save" class="btn btn-fill btn-rose" routerLink="/updatepassword" translate>PROFILE.RESET_PASSWORD</a>
+                            </div>
+                            <div class="col-md-6 form-group label-floating text-right  input-box ">
+                                <button type="button" (click)="updateProfile()" class="btn btn-fill btn-rose" translate>PROFILE.UPDATE_PROFILE</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 no-mobile">
+                <div class="card">
+                    <div class="card-header card-header-icon" data-background-color="rose">
+                        <i class="material-icons">priority_high</i>
+                    </div>
+                    <div class="card-content card-small-height">
+                        <h4 class="card-title card-description" translate>PROFILE.ABOUT_PROFILE</h4>                        
+                        <h5 class="card-description">
+                            <p translate>PROFILE.DESCRIPTION1</p>
+                            <p translate>PROFILE.DESCRIPTION2</p>
+                            <p translate>PROFILE.DESCRIPTION3</p>
+                        </h5>
+                    </div>
+                </div>
+            </div>
+            <!-- end col-md-12 -->
+        </div>
+        <!-- end row -->
+    </div>
+</div>
+    

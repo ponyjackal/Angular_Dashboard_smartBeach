@@ -1,0 +1,328 @@
+<div class="main-content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-8">
+                <div class="card" id="beach-info-card">
+                    <div class="card-header card-header-icon" data-background-color="rose">
+                        <i class="material-icons">priority_high</i>
+                    </div>
+                    <div class="card-content card-small-height">
+                        <h4 class="card-title" translate>SETTINGS.ABOUT.BEACH_INFO</h4>
+                        <form [formGroup]="beachInfo">
+                            <div id="name_container" class="col-md-4 form-group label-floating">
+                                <label class="control-label" translate>SETTINGS.ABOUT.BEACH_NAME</label>
+                                <input type="text" [(ngModel)]="beach.name" class="form-control"
+                                    (ngModelChange)="onChangeName($event)" formControlName="name">
+                            </div>
+                            <div id="country_container" class="col-md-4 form-group label-floating">
+                                <label class="control-label" translate>SETTINGS.ABOUT.COUNTRY</label>
+                                <select [(ngModel)]="beach.country_id" class="form-control" formControlName="country_id"
+                                    (ngModelChange)="onChangeCountry($event)" (change)="onChangeCountry($event)">
+                                    <option selected=""></option>
+                                    <option *ngFor="let country of countries" [value]="country.id"> {{country.name}}
+                                    </option>
+                                </select>
+                            </div>
+                            <div id="place_container" class="col-md-4 form-group label-floating">
+                                <label class="control-label" translate>PROFILE.CITY</label>
+                                <select [(ngModel)]="beach.place_id" class="form-control" formControlName="place_id"
+                                    (ngModelChange)="onChangePlace($event)" (change)="onChangePlace($event)">
+                                    <option disabled="" selected=""></option>
+                                    <option *ngFor="let city of places" [value]="city.id"> {{city.name}} </option>
+                                </select>
+                            </div>
+                            <div class="pull-right">
+                                <button type="button" [disabled]="!changedBeachInfo" (click)="saveBeachInfo()"
+                                    id="beach-info-save" class="btn btn-fill btn-rose" style="margin-top:80px"
+                                    translate>SAVE</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 no-mobile">
+                <div class="card">
+                    <div class="card-header card-header-icon" data-background-color="rose">
+                        <i class="material-icons">priority_high</i>
+                    </div>
+                    <div class="card-content card-small-height">
+                        <h4 class="card-title card-description" translate>SETTINGS.ABOUT.NAME_LOCATION_DES</h4>
+                        <h5 class="card-description">
+                            <p translate>SETTINGS.ABOUT.DESCRIPTION1</p>
+                        </h5>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-8">
+                <div class="card">
+                    <form method="get" action="/" class="form-horizontal">
+                        <div class="card-header card-header-icon" data-background-color="rose">
+                            <i class="material-icons">location_on</i>
+                        </div>
+                        <div class="card-content card-big-height">
+                            <div class="card-title">
+                                <div class="col-md-5 text-left" style="padding-left:0">
+                                    <h4 translate>SETTINGS.ABOUT.BEACH_LOCATION</h4>
+                                </div>
+                                <div class="text-right card-description">
+                                    <p [translate]="'SETTINGS.ABOUT.LATITUDE'"
+                                        [translateParams]="{value: latitude || 0}"></p>
+                                    <p [translate]="'SETTINGS.ABOUT.LONGITUDE'"
+                                        [translateParams]="{value: longitude || 0}"></p>
+                                </div>
+                            </div>
+                            <label class="card-description" translate>SETTINGS.ABOUT.DESCRIPTION2</label>
+                            <div id="regularMap" class="map"></div>
+
+                            <div class="pull-right">
+                                <button type="button" class="btn btn-fill btn-rose" [disabled]="!changedLocation"
+                                    (click)="saveLocation()" translate>SAVE</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="col-md-4 no-mobile">
+                <div class="card">
+                    <div class="card-header card-header-icon" data-background-color="rose">
+                        <i class="material-icons">priority_high</i>
+                    </div>
+                    <div class="card-content card-big-height">
+                        <h4 class="card-title card-description" translate>SETTINGS.ABOUT.ABOUT_MAP_LOCATION</h4>
+                        <h5 class="card-description">
+                            <p translate>SETTINGS.ABOUT.DESCRIPTION3</p>
+                            <p translate>SETTINGS.ABOUT.DESCRIPTION4</p>
+                        </h5>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-8">
+                <div class="card" id="facilities">
+                    <form method="get" action="/" class="form-horizontal">
+                        <div class="card-header card-header-icon" data-background-color="rose">
+                            <i class="material-icons">face</i>
+                        </div>
+                        <div class="card-content card-small-height">
+                            <h4 class="card-title" translate>SETTINGS.ABOUT.BEACH_FACILITIES</h4>
+                            <div class="row">
+                                <label class="col-sm-12 col-xs-12" translate>SETTINGS.ABOUT.DESCRIPTION5</label>
+                                <div class="col-md-1"></div>
+                                <label *ngFor="let beachFacility of beachFacilities"
+                                    class="col-md-1 col-sm-3 col-xs-3 card-content af_radio">
+                                    <input type="checkbox" name="fb" value="{{beachFacility.name}}"
+                                        [checked]="facilities[beachFacility.name]"
+                                        (change)="changeFacilities(beachFacility.name)">
+                                    <i class="{{getFacilityIconClass(beachFacility.id, 'on')}}"
+                                        *ngIf="facilities[beachFacility.name]"></i>
+                                    <i class="{{getFacilityIconClass(beachFacility.id, 'off')}}"
+                                        *ngIf="!facilities[beachFacility.name]"></i>
+                                </label>
+                            </div>
+                            <div class="pull-right">
+                                <button type="button" class="btn btn-fill btn-rose" [disabled]="!changedFacilities"
+                                    (click)="saveFacilities()" translate>SAVE</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="col-md-4 no-mobile">
+                <div class="card">
+                    <div class="card-header card-header-icon" data-background-color="rose">
+                        <i class="material-icons">priority_high</i>
+                    </div>
+                    <div class="card-content card-small-height">
+                        <h4 class="card-title card-description" translate>SETTINGS.ABOUT.ABOUT_FACILITIES</h4>
+                        <h5 class="card-description">
+                            <p translate>SETTINGS.ABOUT.DESCRIPTION6</p>
+                        </h5>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-8">
+                <div class="card">
+                    <form method="get" action="/" class="form-horizontal">
+                        <div class="card-header card-header-icon" data-background-color="rose">
+                            <i class="material-icons"></i>
+                        </div>
+                        <div class="card-content card-big-height">
+                            <h4 class="card-title" translate>SETTINGS.ABOUT.PHOTOS_AND_DESCRIPTION</h4>
+                            <div class="row">
+                                <h6 class="col-md-12"></h6>
+                                <div class="col-md-12">
+                                    <div class="col-lg-3 col-md-6 col-sm-3" *ngFor="let gallery of beachGalleries">
+                                        <div class="fileinput fileinput-exists text-center inputwidth"
+                                            data-provides="fileinput" gallery-id="empty">
+                                            <div class="fileinput-new thumbnail no-img new-fileinput-preview">
+                                                <img src="assets/img/image_placeholder.jpg" alt="...">
+                                            </div>
+                                            <div class="main-card">
+                                                <div class="fileinput-preview fileinput-exists thumbnail">
+
+                                                    <div class="img-card">
+                                                        <img class="photo" src="{{gallery.url}}" alt="...">
+                                                    </div>
+
+                                                </div>
+                                            </div>
+
+                                            <div>
+                                                <span class="btn btn-rose btn-round btn-file">
+                                                    <span class="fileinput-new" translate>SELECT_IMAGE</span>
+                                                    <span class="fileinput-exists" translate>CHANGE_IMAGE</span>
+                                                    <input type="file" name="..."
+                                                        (change)="changeGallery($event, gallery.id)"
+                                                        accept="image/png,image/jpg,image/jpeg" />
+                                                </span>
+                                                <a href="#pablo" class="btn btn-danger btn-round fileinput-exists"
+                                                    data-dismiss="fileinput" (click)="removeGallery(gallery.id)"><i
+                                                        class="fa fa-times"></i>
+                                                    <span translate>REMOVE</span>
+                                                </a>
+                                                <a class="btn btn-success btn-round fileinput-exists"
+                                                    (click)="setMainGallery(gallery.id)" *ngIf="!gallery.is_main"><i
+                                                        class="fa fa-check"></i>
+                                                    <span translate>SET_MAIN</span>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-3 col-md-6 col-sm-3" *ngIf="beachGalleries.length < 4">
+                                        <div class="fileinput fileinput-new text-center" data-provides="fileinput">
+                                            <div class="fileinput-new thumbnail no-img">
+                                                <img src="assets/img/image_placeholder.jpg" alt="...">
+                                            </div>
+                                            <div class="fileinput-preview fileinput-exists thumbnail"></div>
+                                            <div>
+                                                <span class="btn btn-rose btn-round btn-file">
+                                                    <span class="fileinput-new" translate>SELECT_IMAGE</span>
+                                                    <span class="fileinput-exists" translate>CHANGE_IMAG</span>
+                                                    <input type="file" name="..." (change)="addGallery($event)"
+                                                        accept="image/png,image/jpg,image/jpeg" />
+                                                </span>
+                                                <a href="#pablo" id="new_pablo"
+                                                    class="btn btn-danger btn-round fileinput-exists"
+                                                    data-dismiss="fileinput"><i class="fa fa-times"></i> Remove</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- <h6 class="col-md-12 col-md-offset-1" translate>SETTINGS.ABOUT.BEACH_DESCRIPTION</h6>
+                                <div class="col-md-12">
+                                    <input type="text" class="form-control" [(ngModel)]="beach.description" name="description" placeholder="Add your beach descrion here" (ngModelChange)="changedDescription = true">
+                                </div> -->
+                            </div>
+                            <!-- <div class="pull-right">
+                                <button type="button" class="btn btn-fill btn-rose" [disabled]="!changedDescription" (click)="saveDescription()" translate>SAVE</button>
+                            </div>                             -->
+                        </div> <!-- card-content end -->
+                    </form>
+                </div>
+            </div>
+            <div class="col-md-4 no-mobile">
+                <div class="card">
+                    <div class="card-header card-header-icon" data-background-color="rose">
+                        <i class="material-icons">priority_high</i>
+                    </div>
+                    <div class="card-content card-big-height">
+                        <h4 class="card-title card-description" translate>SETTINGS.ABOUT.ABOUT_FACILITIES</h4>
+                        <h5 class="card-description">
+                            <p translate>SETTINGS.ABOUT.DESCRIPTION7</p>
+                        </h5>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-8">
+                <div class="card">
+                    <!-- <div class="card-header card-header-icon" data-background-color="rose">
+                        <i class="material-icons"></i>
+                    </div>
+                    <div class="card-content card-big-height" style="min-height:380px">
+                        <h4 class="card-title" translate>Agreement</h4>
+
+                        <div>
+                            <ng-container *ngFor="let obj of info;let ind=index;">
+                               <div>
+                                    <input type='text' placeholder="info {{ind+1}}" [value]="obj" (input)="setValue($event,ind)">
+                                    <button (click)="info.splice(ind,1)"> <i class="material-icons">close</i></button>
+                               </div>
+                            </ng-container>
+                        </div>
+                    </div> -->
+                    <form >
+                        <div class="card-header card-header-icon" data-background-color="rose">
+                            <i class="material-icons"></i>
+                        </div>
+                        <div class="card-content card-big-height" style="min-height:380px">
+                            <h4 class="card-title" translate>Agreement</h4>
+                            <ng-container *ngFor="let obj of info; let ind=index">
+                                <div class="panel panel-default info-div">
+                                    <div class="row">
+                                        <div class="info">
+
+                                            <input type="text" class="info-input"
+                                                placeholder="" name="info-{{ind}}"
+                                               
+                                                [value]="obj" (input)="setValue($event,ind)">
+
+                                        </div>
+
+                                        <div style="float:left">
+                                            <button class="btn btn-simple btn-danger btn-icon remove  btn-small-size"
+                                                (click)="info.splice(ind,1);infocopy.splice(ind,1);changedInfo = true">
+                                                <i class="material-icons">close</i>
+                                            </button>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </ng-container>
+                            <div class="row">
+                                <div class="pull-left" style="padding: 10px 10px;">
+                                    <button class="btn btn-round btn-rose btn-just-icon save-btn"
+                                        (click)="info.push('');infocopy.push('')" [disabled]="!infocopy[infocopy.length-1]&&infocopy.length>0">
+                                        <i class="material-icons" >add</i>
+                                    </button>&nbsp;&nbsp;&nbsp;&nbsp;
+                                    <label class="description" translate>ADD INFO</label>
+                                </div>
+                            </div>
+                            <div class="pull-right" style="
+                        padding-bottom: 22px;">
+                                <button type="button" class="btn btn-fill btn-rose save-btn" translate
+                                    (click)="saveAgreement(infocopy)" [disabled]="!changedInfo||!infocopy[infocopy.length-1]">SAVE</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- <div class="modal fade" id="cropperModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">New message</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="form-group">
+                            <label for="recipient-name" class="col-form-label">Recipient:</label>
+                            <input type="text" class="form-control" id="recipient-name">
+                        </div>
+                        <div class="form-group">
+                            <label for="message-text" class="col-form-label">Message:</label>
+                            <textarea class="form-control" id="message-text"></textarea>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Send message</button>
+                </div>
+            </div>
+        </div>
+    </div> -->
+</div>

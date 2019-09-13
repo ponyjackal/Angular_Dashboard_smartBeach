@@ -1,0 +1,76 @@
+<div class="wrapper wrapper-full-page">
+    <div class="full-page login-page" filter-color="black">
+        <div class="content">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-4 col-sm-6 col-md-offset-4 col-sm-offset-3">
+                        <div class="card card-login">
+                            <form [formGroup]="frmSetPass">
+                                <div class="input-group">
+                                    <span class="input-group-addon">
+                                        <i class="material-icons">lock_outline</i>
+                                    </span>
+                                    <div class="form-group label-floating" [ngClass]="displayFieldCss(frmSetPass, 'currentPassword')">
+                                        <label class="control-label">Current password</label>
+                                        <input type="password" 
+                                            id="currentPassword"
+                                            [(ngModel)]="currentPassword"
+                                            class="form-control"
+                                            formControlName="currentPassword"
+                                            >
+                                        <app-field-error-display [displayError]="isFieldValid(frmSetPass, 'currentPassword')" errorMsg="{{'PAGES.VALID_PASSWORD_ERROR' | translate}}">
+                                        </app-field-error-display>
+                                    </div>
+                                </div>
+                                <div class="input-group">
+                                    <span class="input-group-addon">
+                                        <i class="material-icons">lock_outline</i>
+                                    </span>
+                                    <div class="form-group label-floating" [ngClass]="displayFieldCss(frmSetPass, 'setPassword')">
+                                        <label class="control-label">New password</label>
+                                        <input type="password" 
+                                            id="setPassword"
+                                            [(ngModel)]="setPassword"
+                                            class="form-control"
+                                            formControlName="setPassword"
+                                            >
+                                        <app-field-error-display [displayError]="isFieldValid(frmSetPass, 'setPassword')" errorMsg="{{'PAGES.VALID_PASSWORD_ERROR' | translate}}">
+                                        </app-field-error-display>
+                                    </div>
+                                </div>
+                                <div class="input-group">
+                                    <span class="input-group-addon">
+                                        <i class="material-icons">lock_outline</i>
+                                    </span>
+                                    <div class="form-group label-floating" [ngClass]="displayFieldCss(frmSetPass, 'confirmPassword')">
+                                        <label class="control-label" translate>PAGES.RETYPE_PASSWORD</label>
+                                        <input type="password" 
+                                            id="confirmPassword"
+                                            [(ngModel)]="confirmPassword"
+                                            class="form-control"
+                                            formControlName="confirmPassword">
+                                        <app-field-error-display [displayError]="isFieldValid(frmSetPass, 'confirmPassword')" errorMsg="{{'PAGES.PASSWORD_MATCH_ERROR' | translate}}">
+                                        </app-field-error-display>
+                                    </div>
+                                </div>
+                            </form>
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <div class="footer text-center">
+                                        <a type="button" routerLink="/profile" class="btn btn-rose btn-default" translate>PROFILE.TITLE</a>
+                                    </div>
+                                </div>
+                                <div class="col-sm-6">
+                                    <div class="footer text-center">
+                                        <button type="button" class="btn btn-rose btn-default" (click)="onUpdate()" translate>UPDATE</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="full-page-background" style="background-image: url(assets/img/bg.jpg) "></div>
+    </div>
+</div>

@@ -1,0 +1,26 @@
+<div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true" *ngIf="beach_menu" style="min-height: 200px;">
+    <beach-menu-category *ngFor="let menu_category of menu_categories" [menu_category]="menu_category" [editable]="editable" (notify)="notifyCategory($event)" [notifyData]="notifyData" [filterText]="filterText" (onClick)="onClickCategory($event)" [filterStatus]="filterStatus"></beach-menu-category>
+    <div class="panel panel-default" *ngIf="addingCategory">
+        <div class="row" style="margin-top: 40px;">
+            <div class="col-md-4 col-md-offset-4 col-sm-8 col-sm-offset-2" style="padding: 0;">
+                <input type="text" class="form-control" placeholder="Category Name" name="newCategoryName" [(ngModel)]="newCategory">
+            </div>
+            <button class="btn btn-simple btn-success btn-icon remove  btn-small-size" (click)="addNewCategory()">
+                <i class="material-icons">done</i>
+            </button>
+
+            <button class="btn btn-simple btn-danger btn-icon remove  btn-small-size" *ngIf="!thing1_edit">
+                <i class="material-icons" (click)="addingCategory = false; newCategory = '';">close</i>
+            </button>
+        </div>
+    </div>
+    <div class="panel panel-default" *ngIf="beach_menu && editable">
+        <div class="row">
+            <div class="col-md-4 col-md-offset-4 col-sm-8 col-sm-offset-2 col-xs-10 col-xs-offset-1" style="padding: 0;">
+                <button class="btn btn-primary btn-block" (click)="addingCategory = true" translate>BEACHMENU.ADD_CATEGORY</button>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="col-md-12" *ngIf="!beach_menu" style="padding-bottom: 50px;min-height: 200px;">
+</div>

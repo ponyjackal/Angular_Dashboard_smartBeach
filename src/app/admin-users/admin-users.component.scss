@@ -1,0 +1,83 @@
+.main-content{
+	.title{
+		float:left;
+	}
+	.block-user-btn{
+		background-color: #836f8b;
+		color:white;
+	}
+	.search-input{
+		width:120px
+	}
+	.form-group{
+		width: 100%; padding-top: 14px;
+	}
+	.card-content{
+		margin-top: 60px;
+	}
+	.user{
+		//height:200px;
+	}
+	.name{
+		font-size: 18px;
+    font-weight: bold;
+    color: #6b6b6b;
+	}
+	.blocked-user-btn{
+		background-color:green;
+		color:white;
+	}
+	.name{
+		font-size: 18px;
+    font-weight: bold;
+    color: #6b6b6b;
+	}
+
+	.loading {
+		padding-top: 100%;
+		color: #946e3f;
+		font-weight: bold;
+	}
+	
+	.block-padding{
+		padding: 12px 5px
+	}
+	.table-head{
+		color:grey;
+		width:200px;
+	}
+	.photo-div{
+		height: 157px;
+    width: 157px;
+    float: left;
+    margin-left: 2%;
+    cursor: pointer;
+    position: relative;
+    margin-top: 2%;
+
+		.image-div{
+			padding-left: 1px;
+			width: 150px;
+			border-radius: 9px;
+			height: 150px;
+			background: #f1f1f1;
+			text-align: center;
+			vertical-align: middle;
+			display: table-cell;
+			img{
+				border-radius: 8px;
+    padding: 5px;
+    max-width: 100% !important;
+    max-height: 100% !important;
+    width: auto !important;
+    height: auto !important;
+
+			}
+		}
+	}
+	.arrow-btn{
+		float: right;
+		font-size: 16px;
+		font-weight: bold;
+	}
+}

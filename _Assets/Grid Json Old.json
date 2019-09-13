@@ -1,0 +1,185 @@
+{
+    "front": [{
+            "type": "umbrella",
+            "number": "1",
+            "status": {
+                "a": [
+                    "available"
+                ],
+                "b": [
+                    "available"
+                ]
+            },
+            "status_icon": "11.png",
+            "seats": 2,
+            "coords": {
+                "y": 95,
+                "x": 104
+            }
+        },
+        {
+            "type": "baldaquin",
+            "number": "2",
+            "status": "available",
+            "status_icon": "1.png",
+            "seats": 4,
+            "coords": {
+                "y": 95,
+                "x": 188
+            }
+        },
+        {
+            "type": "baldaquin",
+            "number": "3",
+            "status": "available",
+            "status_icon": "1.png",
+            "seats": 4,
+            "coords": {
+                "y": 95,
+                "x": 272
+            }
+        },
+        {
+            "type": "baldaquin",
+            "number": "4",
+            "status": "available",
+            "status_icon": "1.png",
+            "seats": 4,
+            "coords": {
+                "y": 95,
+                "x": 356
+            }
+        },
+        {
+            "type": "umbrella",
+            "number": "5",
+            "status": {
+                "a": [
+                    "available",
+                    "available"
+                ],
+                "b": [
+                    "available",
+                    "available"
+                ]
+            },
+            "status_icon": "1111.png",
+            "seats": 4,
+            "coords": {
+                "y": 95,
+                "x": 440
+            }
+        }
+    ],
+    "middle": [{
+            "type": "umbrella",
+            "number": "6",
+            "status": {
+                "a": [
+                    "available"
+                ],
+                "b": [
+                    "available"
+                ]
+            },
+            "status_icon": "11.png",
+            "seats": 2,
+            "coords": {
+                "y": 174,
+                "x": 104
+            }
+        },
+        {
+            "type": "baldaquin",
+            "number": "7",
+            "status": "available",
+            "status_icon": "1.png",
+            "seats": 4,
+            "coords": {
+                "y": 174,
+                "x": 188
+            }
+        },
+        {
+            "type": "baldaquin",
+            "number": "8",
+            "status": "available",
+            "status_icon": "1.png",
+            "seats": 4,
+            "coords": {
+                "y": 174,
+                "x": 272
+            }
+        },
+        {
+            "type": "umbrella",
+            "number": "9",
+            "status": {
+                "a": [
+                    "available",
+                    "available"
+                ],
+                "b": [
+                    "available",
+                    "available"
+                ]
+            },
+            "status_icon": "1111.png",
+            "seats": 4,
+            "coords": {
+                "y": 174,
+                "x": 356
+            }
+        }
+    ],
+    "back": [{
+            "type": "umbrella",
+            "number": "10",
+            "status": {
+                "a": [
+                    "available",
+                    "available"
+                ],
+                "b": [
+                    "available",
+                    "available"
+                ]
+            },
+            "status_icon": "1111.png",
+            "seats": 4,
+            "coords": {
+                "y": 268,
+                "x": 104
+            }
+        },
+        {
+            "type": "baldaquin",
+            "number": "11",
+            "status": "available",
+            "status_icon": "1.png",
+            "seats": 4,
+            "coords": {
+                "y": 268,
+                "x": 188
+            }
+        },
+        {
+            "type": "umbrella",
+            "number": "12",
+            "status": {
+                "a": [
+                    "available"
+                ],
+                "b": [
+                    "available"
+                ]
+            },
+            "status_icon": "11.png",
+            "seats": 2,
+            "coords": {
+                "y": 268,
+                "x": 272
+            }
+        }
+    ]
+}

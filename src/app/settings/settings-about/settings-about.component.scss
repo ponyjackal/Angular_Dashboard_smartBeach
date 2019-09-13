@@ -1,0 +1,120 @@
+.main-content .inputwidth{
+	width:100%;
+	.fileinput-preview{
+		padding-left: 1px;
+		width: 100%;
+		max-width: 100%;
+		//height: 120px;
+		height:160px;
+		img{
+			max-width: 100%!important;
+	max-height: 100%!important;
+	width: auto!important;
+	height: auto!important;
+		}
+		background: #f1f1f1;
+		text-align: center;
+		vertical-align: middle;
+		display: table-cell;
+		//object-fit: cover;
+	}
+	
+	.card img{
+		max-width: 100% !important;
+		max-height: 100% !important;
+	}
+
+	.img-card{
+		height:160px;
+		height: 160px;
+    vertical-align: middle;
+    display: table-cell;
+	}
+	
+	.main-card{
+		max-width: max-content;
+		height: 160px;
+		margin: 0 auto;
+		margin-bottom: 15%;
+	}
+	@media only screen  and (max-width: 769px) {
+		.main-card{
+			margin-bottom: 5%;
+			
+		}
+		.btn{
+			margin-bottom: 5%;
+		}
+	  }
+}
+.main-card img,
+.fileinput .thumbnail > img,
+.fileinput-preview.fileinput-exists.thumbnail img,
+.new-fileinput-preview img{ 
+	max-width: 100%!important;
+	max-height: 100%!important;
+	width: auto!important;
+	height: auto!important;
+}
+
+.fileinput .thumbnail{
+	margin-bottom: 5%;
+	//display: table-cell;
+}
+.btn{
+	width:100%;
+	padding:10px 15px;
+	margin-bottom: -2%;
+}
+.add-info{
+	width: 50%;
+    /* text-align: center; */
+    margin: 0 auto;
+}
+.info-btn{
+	background: #E91E63;
+	width: 50%;
+	float: left;
+	margin: 0;
+	/* margin-right: 22px; */
+	margin: 0px 12px;
+
+}
+.save-btn{
+	background: #E91E63;
+	float: left;
+	width: 41%;
+	margin: 0;
+}
+.info-input{
+	width: 100%;
+
+}
+.info{
+	float: left;
+    margin-left: 4%;
+    padding: 9px;
+    border-radius: 5px;
+    border: 1px solid #c5c5c5;
+    margin: 6px;
+    width: calc(100% - 65px);
+		textarea{
+			border-bottom-color: black;
+			width: 300px;
+			border-left: 0;
+			border-top: 0;
+			border-right: 0;
+		}
+		input{
+			border:0
+		}
+}
+.info-div{
+	float: left;
+	width: 100%;
+	margin: 0 auto;
+}
+.save-btn{
+	width: max-content;
+	padding: 10px 10px;
+}

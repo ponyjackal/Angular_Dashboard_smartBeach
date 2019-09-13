@@ -1,0 +1,149 @@
+<div class="main-content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-4 col-md-4 col-sm-6 col-md-offset-2">
+                <div class="card card-stats">
+                    <div class="card-header" data-background-color="orange">
+                        <i class="star_mark"></i>
+                    </div>
+                    <div class="dropdown show-dropdown">
+                        <a href="#" data-toggle="dropdown">
+                            <div class="card-content">
+                                <p class="category" translate>STATISTICS.AVERAGE_RATE</p>
+                                <h3 class="card-title">{{average_rate}}</h3>
+                            </div>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <div>
+                                <li>
+                                    <div class="col-md-12">
+                                        <div class="col-md-9">
+                                            <span class="col-md-2">
+                                                <i class="material-icons star5">star_rate</i>
+                                            </span>
+                                            <span class="col-md-2">
+                                                <i class="material-icons star5">star_rate</i>
+                                            </span>
+                                            <span class="col-md-2">
+                                                <i class="material-icons star5">star_rate</i>
+                                            </span>
+                                            <span class="col-md-2">
+                                                <i class="material-icons star5">star_rate</i>
+                                            </span>
+                                            <span class="col-md-2">
+                                                <i class="material-icons star5">star_rate</i>
+                                            </span>
+                                        </div>
+                                        <span class="col-md-3">
+                                            <h4 class="text-right">{{rating.five}}</h4>
+                                        </span>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="col-md-12">
+                                        <div class="col-md-9">
+                                            <span class="col-md-2">
+                                                <i class="material-icons star4">star_rate</i>
+                                            </span>
+                                            <span class="col-md-2">
+                                                <i class="material-icons star4">star_rate</i>
+                                            </span>
+                                            <span class="col-md-2">
+                                                <i class="material-icons star4">star_rate</i>
+                                            </span>
+                                            <span class="col-md-2">
+                                                <i class="material-icons star4">star_rate</i>
+                                            </span>
+                                        </div>
+                                        <span class="col-md-3">
+                                            <h4 class="text-right">{{rating.four}}</h4>
+                                        </span>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="col-md-12">
+                                        <div class="col-md-9">
+                                            <span class="col-md-2">
+                                                <i class="material-icons star3">star_rate</i>
+                                            </span>
+                                            <span class="col-md-2">
+                                                <i class="material-icons star3">star_rate</i>
+                                            </span>
+                                            <span class="col-md-2">
+                                                <i class="material-icons star3">star_rate</i>
+                                            </span>
+                                        </div>
+                                        <span class="col-md-3">
+                                            <h4 class="text-right">{{rating.three}}</h4>
+                                        </span>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="col-md-12">
+                                        <div class="col-md-9">
+                                            <span class="col-md-2">
+                                                <i class="material-icons star2">star_rate</i>
+                                            </span>
+                                            <span class="col-md-2">
+                                                <i class="material-icons star2">star_rate</i>
+                                            </span>
+                                        </div>
+
+                                        <span class="col-md-3">
+                                            <h4 class="text-right">{{rating.two}}</h4>
+                                        </span>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="col-md-12">
+                                        <div class="col-md-9">
+                                            <span class="col-md-2">
+                                                <i class="material-icons star1">star_rate</i>
+                                            </span>
+                                        </div>
+                                        <span class="col-md-3">
+                                            <h4 class="text-right">{{rating.one}}</h4>
+                                        </span>
+                                    </div>
+                                </li>
+                            </div>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-4 col-sm-6">
+                <div class="card card-stats">
+                    <div class="card-header" data-background-color="red">
+                        <i class="edit_mark"></i>
+                    </div>
+                    <div class="card-content">
+                        <p class="category" translate>STATISTICS.REVIEWS</p>
+                        <h3 class="card-title">{{review_count}}</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <ul class="timeline">
+                    <li *ngFor="let review of reviews; let i = index;" [ngClass]="i % 2 == 0 ? 'timeline' : 'timeline-inverted'">
+                        <div class="timeline-badge" [ngClass]="timeline_class[review.vote]">
+                            <i class="star_{{review.vote}}"></i>
+                        </div>
+                        <div class="timeline-panel">
+                            <div class="timeline-heading">
+                                <span class="label" [ngClass]="'label-' + timeline_class[review.vote]">{{review.customer.name}}</span>
+                            </div>
+                            <div class="timeline-body">
+                                <p>{{review.review}}</p>
+                            </div>
+                            <h6>
+                                <i class="ti-time"></i>{{review.before}}
+                            </h6>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>

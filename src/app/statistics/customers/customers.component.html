@@ -1,0 +1,185 @@
+<div class="main-content">
+    <div class="container-fluid">
+        <div class="main-content">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-lg-3 col-md-6 col-sm-6">
+                        <div class="card card-stats">
+                            <div class="card-header" data-background-color="orange">
+                                <i class="calendar_day"></i>
+                            </div>
+                            <div class="card-content">
+                                <p class="category">Orders - day</p>
+                                <h3 class="card-title">184</h3>
+                            </div>
+                            <div class="card-footer-small">
+                                    <div class="col-md-5 form-group label-floating text-left" style="padding:0;margin:0">
+                                        <button mat-raised-button (click)="picker1.open()" class="btn btn-white btn-simple" style="width:100%; margin:0; padding:0;">
+                                            <div class="row">
+                                                <div class="col-md-2 text-center" style="padding:0">
+                                                    <i class="material-icons">date_range</i> 
+                                                </div>
+                                                <div class="col-md-9 text-center" style="padding:0 0 0 10px">
+                                                        since
+                                                    <mat-form-field style="width:100%">
+                                                        <input class="text-left text-rose" matInput [matDatepicker]="picker1" [formControl]="date" style="max-width:50px !important">                                        
+                                                        <mat-datepicker 
+                                                            #picker1
+                                                            [startView]="'month'">
+                                                        </mat-datepicker>
+                                                    </mat-form-field>
+                                                </div>
+                                            </div>
+                                        </button>                         
+                                    </div>
+                                    <div class="col-md-7">                            
+                                                <div>&nbsp;</div>                                
+                                    </div>                             
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 col-sm-6">
+                        <div class="card card-stats">
+                            <div class="card-header" data-background-color="red">
+                                <i class="calendar_week"></i>
+                            </div>
+                            <div class="card-content">
+                                <p class="category">Orders - week</p>
+                                <h3 class="card-title">953</h3>
+                            </div>
+                            <div class="card-footer">
+                                <div class="stats">
+                                    <i class="material-icons">date_range</i> Since 15.07.2018
+                                </div>                                                                  
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 col-sm-6">
+                        <div class="card card-stats">
+                            <div class="card-header" data-background-color="green">
+                                <i class="calendar_month"></i>
+                            </div>
+                            <div class="card-content">
+                                <p class="category" style="text-indent: 0;">Orders - month</p>
+                                <h3 class="card-title">3804</h3>
+                            </div>
+                            <div class="card-footer">
+                                <div class="stats">
+                                    <i class="material-icons">date_range</i> Since 22.06.2018
+                                </div>                            
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 col-sm-6">
+                        <div class="card card-stats">
+                            <div class="card-header" data-background-color="blue">
+                                <i class="calendar_year"></i>
+                            </div>
+                            <div class="card-content">
+                                <p class="category">Orders All time</p>
+                                <h3 class="card-title">18936</h3>
+                            </div>
+                            <div class="card-footer">
+                                <div class="stats">
+                                    <i class="material-icons">date_range</i> Since 02.06.2016
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">                        
+                        <div class="col-md-6">
+                            <div class="card card-chart">
+                                <div class="card-header" data-background-color="orange">
+                                    <div id="straightLinesChart" class="ct-chart"></div>
+                                </div>
+                                <div class="card-content">
+                                    <div class="card-title">
+                                        <h4 class="col-md-6">Orders per hour</h4>
+                                        <div class="col-md-6" style="background-color:orange; padding:3px">
+                                            <span class="col-md-3">
+                                                <div class="round-rectangle round-rectangle-online">&nbsp;</div> 
+                                            </span>
+                                            <span class="col-md-3" style="color:rgba(71, 47, 191, 1); margin:2px">Online</span>
+                                            <span class="col-md-3">
+                                                <div class="round-rectangle round-rectangle-white">&nbsp;</div> 
+                                            </span>
+                                            <span class="col-md-2" style="color:white; margin:2px">All</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="card card-chart">
+                                <div class="card-header" data-background-color="red">
+                                    <div id="customersPerDayLineChart" class="ct-chart"></div>
+                                </div>
+                                <div class="card-content">
+                                        <div class="card-title">
+                                                <h4 class="col-md-6">Orders per day</h4>
+                                                <div class="col-md-6" style="background-color:#E24943; padding:3px">
+                                                    <span class="col-md-3">
+                                                        <div class="round-rectangle round-rectangle-online">&nbsp;</div> 
+                                                    </span>
+                                                    <span class="col-md-3" style="color:rgba(71, 47, 191, 1); margin:2px">Online</span>
+                                                    <span class="col-md-3">
+                                                        <div class="round-rectangle round-rectangle-white">&nbsp;</div> 
+                                                    </span>
+                                                    <span class="col-md-2" style="color:white; margin:2px">All</span>
+                                                </div>
+                                        </div>                                    
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="card">
+                                <div class="card-header" data-background-color="green">
+                                    <div id="colouredBarsChart" class="ct-chart"></div>
+                                </div>
+                                <div class="card-content">
+                                    <div class="card-title">
+                                            <h4 class="col-md-6">Orders per month</h4>
+                                            <div class="col-md-6" style="background-color:#64B964; padding:3px">
+                                                <span class="col-md-3">
+                                                    <div class="round-rectangle round-rectangle-online">&nbsp;</div> 
+                                                </span>
+                                                <span class="col-md-3" style="color:rgba(71, 47, 191, 1); margin:2px">Online</span>
+                                                <span class="col-md-3">
+                                                    <div class="round-rectangle round-rectangle-white">&nbsp;</div> 
+                                                </span>
+                                                <span class="col-md-2" style="color:white; margin:2px">All</span>
+                                            </div>
+                                    </div>                                    
+                                </div>                                
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="card">
+                                <div class="card-header" data-background-color="blue">
+                                    <div id="multipleBarsChart" class="ct-chart"></div>
+                                </div>
+                                <div class="card-content">
+                                        <div class="card-title">
+                                                <h4 class="col-md-6">Orders per year</h4>
+                                                <div class="col-md-6" style="background-color:#3CB3C9; padding:3px">
+                                                    <span class="col-md-3">
+                                                        <div class="round-rectangle round-rectangle-online">&nbsp;</div> 
+                                                    </span>
+                                                    <span class="col-md-3" style="color:rgba(71, 47, 191, 1); margin:2px">Online</span>
+                                                    <span class="col-md-3">
+                                                        <div class="round-rectangle round-rectangle-white">&nbsp;</div> 
+                                                    </span>
+                                                    <span class="col-md-2" style="color:white; margin:2px">All</span>
+                                                </div>
+                                        </div>                                    
+                                </div>                                
+                            </div>
+                        </div>
+                    </div>                    
+            </div>
+        </div>
+    </div>
+</div>

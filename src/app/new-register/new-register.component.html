@@ -1,0 +1,144 @@
+
+    <div class="main-content">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="card">
+                        <div>
+                            <div>
+                                <div>
+                                    <div class="card-header card-header-icon" data-background-color="rose">
+                                        <i class="material-icons">priority_high</i>
+                                    </div>
+                                    <div class="title">
+                                        <h4 translate>New beaches
+                                            registered</h4>
+                                    </div>
+                                    <div class="top-right-div">
+                                 
+                                        <div class="search">
+                                            <input style="padding-bottom: 2%;width:100%;padding-bottom: 2%;width: 100%;" id="search" name="search" class="form-control search-input" [(ngModel)]="filterText"
+                                                placeholder="Search beach"></div>
+                                        <div class="but-div">
+                                            <div class="all-div">
+                                                <div class="mb"> <button class="p-10 small-padding btn btn-light all-btn" (click)="status='all';">ALL</button>
+                                                </div>
+                                                <div class="count-div"> {{beaches.length}} {{(beaches.length>1)?'beaches':'beach'}}</div>
+
+                                            </div>
+                                            
+                                            <div class="pending-div">
+                                                <div class="mb"><button class="p-10 btn btn-secondary pending-btn" (click)="status='pending'">PENDING</button>
+                                                </div>
+
+                                                <div class="count-div">{{getTotal('pending')}} beach{{(getTotal('pending')>1)?'es':''}}</div>
+                                            </div>
+                                            <div class="req-div">
+                                                <div class="mb"> <button class="p-10 btn btn-danger req-btn" (click)="status='active';">ACTIVE</button>
+                                                </div>
+
+                                                <div class="count-div">{{getTotal('active')}} beach{{(getTotal('active')>1)?'es':''}}</div>
+                                            </div>
+                                            <div class="suspended-div">
+                                                <div class="mb"> <button class="p-10 btn btn-secondary suspended-btn" (click)="status='suspended';">SUSPENDED</button>
+                                                </div>
+                                                <div class="count-div">{{getTotal('suspended')}} beach{{(getTotal('suspended')>1)?'es':''}}</div>
+
+
+                                            </div>
+                                        </div>
+                                        </div>
+                                </div>
+                            </div>
+                            <div style="clear: both;"></div>
+                            <ng-container *ngFor = "let beach of beaches">
+                            <div class="content-div" *ngIf="(beach.status==status || status =='all') && (!(filterText.length>=3) || filterText.length>=3 && beach.name.search(filterText)>-1)">
+                                <div class="beach">
+
+                                    <div class="beach-name">{{beach.name}}</div>
+                                    <!-- <div class="beach-remove">X</div> -->
+                                    <div style="clear:both"></div>
+
+                                </div>
+                                <div class="table-div">
+                                    <tr>
+                                        <th class="table-head">
+                                            Country
+                                        </th>
+                                        <td>
+                                            {{beach.company_country}}
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th class="table-head">
+                                            Place
+                                        </th>
+                                        <td>
+                                                {{beach.company_city}}
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th class="table-head">
+                                            Owner Name
+                                        </th>
+                                        <td>
+                                                {{beach.name}}
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th class="table-head">
+                                            Company name
+                                        </th>
+                                        <td>
+                                                {{beach.company}}
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th class="table-head">
+                                            Email-address
+                                        </th>
+                                        <td>
+                                                {{beach.email}}
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th class="table-head">
+                                            Phone number
+                                        </th>
+                                        <td>
+                                                {{beach.phone}}
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th class="table-head">
+                                            Status
+                                        </th>
+                                        <td *ngIf="beach.status == 'active'" style="font-weight:bold;color:#f44336">
+                                                {{beach.status}}
+                                        </td>
+                                        <td *ngIf="beach.status == 'pending'" style="font-weight:bold;color:#c4c98c">
+                                            {{beach.status}}
+                                    </td>
+                                    <td *ngIf="beach.status == 'suspended'" style="font-weight:bold;color:#836f8b">
+                                        {{beach.status}}
+                                </td>
+                                    </tr>
+
+                                </div>
+
+
+                                <div class="approve-div" *ngIf="beach.status=='pending' || beach.status=='suspended'">
+                                    <button class="btn btn-rose approve-btn" (click)="onClickApprove(beach.id,'active',beach.email)">ACTIVE</button>
+                                </div>
+                                <div class="approve-div" *ngIf="beach.status=='active'">
+                                    <button class="btn btn-rose approve-btn" (click)="onClickApprove(beach.id,'suspended')">SUSPEND</button>
+                                </div>
+                                <div style="clear:both"></div>
+                            </div>
+                        </ng-container>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>

@@ -1,0 +1,107 @@
+.main-content{
+	.content-div{
+		padding: 10px 7px;
+		background: #f7f7f7;
+    margin: 2% 2%;
+	}
+.beach-name{
+	float: left;
+	font-weight: bold;
+    font-size: 18px;
+    color: #5d5a5a;
+}
+.beach{
+	margin-bottom: 2%;
+}
+.beach-remove{
+	float:right;
+	color:red;
+}
+.table-div{
+	margin-left: 12%;
+}
+.approve-div{
+	float: right;
+	margin-right: 1%;
+}
+.approve-btn{
+	padding: 12px 17px;
+}
+.table-head{
+	width: 120px;
+	color:grey;
+}
+
+.search{
+	float: left;
+	width: 101px;
+	margin-top: 2%;
+}
+.all-div{
+	float: left;
+	//width: 87px;
+	text-align: center;
+	padding: 10px 4px;
+}
+.all-btn{
+	//padding: 24% 25%;
+	background-color: #faf9f9;
+	color: black;
+	width:100%;
+}
+.title{
+	width:max-content;
+	padding-top: 1%;
+	float:left;
+
+}
+.suspended-div{
+	float:left;
+	//width: 105px;
+	text-align: center;
+	padding: 10px 4px;
+}
+.suspended-btn{
+	//padding: 11% 16%;
+	background-color: #836f8b;
+}
+.pending-div{
+	float:left;
+//	width: 85px;
+	text-align: center;
+	padding: 10px 4px;
+}
+.pending-btn{
+	//padding: 14% 17%;
+	color:black;
+	background-color: rgb(196,201,140);
+}
+.req-div{
+	float:left;
+//	width: 146px;
+	text-align: center;
+	padding: 10px 4px;
+}
+.req-btn{
+//	padding: 8% 13%;
+	color:black;
+}
+.publish-div{
+	float:left;
+//	width: 88px;
+	text-align: center;
+	padding: 10px 4px;
+}
+.publish-btn{
+//	padding: 13% 29%;
+	
+}
+.top-right-div{
+	float:right;
+}
+.but-div{
+	float:right;
+	padding: 0px 30px;
+}
+
+}

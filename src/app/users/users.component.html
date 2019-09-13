@@ -1,0 +1,122 @@
+<div class="main-content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div>
+                        <div>
+                                <div >
+                                        <div class="card-header card-header-icon" data-background-color="rose">
+                                            <i class="material-icons">priority_high</i>
+                                        </div>
+                                        <div class="title">
+                                            <h4 style="font-size: 17px;" translate>Users</h4>
+                                        </div>
+                                        <div class="top-right-div">
+                                                <div class="but-div">
+                                                    <div class="all-div">
+                                                        <div class="mb"> <button
+                                                                class="p-10 small-padding btn btn-light all-btn"
+                                                                (click)="status='all';getUsers()">ALL</button>
+                                                        </div>
+                                                        <div class="count-div">{{allCount}}
+                                                            {{(allCount>1)?'users':'user'}}</div>
+        
+                                                    </div>
+                                                    <div class="suspended-div">
+                                                        <div class="mb"> <button class="p-10 btn btn-secondary suspended-btn"
+                                                                (click)="status='validated';getNoValidUsers()">NOT VALIDATED(SMS)</button>
+                                                        </div>
+                                                        <div class="count-div">{{nonValidCount}}
+                                                                {{(nonValidCount>1)?'users':'user'}}</div>
+        
+        
+                                                    </div>
+                                                    <div class="pending-div">
+                                                        <div class="mb"><button class="p-10 btn btn-secondary block-user-btn"
+                                                                (click)="status = 'blocked';getBlockUsers()">BLOCKED USERS</button>
+                                                        </div>
+        
+                                                        <div class="count-div">{{blockCount}}
+                                                                {{(blockCount>1)?'users':'user'}}</div>
+                                                    </div>
+                                                
+                                                </div>
+                                                <div class="search">
+                                                    <input style="padding-bottom: 2%;width:100%;padding-bottom: 2%;width: 100%;"
+                                                        id="search" name="search" class="form-control search-input"
+                                                        [(ngModel)]="filterText" placeholder="Search phone.no"></div>
+                                            </div>
+                                    </div>
+                                
+                        </div>
+                        <div style="clear: both;"></div>
+                        <div style="margin-right: 1%;
+                        margin-left: 1%;margin-top: 2%;">
+                         <div infiniteScroll [infiniteScrollDistance]="2" [infiniteScrollThrottle]="1000"
+                         (scrolled)="onScroll()">
+                            <ng-container *ngFor="let item of users">
+                                <div style="background:#f9f9f9">
+                                <div class="row user" *ngIf=" (!(filterText.length>=3) || filterText.length>=3 && item.phone.search(filterText)>-1)" style="
+                           margin-bottom: 3%;
+                                padding: 10px;">
+                                <div class="info-horizontal" style="margin:15px 30px;">
+                                    <div class="row" style="margin-bottom: 2%">
+                                        <div class="col-md-6 name">{{item.name}}</div>
+                                            <!-- <div  class="col-md-6 text-right" style="color:red">X</div> -->
+                                        </div>
+                                    <div>
+                                <div style="float: left;padding: 10px;">
+                                        <div class="photo-div">
+                                            <div class="image-div">
+                                                <img alt="..." [src]="item.photo" onerror="this.src='assets/img/image_placeholder.jpg'" style="max-width: 100%!important; max-height: 100%!important; width: auto!important; height: auto!important;"></div>
+                                        </div>
+                                
+                            </div>
+                                <div style="float: left;padding:2%">
+                                    <div>
+                                                
+                                       <tr><th class="table-head">Phone number</th>
+                                           <td>{{item.phone}}</td>
+                                        </tr><tr><th class="table-head">Reservations cancelled</th>
+                                            <td>{{(item.status.canceled)?(item.status.canceled):0}}</td>
+                                        </tr><tr><th class="table-head">Reservations completed</th>
+                                            <td>{{(item.status.completed)?(item.status.completed):0}}</td>
+                                        </tr><tr><th class="table-head">Loiality points</th>
+                                            <td *ngIf="item.points.length>0">
+                                                <ng-container *ngFor = "let data of item.points">
+                                                    {{data.beach_name}} - {{data.points}}
+                                                </ng-container></td>
+                                                <td *ngIf="!item.points.length">
+                                                       0</td>
+                                        </tr></div>
+                                </div>
+                                    <div style="float: right;margin-right: -2%; ">
+                                        
+                                      <button *ngIf="!item.blocked" style="padding: 8px 18px;width:100px" class="btn btn-primary" (click)="item.showStatus=!item.showStatus">ACTIVE <span class="arrow-btn">^</span></button>
+                                        <button *ngIf="item.blocked" style="padding: 8px 18px;    background-color: #836f8b;width:100px" (click)="item.showStatus=!item.showStatus" class="btn btn-secondary" >BLOCKED <span class="arrow-btn">^</span></button>
+                                        <br> 
+                                        <button *ngIf="item.showStatus && !item.blocked" style="padding: 8px 18px;    background-color: #836f8b;width:100px" class="btn btn-secondary" (click)="item.blocked = true; item.showStatus = false;changeStatus(item)">BLOCKED</button><br>
+                                        <button *ngIf="item.showStatus && item.blocked" style="padding: 8px 18px;" class="btn btn-primary" (click)="item.blocked = false ; item.showStatus = false;changeStatus(item)">ACTIVE</button>
+                                </div>
+                               
+                                                               
+                            
+                            </div>
+                            
+                        </div>
+                    </div>
+                </div>
+                    </ng-container>
+                    </div>
+                    <div *ngIf = "loading" class="text-center loading">
+                        Loading clients ...
+                    </div>
+                </div>
+                    </div>
+
+                   
+                </div>
+            </div>
+        </div>
+    </div></div>

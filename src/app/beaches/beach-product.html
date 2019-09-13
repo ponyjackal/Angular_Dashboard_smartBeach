@@ -1,0 +1,117 @@
+<ng-template #Umbrella let-item>
+        <ng-container *ngIf="!(item.type=='umbrella' && item.item.sides>1)">
+            <img [ngClass]="(item.item.isFull || item.type=='static')?'cursor-disabled '+item.item.status_class:'cursor-pointer '+item.item.status_class"
+                [src]="item.img" (click)="item.item.isFull || onClickItem(item.item)" />
+        </ng-container>
+        <div *ngIf="item.type=='umbrella' && item.item.sides>1">
+            <div id="drag-comb" class="draggable-element-div grid-elements {{item.item.status_class}}">
+                <div [ngClass]="(item.item.isFull)?'ele-merged-obj cursor-disabled':'ele-merged-obj cursor-pointer'"
+                    style="position:relative;" (click)="item.item.isFull || onClickItem(item.item)">
+                    <div class="ele-merged-div float-left position-relative"
+                        [ngStyle]="{} || {'width':item.info.widthPercentage+'%'}">
+                        <div class="ele-merged-sub left" [ngStyle]="{'width':item.info.pos.widthLeftOuter+'%'}">
+                            <div class="ele-merged-inner" [ngStyle]="{'width':item.info.pos.widthLeftInner+'%'}">
+                                <img id="drag-comb-left" class="ele-merged-img upside-down left-img" [src]="item.img">							
+                            </div>
+                        </div>
+                        <div class="ele-merged-sub right" [ngStyle]="{'width':item.info.pos.widthRightOuter+'%'}">
+                            <div class="ele-merged-inner right"
+                                [ngStyle]="{'width':item.info.pos.widthRightInner+'%','margin-left':item.info.pos.marginLeftOffset+'%'}">
+                                <img id="drag-comb-right" class="ele-merged-img upside-down right-img" [src]="item.img">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="drag-comb-div" style="opacity:0;width:100%;height:100%;position:absolute;">&nbsp;</div>
+            </div>
+        </div>
+    </ng-template>
+    <ng-template #ZoneItems let-list>
+        <ng-container *ngFor="let item of list">
+            <div class="seat free disabled-{{(item.disabledNow)?true:false}}" [ngStyle]="item.style">
+                <ng-container
+                    *ngTemplateOutlet="Umbrella; context:{$implicit:{item:item, info:item.info.mapElement, img: item.img, type:item.type}}">
+                </ng-container>
+                <div *ngIf="item.type!=='static' && item.disabledNow" class="seat-locked-div">
+                    <div class="seat-no-locked (editingSuspend)?'editing':'saved'">X</div>
+                </div>
+                <div *ngIf="item.type!=='static'" class="seat-no-div">
+                    <div class="seat-no-inner"></div>
+                    <span class="seat-no-span">{{item.newNumber}}</span>
+                </div>
+            </div>
+        </ng-container>
+    </ng-template>
+    
+    
+    
+    
+    
+    <div class="main-content">
+        <div class="container-fluid">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-content">
+                        <br><br>
+                        
+                        <div id='container'>
+                            <div id='grid-contents'>
+                                <div id="front" class="hoverme">
+                                    <p translate>BEACHMAP.FRONT</p>
+                                    <div class="price">
+                                        <label translate>BEACHMAP.UMBRELLA</label>
+                                        <input type="text" class="ms-input" id="front_umbrella_price" />
+                                        <div class="clear"></div>
+                                        <label translate>BEACHMAP.BALDAQUIN</label>
+                                        <input type="text" class="ms-input" id="front_baldaquin_price" />
+                                    </div>
+                                </div>
+                                <div id="middle" class="hoverme">
+                                    <p translate>BEACHMAP.MIDDLE</p>
+                                    <div class="price">
+                                        <label translate>BEACHMAP.UMBRELLA</label>
+                                        <input type="text" class="ms-input" id="middle_umbrella_price" />
+                                        <div class="clear"></div>
+                                        <label translate>BEACHMAP.BALDAQUIN</label>
+                                        <input type="text" class="ms-input" id="middle_baldaquin_price" />
+                                    </div>
+                                </div>
+                                <div id="back" class="hoverme">
+                                    <p translate>BEACHMAP.BACK</p>
+                                    <div class="price">
+                                        <label translate>BEACHMAP.UMBRELLA</label>
+                                        <input type="text" class="ms-input" id="back_umbrella_price" />
+                                        <div class="clear"></div>
+                                        <label translate>BEACHMAP.BALDAQUIN</label>
+                                        <input type="text" class="ms-input" id="back_baldaquin_price" />
+                                    </div>
+                                </div>
+                                <div class="map-scroll-content" id='map'>
+                                    <div id='mappanel'>
+                                        <div class="wave" #wave>
+                                            <img src="../assets/imgs/wave.png">
+                                        </div>
+                                        <div class="wave-offset-div">
+                                            &nbsp;
+                                        </div>
+                                        <div class="container {{(editingNumbers)?'edit-numbers':''}}" id="container"
+                                            [ngStyle]="containerStyle || getFullWidth()">
+    
+                                            <div *ngIf="grid" class="grid-seat-div">
+                                                <ng-container *ngFor="let zone of ['front','middle','back']">
+                                                    <ng-container
+                                                        *ngTemplateOutlet="ZoneItems; context:{$implicit:grid[zone]}">
+                                                    </ng-container>
+                                                </ng-container>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- card-content end -->
+                </div>
+            </div>
+        </div>
+    </div>

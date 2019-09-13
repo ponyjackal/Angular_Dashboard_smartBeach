@@ -1,0 +1,43 @@
+<div class="wrapper wrapper-full-page">
+    <div class="full-page pricing-page">
+        <div class="content" *ngIf="!loading">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-8 col-md-offset-2 text-center">
+                        <h2 class="title" translate>SETTINGS.BEACH_PLAN.PICK_PLAN</h2>
+                        <h5 class="description" translate>SETTINGS.BEACH_PLAN.CHOOSE_FIT_PLAN</h5>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-3 col-md-offset-2">
+                        <div class="card card-pricing card-plain plan_{{planList[0].id}}">
+                            <div class="card-content">
+                                <h6 class="category" translate>SETTINGS.BEACH_PLAN.RESERVATIONS</h6>
+                                <img src="assets/img/plan1.png" />
+                                <h3 class="card-title">{{planList[0].price}} €</h3>
+                                <p class="card-description" [translate]="'SETTINGS.BEACH_PLAN.GOOD_PRICE'" [translateParams]="{value: planList[0].teaser}"></p>
+                                <a (click)="choosePlan(planList[0].id)" class="btn btn-white btn-round" translate>SETTINGS.BEACH_PLAN.CHOOSE_PLAN</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-md-offset-1">
+                        <div class="card card-pricing card-plain plan_{{planList[1].id}}">
+                            <div class="card-content">
+                                <h6 class="category" translate>SETTINGS.BEACH_PLAN.RESERVATIONS_AND_ORDERS</h6>
+                                <img src="assets/img/plan2.png" />
+                                <h3 class="card-title">{{planList[1].price}} €</h3>
+                                <p class="card-description" [translate]="'SETTINGS.BEACH_PLAN.GOOD_PRICE'" [translateParams]="{value: planList[1].teaser}"></p>
+                                <a (click)="choosePlan(planList[1].id)" class="btn btn-white btn-round" translate>SETTINGS.BEACH_PLAN.CHOOSE_PLAN</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <!-- <div class="col-md-8 col-md-offset-2 text-center">
+                        <h5 class="description" translate>SETTINGS.BEACH_PLAN.DESCRIPTION</h5>
+                    </div> -->
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

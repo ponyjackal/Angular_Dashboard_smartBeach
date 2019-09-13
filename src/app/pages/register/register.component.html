@@ -1,0 +1,222 @@
+<div class="wrapper wrapper-full-page">
+    <nav class="navbar navbar-primary navbar-transparent navbar-absolute">
+        <div class="container">
+            <div class="collapse navbar-collapse" id="menu-example">
+                <ul class="nav navbar-nav navbar-right">
+                   
+                    <li class=" active ">
+                        <a routerLink="/register">
+                            <i class="material-icons">person_add</i>
+                            {{'PAGES.REGISTER' | translate}}
+                        </a>
+                    </li>
+                    <li class="">
+                        <a routerLink="/login">
+                            <i class="material-icons">fingerprint</i>
+                            {{'PAGES.LOGIN' | translate}}
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" style="padding: 10px 20px !important;width: 160px;">
+                            <img src="assets/img/flags/{{selected_lang}}.png" alt="">
+                            <!-- <span style="padding-right: 10px;" class="no-mobile">&nbsp;{{selected_name}}</span> -->
+                            <span><b class="caret text-right"></b></span>
+                        </a>
+                        <ul class="dropdown-menu" style="min-width: 79px;padding: 0px 89px !important;
+                        background: transparent;">
+                            <li style="cursor: pointer;" *ngFor="let language of languages;let index = index;">
+                                <a class="text-uppercase" *ngIf="selected_lang !== language.name" (click)="changeLanguage(index)">
+                                    <img src="assets/img/flags/{{language.name}}.png" alt="">
+                                    <!-- <span class="no-mobile">&nbsp;{{language.long_name}}</span> -->
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="full-page register-page" filter-color="black">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-10 col-md-offset-1">
+                    <div class="card card-signup">
+                        <div class="col-md-6 col-md-offset-3">
+                            <div class="card-header text-center" data-background-color="rose">
+                                <h4 class="card-title text-center" translate>PAGES.REGISTER</h4>
+                                <div class="beach-label">
+                                    <div class="col-md-8 col-md-offset-2"><img src="assets/img/smart-beach-label.png"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-content">
+                            <div class="row">                                
+                                <div class="col-md-5 col-md-offset-6">
+                                    <div class="social text-center">                                       
+                                    </div>
+                                    <form [formGroup]="register">
+                                        <div class="card-content">
+                                            <div class="input-group">
+                                                <span class="input-group-addon">
+                                                    <i class="material-icons">face</i>
+                                                </span>
+                                                <div class="form-group label-floating" [ngClass]="displayFieldCss(register, 'yourName')">
+                                                    <label class="control-label" translate>PAGES.YOUR_NAME</label>
+                                                    <input type="text"
+                                                        [(ngModel)]="model.name" 
+                                                        id="yourName"
+                                                        class="form-control"
+                                                        formControlName="yourName">
+                                                </div>
+                                                <app-field-error-display [displayError]="isFieldValid(register, 'yourName')" errorMsg="{{'PAGES.NAME_REQUIRED' | translate}}">
+                                                </app-field-error-display>
+                                            </div>
+                                            <div class="input-group">
+                                                <span class="input-group-addon">
+                                                    <i class="material-icons">location_city</i>
+                                                </span>
+                                                <div class="form-group label-floating" [ngClass]="displayFieldCss(register, 'companyName')">
+                                                    <label class="control-label" translate>PAGES.COMPANY_NAME</label>
+                                                    <input type="text" 
+                                                        id="companyName"
+                                                        [(ngModel)]="model.company" 
+                                                        class="form-control"
+                                                        formControlName="companyName">
+                                                </div>
+                                                <app-field-error-display [displayError]="isFieldValid(register, 'companyName')" errorMsg="{{'COMPANY_NAME_REQUIRED' | translate}}">
+                                                </app-field-error-display>
+                                            </div>
+                                            <div class="input-group">
+                                                <span class="input-group-addon">
+                                                    <i class="material-icons">email</i>
+                                                </span>
+                                                <div class="form-group label-floating" [ngClass]="displayFieldCss(register, 'email')">
+                                                    <label class="control-label" translate>PAGES.EMAIL_ADDRESS</label>
+                                                    <input type="text" 
+                                                        id="email"
+                                                        [(ngModel)]="model.email" 
+                                                        class="form-control" 
+                                                        formControlName="email"
+                                                        pattern="^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$">
+                                                    <app-field-error-display [displayError]="isFieldValid(register, 'email')" errorMsg="{{'PAGES.EMAIL_ERROR' | translate}}">
+                                                    </app-field-error-display>
+                                                </div>
+                                            </div>
+                                            <div class="input-group">
+                                                <span class="input-group-addon">
+                                                    <i class="material-icons">call</i>
+                                                </span>
+                                                <div class="form-group label-floating"  [ngClass]="displayFieldCss(register, 'number')">
+                                                    <label class="control-label" translate>PAGES.PHONE_NUMBER</label>
+                                                    <input type="text" 
+                                                        [(ngModel)]="model.phone" 
+                                                        id="phoneNumber" 
+                                                        class="form-control" 
+                                                        formControlName="number"
+                                                        pattern="^[0-9+-]{10,15}$"
+                                                        maxlength="15"
+                                                        minlength="10">
+                                                    <app-field-error-display [displayError]="isFieldValid(register, 'number')" errorMsg="{{'PAGES.PHONE_NUMBER_ERROR' | translate}}">
+                                                    </app-field-error-display>
+                                                </div>
+                                            </div>  
+                                            
+                                             <div class="input-group">
+                                                <span class="input-group-addon">
+                                                    <i class="material-icons">map</i>
+                                                </span>
+                                                <div class="form-group label-floating"  [ngClass]="displayFieldCss(register, 'countryName')">
+
+                                                        <label class="control-label" translate>PAGES.COUNTRY</label>
+                                                        <select id="country"
+                                                            [(ngModel)]="model.country"
+                                                            class="form-control" (ngModelChange)="onChangeCountry(model.country)"
+                                                            (change)="onChangeCountry(model.country)"
+                                                            formControlName="countryName"
+                                                            *ngIf="!loading">
+                                                            <option value=""></option>
+                                                            <option *ngFor="let country of countries" [value]="country.name">{{country.name}}</option>
+                                                        </select>
+                                                <app-field-error-display [displayError]="isFieldValid(register, 'countryName')" errorMsg="{{'PAGES.COUNTRY_REQUIRED' | translate}}">
+                                                    </app-field-error-display> 
+                                                </div>
+                                            </div> 
+                                            <div class="input-group">
+                                                <span class="input-group-addon">
+                                                    <i class="material-icons">place</i>
+                                                </span>
+                                                <div class="form-group label-floating" [ngClass]="displayFieldCss(register, 'PlaceName')">
+                                                    <label class="control-label" translate>PAGES.PLACE</label>
+                                                    <input type="text" 
+                                                        id="place"
+                                                        [(ngModel)]="model.place" 
+                                                        class="form-control"
+                                                        formControlName="PlaceName"> 
+
+                                                        <!-- <select
+                                                            [(ngModel)]="model.place"
+                                                            class="form-control" 
+                                                            formControlName="PlaceName"
+                                                            *ngIf="!loading">
+                                                            <option value=""></option>
+                                                            <option *ngFor="let city of places" [value]="city.name">{{city.name}}</option>
+                                                        </select> -->
+
+                                                        <!-- <select id="place" [(ngModel)]="model.place"
+                                                        class="form-control"
+                                                        formControlName="PlaceName">
+                                                        <option disabled="" selected=""></option>
+                                                        <option *ngFor="let city of places" [value]="city.id"> {{city.name}} </option>
+                                                    </select> -->
+                                                 <app-field-error-display [displayError]="isFieldValid(register, 'PlaceName')" errorMsg="{{'PAGES.PLACE_REQUIRED' | translate}}">
+                                                    </app-field-error-display> 
+                                                </div>
+                                            </div>   
+                                            <!-- If you want to add a checkbox to this form, uncomment this code -->
+                                            <div class="form-group label-floating checkbox" [ngClass]="displayFieldCss(register, 'optionsCheckboxes')">
+                                                <label>
+                                                    <input type="checkbox" 
+                                                    id="optionsCheckboxes"
+                                                    formControlName="optionsCheckboxes"
+                                                    name="optionsCheckboxes" checked> I agree to the
+                                                    <a data-toggle="modal" data-target="#termsconditionsModal">terms and conditions</a>.
+                                                </label>
+                                                <app-field-error-display [displayError]="isFieldValid(register, 'optionsCheckboxes')" errorMsg="{{'PAGES.CHECKED_REQUIRED' | translate}}">
+                                                </app-field-error-display>
+                                            </div>
+                                        </div>
+                                        <div class="footer text-center">
+                                            <button class="btn btn-rose btn-round" id="register" (click)="onRegister()" translate>PAGES.SEND_REQUEST</button>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="full-page-background" style="background-image: url(assets/img/bg.jpg) "></div>
+    </div>
+
+
+    <!--termsconditions-modal-->
+    <div class="modal fade termsconditionsmodal" id="termsconditionsModal" tabindex="-1" role="dialog" aria-labelledby="termsConditionsModal" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                            <h4 class="title" translate>Terms and Conditions</h4>
+                    </div>
+                    <div class="modal-body">
+                            <div class="row content">
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{termsConditions}}
+                                   
+                                </div>
+                            
+            
+                    </div>
+                </div>
+            </div>
+        </div>
+</div>

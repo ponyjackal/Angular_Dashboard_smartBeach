@@ -1,0 +1,15 @@
+<div class="row" mat-dialog-content>
+    <div class="col-md-6">
+        <button class="btn btn-simple control-btn" (click)="incHour()">˄</button>
+        <h1 class="time-text">{{('0' + time.hour).slice(-2)}}</h1>
+        <button class="btn btn-simple control-btn" (click)="decHour()">˅</button>
+    </div>
+    <div class="col-md-6">
+        <button class="btn btn-simple control-btn" (click)="incMinute()">˄</button>
+        <h1 class="time-text">{{('0' + time.minute).slice(-2)}}</h1>
+        <button class="btn btn-simple control-btn" (click)="decMinute()">˅</button>
+    </div>
+</div>
+<div class="text-center">
+    <button class="btn btn-primary btn-round" (click)="submit()">OK</button>
+</div>

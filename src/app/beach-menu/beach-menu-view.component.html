@@ -1,0 +1,75 @@
+<div class="main-content">
+    <div class="container-fluid">
+        <div class="row" *ngIf="!isLoading">
+            <div class="col-md-9">
+                <div class="card">
+                    <div class="card-header card-header-icon" data-background-color="rose">
+                        <i class="material-icons">priority_high</i>
+                    </div>
+                    <h4 class="col-md-2 card-header card-title" translate>BEACHMENU.VIEW_MENU</h4>
+                    <div class="card-header text-right no-mobile form-inline">
+                        <div style="display: inline-flex; padding-right: 20px;">
+                            <input class="form-control" placeholder="Search Product" [(ngModel)]="filterText"/>
+                        </div>
+                    </div>
+                    <div class="card-header text-center mobile form-inline">
+                        <div style="display: inline-flex; padding-right: 20px;">
+                            <input class="form-control" placeholder="Search Product" [(ngModel)]="filterText"/>
+                        </div>
+                    </div>
+                    <div class="card-header text-right no-mobile form-inline">
+                        <button class="small-padding btn btn-light filter" style="background-color: #faf9f9; color: black;" (click)="filterStatus = 'all'" translate>ALL</button>
+                        <button class="small-padding btn btn-secondary filter" style="background-color: #836f8b" (click)="filterStatus = 'inactive'" translate>SUSPENDED</button>
+                        <button class="small-padding btn btn-primary filter" (click)="filterStatus = 'active'" translate>PUBLISHED</button>
+                    </div>
+                    <div class="card-header text-center mobile form-inline">
+                        <button class="small-padding btn btn-light filter" style="background-color: #faf9f9; color: black;" (click)="filterStatus = 'all'" translate>ALL</button>
+                        <button class="small-padding btn btn-secondary filter" style="background-color: #836f8b" (click)="filterStatus = 'inactive'" translate>SUSPENDED</button>
+                        <button class="small-padding btn btn-primary filter" (click)="filterStatus = 'active'" translate>PUBLISHED</button>
+                    </div>
+
+                    <div class="card-content">
+                        <ul class="nav nav-pills nav-pills-rose tab-link-container row">
+                            <li class="col-md-4 col-xs-12 text-center" beach-menu-tab tab_id="pill1" menu_index="1" ismain="0" empty_title="LANGUAGE.SECOND"></li>
+                            <li class="col-md-4 col-xs-12 text-center active" beach-menu-tab tab_id="pill2" menu_index="0" ismain="1" empty_title="LANGUAGE.ENGLISH"></li>
+                            <li class="col-md-4 col-xs-12 text-center" beach-menu-tab tab_id="pill3" menu_index="2" ismain="0" empty_title="LANGUAGE.THIRD"></li>
+                        </ul>
+                        <div class="tab-content">
+                            <div class="tab-pane" id="pill1">
+                                <beach-menu [beach_menu]="beach_menus[1]" (notify)="notify($event)" [notifyData]="notifyData" [filterText]="filterText" [filterStatus]="filterStatus"></beach-menu>
+                            </div>
+                            <div class="tab-pane active" id="pill2">
+                                <beach-menu [beach_menu]="beach_menus[0]" (notify)="notify($event)" [notifyData]="notifyData" [filterText]="filterText" [filterStatus]="filterStatus"></beach-menu>
+                            </div>
+                            <div class="tab-pane" id="pill3">
+                                <beach-menu [beach_menu]="beach_menus[2]" (notify)="notify($event)" [notifyData]="notifyData" [filterText]="filterText" [filterStatus]="filterStatus"></beach-menu>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 no-mobile">
+                <div class="card">
+                    <div class="card-header card-header-icon" data-background-color="rose">
+                        <i class="material-icons">priority_high</i>
+                    </div>
+                    <div class="card-header">
+                        <h4 class="card-title card-description" translate>BEACHMENU.ABOUT_ADD_EDIT_DELETE</h4>
+                    </div>
+                    <div class="card-content">
+                        <h4 class="card-description">
+                            <p translate>BEACHMENU.EDIT.DESCRIPTION1</p>
+                            <p translate>BEACHMENU.EDIT.DESCRIPTION2</p>
+                            <p translate>BEACHMENU.EDIT.DESCRIPTION3</p>
+                            <p translate>BEACHMENU.EDIT.DESCRIPTION4</p>
+                            <p translate>BEACHMENU.EDIT.DESCRIPTION5</p>
+                            <p translate>BEACHMENU.EDIT.DESCRIPTION6</p>
+                            <p translate>BEACHMENU.EDIT.DESCRIPTION7</p>
+                            <p translate>BEACHMENU.EDIT.DESCRIPTION8</p>
+                        </h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

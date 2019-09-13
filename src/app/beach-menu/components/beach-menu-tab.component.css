@@ -1,0 +1,17 @@
+.title{
+    width: 80%;
+    margin-left: 10%;
+    margin-right: 0;
+    float: left;
+}
+.title.editable, .edit-title {
+    width: 70%;
+    margin-left: 10%;
+    margin-right: 0;
+    float: left;
+}
+.edit-buttons {
+    margin-top: -12px;
+    width: 20%;
+    float: left;
+}

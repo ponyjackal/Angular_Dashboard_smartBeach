@@ -1,0 +1,480 @@
+<div class="main-content">
+	<div class="container-fluid">
+		<div class="col-md-12">
+
+			<div class="card">
+				<div class="card-header card-header-icon" data-background-color="rose">
+					<i class="material-icons">priority_high</i>
+				</div>
+				<h4 class="card-header card-title" translate>Elements structure</h4>
+				<div class="card-content">
+					<div class="row" translate>
+						BEACHMAP.UMBRELLA
+					</div>
+					<div class="row">
+						<img [src]="element.img" *ngFor="let element of structuresUmbrella"
+							[ngClass]="element.active ? 'element active' : 'element'"
+							(click)="selectElement(element,'structure')" />
+					</div>
+					<div class="row" translate>
+						BEACHMAP.BALDAQUIN
+					</div>
+					<div class="row">
+						<img [src]="element.img" *ngFor="let element of structuresBaldaquin"
+							[ngClass]="element.active ? 'element active' : 'element'"
+							(click)="selectElement(element,'structure')" />
+					</div>
+
+					<br />
+					<div class="pull-right">
+						<button type="button" [disabled]="!structureChanged || structureSaved || !structureSelected"
+							class="btn btn-fill btn-rose" (click)="saveBeachStructures()"
+							translate>{{(dataSaving)?'SAVING':'SAVE'}}</button>
+					</div>
+				</div>
+			</div>
+
+			<div *ngIf="structureUmbrellaSaved" class="card">
+				<div class="card-header card-header-icon" data-background-color="rose">
+					<i class="material-icons">priority_high</i>
+				</div>
+				<h4 class="card-header card-title" translate>BEACHMAP.CONFIGURATION</h4>
+				<div class="card-content">
+					<div class="row">
+
+						<div class="col-md-7">
+							
+							<div class="config-list-container">
+
+								<div class="list-arrow-box">
+									<button (click)="doScrolling(1,'left')" class="list-arrow left">
+										&lt;
+									</button>
+									<button (click)="doScrolling(1,'right')" class="list-arrow right">
+										&gt;
+									</button>
+								</div>
+								<div id="scroll-cont-1" class="scroll-cont">
+									<div class="config-list-scroll  umbrellas p-t-10" id="scrollable-1">
+										<img draggable="true" data-id="umbrella_{{element.id}}" [src]="element.img"
+											*ngFor="let element of umbrellas"
+											[ngClass]="element.active ? 'element umbrella active selectable' : 'element umbrella selectable'"
+											draggable="true" (dragstart)="drag($event)" />
+									</div>
+								</div>
+
+							</div>
+							<div class="config-list-container">
+								<div class="list-arrow-box">
+									<button (click)="doScrolling(2,'left')" class="list-arrow left">
+										&lt;
+									</button>
+									<button (click)="doScrolling(2,'right')" class="list-arrow right">
+										&gt;
+									</button>
+								</div>
+								<div id="scroll-cont-2" class="scroll-cont">
+									<div class="config-list-scroll sunbeds p-t-10" id="scrollable-2">
+										<img draggable="true" data-id="sunbed_{{element.id}}" [src]="element.img"
+											*ngFor="let element of sunbeds"
+											[ngClass]="element.active ? 'element sunbed active selectable' : 'element sunbed selectable'"
+											draggable="true" (dragstart)="drag($event)" />
+									</div>
+								</div>
+
+							</div>
+
+
+
+						</div>
+						<div class="col-md-5" id="drop-zone">
+							<ng-container *ngFor="let row of editList; let ind=index;">
+								<div class="row mb-3 drop-zone-row">
+									<button class="drop-zone-close" *ngIf="row.umbrella || row.sunbed"
+										(click)="removeEditList(row)">x</button>
+									<div class="umbrella" (drop)="dropUmbrella($event, ind)"
+										(dragover)="allowDrop($event)">
+										<img *ngIf="row.umbrella" class="dropped-img" [src]="row.umbrella.img">
+									</div>
+									<div class="text-center plus">
+										+
+									</div>
+									<div class="sunbed" (drop)="dropSunbed($event, ind)" (dragover)="allowDrop($event)">
+										<img *ngIf="row.sunbed" class="dropped-img" [src]="row.sunbed.img">
+									</div>
+								</div>
+								<ng-container
+									*ngIf="editList.length<maxListCount &&ind+1==editList.length && row.umbrella && row.sunbed">
+									<div class="row text-center">
+										<button class="btn btn-fill btn-success" (click)="addItemtoList()">Add</button>
+									</div>
+								</ng-container>
+							</ng-container>
+
+
+
+						</div>
+						<br />
+						<div class="pull-right">
+							<button type="button" [disabled]="!validUmbrella ||!umbrellaChanged || umbrellaSaved"
+								class="btn btn-fill btn-rose" (click)="saveBeachElements()"
+								translate>{{(dataSaving)?'SAVING':'SAVE'}}</button>
+						</div>
+					</div>
+				</div>
+				<!-- card-content end -->
+			</div>
+
+
+
+			<div *ngIf="structureBaldaquinSaved" class="card">
+				<div class="card-header card-header-icon" data-background-color="rose">
+					<i class="material-icons">priority_high</i>
+				</div>
+				<h4 class="card-header card-title" translate>BEACHMAP.BALDAQUIN</h4>
+				<div class="card-content">
+					<div class="row">
+
+						<div class="col-md-12">
+
+							<div class="baldaquins p-t-10">
+								<ng-container *ngFor="let element of baldaquins">
+									<div class="relative-box">
+
+										<img data-id="baldaquin_{{element.id}}"
+											(click)="selectElement(element,'baldaquin')" [src]="element.img"
+											class="element baldaquin selectable" />
+										<img *ngIf="element.active" (click)="selectElement(element,'baldaquin')"
+											class="absolute-checkmark" src="/assets/img/structure/check.png">
+
+									</div>
+								</ng-container>
+							</div>
+
+
+						</div>
+
+						<br />
+						<div class="pull-right">
+							<button type="button" [disabled]="!baldaquinChanged || baldaquinSaved"
+								class="btn btn-fill btn-rose" (click)="saveBeachBaldaquins()"
+								translate>{{(dataSaving)?'SAVING':'SAVE'}}</button>
+						</div>
+					</div>
+				</div>
+				<!-- card-content end -->
+			</div>
+
+
+
+			<div class="card">
+				<div class="card-header card-header-icon" data-background-color="rose">
+					<i class="material-icons">priority_high</i>
+				</div>
+				<h4 class="col-md-6 card-header card-title" translate>BEACHMAP.CONFIGURATION</h4>
+				<br><br>
+				<!-- <div class="card-header text-right">
+						<button class="btn btn-rose" translate>BEACHMAP.FULLSCREEN</button>
+					</div> -->
+				<div class="card-content">
+					<div id='container'>
+						<div id='grid-contents'>
+							<!-- <div id="gridvalue" class="grid">{{gridValue}}</div> -->
+							<!-- <div id="gridout" class="grid">
+									<img id='gridoutImg' src='assets/img/beach-configuration/gridout.png'/>
+								</div>
+								<div id="gridin" class="zoom">
+									<img id='gridinImg' src='assets/img/beach-configuration/gridin.png'/>
+								</div> -->
+
+							<div id="front" class="hoverme">
+								<p translate>BEACHMAP.FRONT</p>
+								<div class="price">
+									<label translate>BEACHMAP.UMBRELLA</label>
+									<input type="text" class="ms-input" id="front_umbrella_price" />
+									<div class="clear"></div>
+									<label translate>BEACHMAP.BALDAQUIN</label>
+									<input type="text" class="ms-input" id="front_baldaquin_price" />
+								</div>
+							</div>
+							<div id="middle" class="hoverme">
+								<p translate>BEACHMAP.MIDDLE</p>
+								<div class="price">
+									<label translate>BEACHMAP.UMBRELLA</label>
+									<input type="text" class="ms-input" id="middle_umbrella_price" />
+									<div class="clear"></div>
+									<label translate>BEACHMAP.BALDAQUIN</label>
+									<input type="text" class="ms-input" id="middle_baldaquin_price" />
+								</div>
+							</div>
+							<div id="back" class="hoverme">
+								<p translate>BEACHMAP.BACK</p>
+								<div class="price">
+									<label translate>BEACHMAP.UMBRELLA</label>
+									<input type="text" class="ms-input" id="back_umbrella_price" />
+									<div class="clear"></div>
+									<label translate>BEACHMAP.BALDAQUIN</label>
+									<input type="text" class="ms-input" id="back_baldaquin_price" />
+								</div>
+							</div>
+							<div id='map'>
+								<div id="seapanel">
+									<span>Sea</span>
+								</div>
+								<div id='mappanel'>
+								</div>
+								<div id="mappanel-loading" *ngIf="mapLoading">
+									Loading Beach map..
+								</div>
+							</div>
+							<div id='toolpanel'>
+								<!--div id="zoomvalue" class="zoom">100%</div>
+								<div id="zoomout" class="zoom">
+									<img id='zoomoutImg' src='assets/img/beach-configuration/zoomout.png' />
+								</div>
+								<div id="zoomin" class="zoom">
+									<img id='zoominImg' src='assets/img/beach-configuration/zoomin.png' />
+								</div-->
+
+								<div class="clear"></div>
+								<ng-container *ngIf="!(combinationLoaded && dynamicComponentsLoaded)">
+									<div class="comb-cat-title loading">
+										Loading..
+									</div>
+								</ng-container>
+								<ng-container *ngIf="combinationLoaded && dynamicComponentsLoaded">
+									<div class="comb-cat-title">
+										Dynamic
+									</div>
+									<!-- Umbrella Elements -->
+									<div class="w-100">
+										<ng-container *ngFor="let imgSrc of savedCombinations;let ind=index;">
+											<div class="comb-outer-div col-6">
+												<div draggable="true" id="drag-comb-{{ind+1}}" data-id='{{ind}}'
+													class="draggable-element-div grid-elements"
+													*ngIf="imgSrc.type=='umbrella'">
+													<div class="ele-merged-obj" style="position:relative;">
+														<div class="ele-merged-div float-left position-relative"
+															[ngStyle]="{'width':imgSrc.widthPercentage+'%'}">
+															<div class="ele-merged-sub left"
+																[ngStyle]="{'width':imgSrc.pos.widthLeftOuter+'%'}">
+																<div class="ele-merged-inner"
+																	[ngStyle]="{'width':imgSrc.pos.widthLeftInner+'%'}">
+																	<img id="drag-comb-left-{{ind+1}}"
+																		class="ele-merged-img upside-down"
+																		*ngIf="imgSrc"
+																		[src]="imgPath+imgSrc.image+'?'+clearCache">
+																</div>
+															</div>
+															<div class="ele-merged-sub right"
+																[ngStyle]="{'width':imgSrc.pos.widthRightOuter+'%'}">
+																<div class="ele-merged-inner right"
+																	[ngStyle]="{'width':imgSrc.pos.widthRightInner+'%','margin-left':imgSrc.pos.marginLeftOffset+'%'}">
+																	<img id="drag-comb-right-{{ind+1}}"
+																		class="ele-merged-img upside-down"
+																		*ngIf="imgSrc"
+																		[src]="imgPath+imgSrc.image+'?'+clearCache">
+																</div>
+															</div>
+														</div>
+													</div>
+													<div id="drag-comb-div-{{ind+1}}"
+														style="opacity:0;width:100%;height:100%;position:absolute;">
+														&nbsp;</div>
+												</div>
+											</div>
+										</ng-container>
+									</div>
+									<!-- Baldaquin Elements-->
+									<div class="w-100">
+										<ng-container *ngFor="let imgSrc of savedCombinations;let ind=index;">
+											<div *ngIf="imgSrc && imgSrc.type=='baldaquin' && imgSrc.element.baldaquin"
+												draggable="true" id="drag-comb-bal-{{ind+1}}" data-id='{{ind}}'
+												class="comb-outer-div col-6">
+												<div class="ele-merged-div-bal" draggable="true"
+													id="drag-comb-inner-{{ind+1}}">
+													<img id="drag-comb-right-{{ind+1}}" draggable="true"
+														id="drag-comb-img-{{ind+1}}" data-id="drag-comb-img-{{ind+1}}"
+														[ngStyle]="{'width':imgSrc.widthPercentage+'%','height':'100%','padding-left':'0px','padding-right':'0px'}"
+														[src]="imgPath+imgSrc.image+'?'+clearCache"
+														class="element baldaquin selectable" />
+												</div>
+											</div>
+
+										</ng-container>
+									</div>
+									<div class="comb-cat-end">
+										&nbsp;
+									</div>
+									<!-- Static Elements-->
+									<div class="comb-cat-title">
+										Static
+									</div>
+									<div class="w-100">
+										<ng-container *ngFor="let imgSrc of staticElements;let ind=index;">
+											<div *ngIf="imgSrc.objectType!='alway'" draggable="true"
+												id="drag-comb-static-{{ind+1}}" data-id='{{ind}}'
+												class="comb-outer-div col-6">
+												<div class="ele-merged-div-bal" draggable="true"
+													id="drag-comb-inner-{{ind+1}}">
+													<img id="drag-comb-static-{{ind+1}}" draggable="true"
+														id="drag-comb-static-{{ind+1}}"
+														data-id="drag-comb-static-img-{{ind+1}}" [src]="imgSrc.image"
+														class="element static drag-img-static-ele" />
+												</div>
+											</div>
+
+										</ng-container>
+									</div>
+									<div class="comb-cat-end">
+										&nbsp;
+									</div>
+
+									<div class="comb-cat-title">
+										Always
+									</div>
+									<div class="w-100">
+										<ng-container *ngFor="let imgSrc of staticElements;let ind=index;">
+											<div *ngIf="imgSrc.objectType=='alway'" draggable="true"
+												id="drag-comb-static-{{ind+1}}" data-id='{{ind}}'
+												class="comb-outer-div col-4">
+												<div class="ele-merged-div-bal comb-col-3" draggable="true"
+													id="drag-comb-inner-{{ind+1}}">
+													<img id="drag-comb-static-{{ind+1}}" draggable="true"
+														id="drag-comb-static-{{ind+1}}"
+														data-id="drag-comb-static-img-{{ind+1}}" [src]="imgSrc.image"
+														class="element static drag-img-static-ele" />
+												</div>
+											</div>
+										</ng-container>
+									</div>
+									<div class="comb-cat-end">
+										&nbsp;
+									</div>
+
+								</ng-container>
+
+							</div>
+							<div class="clearfix"></div>
+						</div>
+					</div>
+
+					<div id='fileinput'>
+						<input type='file' id='file-input' />
+					</div>
+
+					<div class="clearfix"></div>
+					<div class="row grid-action-row">
+						<div class="grid-action-col">
+							<button type="button" id='save' class="btn btn-fill btn-rose" translate>SAVE</button>
+						</div>
+						<div *ngIf="!published" class="grid-action-col">
+							<button type="button" id="publish" class="btn btn-fill btn-primary" (click)="publishGrid()"
+								translate>BEACHMAP.PUBLISH</button>
+						</div>
+						<div class="grid-empty-col">
+							&nbsp;
+						</div>
+						<div class="grid-action-col-right">
+							<div class="grid-action-col nouislider">
+								<nouislider id="zoomcontrol" [connect]="false" [min]="10" [max]="50" [step]="1"
+									[(ngModel)]="simpleSlider" [tooltips]="true" class="slider"></nouislider>
+								<div *ngIf="false" id="gridvalue" class="text-center">{{gridValue}}</div>
+							</div>
+							<div class="grid-action-col zoom-div">
+
+								<div class="zoom-row">
+									<div id="zoomvalue" class="zoom">100%</div>
+								</div>
+								<div class="zoom-row">
+									<div id="zoomout" class="zoom">
+										<img id='zoomoutImg' src='assets/img/beach-configuration/zoomout.png' />
+									</div>
+
+									<div id="zoomin" class="zoom">
+										<img id='zoominImg' src='assets/img/beach-configuration/zoomin.png' />
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- card-content end -->
+			</div>
+
+
+
+			<!-- Test image merge -->
+			<!--div *ngIf="false && structureSelected" class="card" style="background:white;">
+				<div class="card-header card-header-icon" data-background-color="rose">
+					<i class="material-icons">priority_high</i>
+				</div>
+				<h4 class="card-header card-title">HERE WE TEST</h4>
+				<div class="card-content">
+					<ng-container *ngFor="let imgSrc of savedCombinations">
+						<div *ngIf="imgSrc.type=='umbrella'">
+							<div class="ele-merged-obj" style="position:relative;">
+								<div class="ele-merged-div float-left position-relative" [ngStyle]="{'width':imgSrc.widthPercentage+'%'}">
+						
+									<div class="ele-merged-sub left" [ngStyle]="{'width':imgSrc.pos.widthLeftOuter+'%'}">
+										<div class="ele-merged-inner" [ngStyle]="{'width':imgSrc.pos.widthLeftInner+'%'}">
+											<img class="ele-merged-img upside-down" *ngIf="imgSrc" [src]="imgSrc.image">
+										</div>
+									</div>
+									<div class="ele-merged-sub right" [ngStyle]="{'width':imgSrc.pos.widthRightOuter+'%'}">
+										<div class="ele-merged-inner right" [ngStyle]="{'width':imgSrc.pos.widthRightInner+'%','margin-left':imgSrc.pos.marginLeftOffset+'%'}">
+											<img class="ele-merged-img upside-down" *ngIf="imgSrc" [src]="imgSrc.image">
+										</div>
+									</div>
+								
+								</div>
+							</div>
+						</div>
+					</ng-container>
+					<div>
+						<ng-container *ngFor="let element of selectedBaldaquins">
+							<div class="relative-box ele-merged-div-bal">
+								<img data-id="baldaquin_{{element.id}}" [src]="element.img" class="element baldaquin selectable" />
+							</div>
+						</ng-container>
+					</div>
+					<br />
+
+
+				</div>
+			</div-->
+
+
+
+		</div>
+
+		<div class="col-md-12 no-mobile">
+			<div class="card">
+				<div class="card-header card-header-icon" data-background-color="rose">
+					<i class="material-icons">priority_high</i>
+				</div>
+				<div class="card-header">
+					<h4 class="card-title card-description" translate>BEACHMAP.ABOUT_TITLE</h4>
+				</div>
+				<div class="card-content">
+					<h4 class="card-description">mappanel
+						<p translate>BEACHMAP.DESCRIPTION1</p>
+						<p translate>BEACHMAP.DESCRIPTION2</p>
+						<p translate>BEACHMAP.VERRY_IMPORTANT</p>
+						<p translate>BEACHMAP.DESCRIPTION3</p>
+						<p translate>BEACHMAP.DESCRIPTION4</p>
+					</h4>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+<div class="low-resolution-alert">
+	<div class="low-res-div-inner">
+		<span translate>BEACHMAP.MOBILE_ACCESS_MSG</span>
+		<br>
+		<button translate (click)="goHome()">GOBACK</button>
+	</div>
+</div>

@@ -1,0 +1,225 @@
+<div class="main-content">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-8">
+                    <div class="card">
+                        <div class="card-header card-header-icon" data-background-color="rose">
+                            <i class="material-icons">check_box</i>
+                        </div>
+                        <div class="card-content">
+                            <h4 class="card-title" translate>SETTINGS.CHECKBOX.TITLE</h4>
+                            <form method="#" action="#">
+                                <div class="col-md-12">
+                                    <label class=" card-item-title text-rose" translate>SETTINGS.CHECKBOX.ACTIVE_DEACTIVE</label>
+                                    <div class="card-item-content row">
+                                            <div class="col-xs-8 form-group label-floating">
+                                                    <label translate>SETTINGS.CHECKBOX.WITHOUT_PAY_RESERVE</label>
+                                                </div>
+                                                <div class="col-xs-4 form-group label-floating">
+                                                    <div class="togglebutton">
+                                                        <label>
+                                                            <input type="checkbox" (ngModelChange)="changedData = true;onChangePayReserve($event)" [(ngModel)]="without_pay_reserve" name="without_pay_reserve" [ngModelOptions]="{standalone: true}">
+                                                        </label>
+                                                    </div>
+                                                </div>  
+                                                
+                                                <div *ngIf="without_pay_reserve" class="col-xs-8 form-group label-floating">
+                                                        <label translate>SETTINGS.CHECKBOX.CREDIT_CARD</label>
+                                                    </div>
+                                                    <div *ngIf="without_pay_reserve" class="col-xs-4 form-group label-floating">
+                                                        <div class="togglebutton">
+                                                            <label>
+                                                                <input type="checkbox" (ngModelChange)="changedData = true;onChangeCc($event)" [(ngModel)]="card" name="credit" [ngModelOptions]="{standalone: true}">
+                                                            </label>
+                                                        </div>
+                                                    </div>  
+                                                <div *ngIf="without_pay_reserve && card"  class="col-xs-8 form-group label-floating">
+                                                        <label translate>SETTINGS.CHECKBOX.CC_PAY_RESERVE</label>
+                                                    </div>
+                                                    <div *ngIf="without_pay_reserve && card" class="col-xs-4 form-group label-floating">
+                                                        <div class="togglebutton">
+                                                            <label>
+                                                                <input type="checkbox" (ngModelChange)="changedData = true" [(ngModel)]="only_cc" name="cc_reserve" [ngModelOptions]="{standalone: true}">
+                                                            </label>
+                                                        </div>
+                                                    </div>   
+                                                                      
+                                                                      
+                                        <div class="col-xs-8 form-group label-floating" *ngIf="false">
+                                            <label translate>SETTINGS.CHECKBOX.RECEPTION</label>
+                                        </div>
+                                        <div class="col-xs-4 form-group label-floating" *ngIf="false">
+                                            <div class="togglebutton">
+                                                <label>
+                                                    <input type="checkbox" (ngModelChange)="changedData = true" checked>
+                                                </label>
+                                            </div>
+                                        </div>                                
+                                        <div *ngIf="without_pay_reserve" class="col-xs-8 form-group label-floating">
+                                            <label translate>SETTINGS.CHECKBOX.AGREE_CUSTOMER_OCCUPIED</label>
+                                        </div>
+                                        <div *ngIf="without_pay_reserve" class="col-xs-4 form-group label-floating">
+                                            <div class="togglebutton">
+                                                <label>
+                                                    <input type="checkbox" (ngModelChange)="changedData = true" [(ngModel)]="umbrella['person-num']['one']['occupy-all-seats']" [ngModelOptions]="{standalone: true}">
+                                                </label>
+                                            </div>
+                                        </div> 
+
+                                        <div *ngIf="without_pay_reserve" class="col-xs-8 form-group label-floating">
+                                                <label translate>SETTINGS.CHECKBOX.AGREE_CUSTOMER_BOTHSIDE</label>
+                                            </div>
+                                            <div *ngIf="without_pay_reserve" class="col-xs-4 form-group label-floating">
+                                                <div class="togglebutton">
+                                                    <label>
+                                                        <input type="checkbox" (ngModelChange)="changedData = true" [(ngModel)]="umbrella['person-num']['two']['occupy-all-seats']" [ngModelOptions]="{standalone: true}">
+                                                    </label>
+                                                </div>
+                                            </div>
+
+                                            <div *ngIf="without_pay_reserve" class="col-xs-8 form-group label-floating">
+                                                    <label translate>SETTINGS.CHECKBOX.PHOTO_REQUIRED</label>
+                                                </div>
+                                                <div *ngIf="without_pay_reserve" class="col-xs-4 form-group label-floating">
+                                                    <div class="togglebutton">
+                                                        <label>
+                                                            <input type="checkbox" (ngModelChange)="changedData = true" [(ngModel)]="photo_required" name="photo_required" [ngModelOptions]="{standalone: true}">
+                                                        </label>
+                                                    </div>
+                                                </div>  
+                                        <div class="col-xs-8 form-group label-floating">
+                                            <label translate>SETTINGS.CHECKBOX.ADD_SUNBED</label>
+                                        </div>
+                                        <div class="col-xs-4 form-group label-floating">
+                                            <div class="togglebutton">
+                                                <label>
+                                                    <input type="checkbox" (ngModelChange)="changedData = true" [(ngModel)]="sunbeds_at_baldaquin" [ngModelOptions]="{standalone: true}">
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="col-xs-8 form-group label-floating">
+                                            <label translate>SETTINGS.CHECKBOX.REQUIRE_CALL</label>
+                                        </div>
+                                        <div class="col-xs-4 form-group label-floating">
+                                            <div class="togglebutton">
+                                                <label>
+                                                    <input type="checkbox" (ngModelChange)="changedData = true" [(ngModel)]="require_call" [ngModelOptions]="{standalone: true}">
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-12" *ngIf="without_pay_reserve && !card && !only_cc">
+                                    <label class="card-item-title text-rose" translate>SETTINGS.CHECKBOX.RESERVATION_LIMIT</label>
+                                    <div class="card-item-content row">
+                                        <div class="col-xs-2 form-group label-floating">
+                                            <input type="number" class="form-control" (ngModelChange)="changedData = true" [(ngModel)]="booking_time_limit" name="booking_time_limit">
+                                        </div>
+                                        <div class="col-xs-10 form-group form-horizontal label-floating">
+                                            <label class="input-by" translate>SETTINGS.CHECKBOX.MINUTES</label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-12">
+                                    <label class="card-item-title text-rose" translate>SETTINGS.CHECKBOX.SUNBED_READY_USE</label>
+                                    <div class="card-item-content row">
+                                        <div class="col-xs-2 form-group label-floating">
+                                            <label class="control-label">&nbsp;</label>
+                                            <input type="number" (ngModelChange)="changedData = true" [(ngModel)]="extra_sunbeds" class="form-control" name="extra_sunbeds">
+                                        </div>
+                                        <div class="col-xs-10 form-group  form-horizontal label-floating">
+                                            <label class="input-by" translate>SETTINGS.CHECKBOX.SUNBEDS</label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-12">
+                                    <label class="card-item-title text-rose" translate>SETTINGS.CHECKBOX.EXTRA_SUNBEDS</label>
+                                    <div class="card-item-content row">
+                                        <div class="col-xs-2 form-group label-floating">
+                                            <input type="number" class="form-control" (ngModelChange)="changedData = true" [(ngModel)]="seats.extra" name="extra" max="5">
+                                        </div>
+                                        <div class="col-xs-10 form-group form-horizontal label-floating">
+                                            <label class="input-by" translate>SETTINGS.CHECKBOX.SUNBEDS</label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div *ngIf="without_pay_reserve" class="col-md-12">
+                                    <label class="card-item-title text-rose" translate>SETTINGS.CHECKBOX.DAILY_LIMIT</label>
+                                    <div class="card-item-content row">
+                                        <div class="col-xs-2 form-group label-floating">
+                                            <input type="number" class="form-control" (ngModelChange)="changedData = true" [(ngModel)]="cancel_daily_limit" name="cancel_daily_limit">
+                                        </div>
+                                        <div class="col-xs-10 form-group form-horizontal label-floating">
+                                            <label class="input-by">&nbsp;</label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div *ngIf="without_pay_reserve" class="col-md-12">
+                                    <label class="card-item-title text-rose" translate>SETTINGS.CHECKBOX.DAY_RELEASE_PERCENT</label>
+                                    <div class="card-item-content row">
+                                        <div class="col-xs-2 form-group label-floating">
+                                            <input type="number" class="form-control" (ngModelChange)="changedData = true" [(ngModel)]="day_release_percent_to_points" name="day_release_percent_to_points">
+                                        </div>
+                                        <div class="col-xs-10 form-group form-horizontal label-floating">
+                                            <label class="input-by">%</label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div *ngIf="without_pay_reserve" class="col-md-12">
+                                    <label class="card-item-title text-rose" translate>SETTINGS.CHECKBOX.PARTIAL_DAY_RELEASE_PERCENT</label>
+                                    <div class="card-item-content row">
+                                        <div class="col-xs-2 form-group label-floating">
+                                            <input type="number" class="form-control" (ngModelChange)="changedData = true" [(ngModel)]="partial_day_release_percent_to_points" name="partial_day_release_percent_to_points">
+                                        </div>
+                                        <div class="col-xs-10 form-group form-horizontal label-floating">
+                                            <label class="input-by">%</label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-12" *ngIf="partial_day_release_percent_to_points > 0">
+                                    <label class="card-item-title text-rose" translate>SETTINGS.CHECKBOX.HOUR_RELEASE_POINT</label>
+                                    <div class="card-item-content clear-fix">
+                                        <div class="pull-left">
+                                            <div class="time-input pull-left">
+                                                <input type="number" class="form-control" (ngModelChange)="changedData = true" [(ngModel)]="hour_release_points_hh" name="hour_release_points_hh" min=0 max=23>
+                                            </div>
+                                            <span class="pull-left time-split">:</span>
+                                        </div>
+                                        <div class="time-input pull-left">
+                                            <input type="number" class="form-control" (ngModelChange)="changedData = true" [(ngModel)]="hour_release_points_mm" name="hour_release_points_mm" min=0 max=59>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="pull-right">
+                                    <button type="button" [disabled]="!changedData" class="btn btn-fill btn-rose" (click)="saveSettings()" translate>SAVE</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 no-mobile">
+                    <div class="card">
+                        <div class="card-header card-header-icon" data-background-color="rose">
+                            <i class="material-icons">priority_high</i>
+                        </div>
+                        <div class="card-content">
+                            <h4 class="card-title card-description"></h4>
+                            <h4 class="card-description">
+                                <p translate>SETTINGS.CHECKBOX.DESCRIPTION1</p>
+                                <p translate>SETTINGS.CHECKBOX.DESCRIPTION2</p>
+                                <p translate>SETTINGS.CHECKBOX.DESCRIPTION3</p>
+                                <p translate>SETTINGS.CHECKBOX.DESCRIPTION4</p>
+                                <p translate>SETTINGS.CHECKBOX.DESCRIPTION5</p>
+                                <p translate>SETTINGS.CHECKBOX.DESCRIPTION6</p>
+                                <p translate>SETTINGS.CHECKBOX.DESCRIPTION7</p>
+                                <p translate>SETTINGS.CHECKBOX.DESCRIPTION8</p>
+                                <p translate>SETTINGS.CHECKBOX.DESCRIPTION9</p>
+                                <p translate>SETTINGS.CHECKBOX.DESCRIPTION10</p>
+                            </h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    

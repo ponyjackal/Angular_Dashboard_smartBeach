@@ -1,0 +1,84 @@
+.menu-item-input.input-price{
+    float: left;
+    max-width: 77px;
+    /* margin-right: -12px; */
+    /* margin-left: 35%;
+    margin-bottom: 22%; */
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    /* display: none; <- Crashes Chrome on hover */
+    -webkit-appearance: none;
+    margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
+}
+
+input[type=number] {
+    -moz-appearance:textfield; /* Firefox */
+}
+.fileinput{
+    width:100%;
+}
+.fileinput-preview{
+    padding-left: 1px;
+    width: 100%;
+    max-width: 100%;
+    height: 177px;
+    background: #f1f1f1;
+    text-align: center;
+    vertical-align: middle;
+    display: table-cell;
+    object-fit: cover;
+   
+}
+.btn{
+    width:100%;
+}
+
+.img-card{
+    height:160px;
+    height: 160px;
+vertical-align: middle;
+display: table-cell;
+}
+
+.main-card{
+    max-width: max-content;
+    height: 160px;
+    margin: 0 auto;
+    margin-bottom: 15%; 
+}
+
+@media only screen  and (max-width: 769px) {
+    .btn{
+        margin-bottom: 5%;
+    }
+  }
+
+  .main-sub-card img,
+.fileinput .thumbnail > img,
+.fileinput-preview.fileinput-exists.thumbnail img{
+	max-width: 100%!important;
+	max-height: 100%!important;
+	width: auto!important;
+	height: auto!important;
+}
+
+.fileinput .thumbnail{
+	margin-bottom: 5%;
+}
+.btn{
+	width:100%;
+	padding:10px 15px;
+	margin-bottom: -2%;
+}
+
+.fileinput .thumbnail > img{
+    max-width: 100%!important;
+	max-height: 100%!important;
+	width: auto!important;
+	height: auto!important;
+}
+.mt-9{
+    margin-top: -9px;
+}

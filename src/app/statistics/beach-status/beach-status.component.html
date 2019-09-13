@@ -1,0 +1,404 @@
+<div class="main-content">
+    <div class="container-fluid">
+        <!-- <div class="row">
+            <div class="col-lg-3 col-md-6 col-sm-6">
+                <div class="card card-stats">
+                    <div class="card-header" data-background-color="orange">
+                        <i class="calendar_day"></i>
+                    </div>
+                    <div class="dropdown show-dropdown">
+                        <a href="#" data-toggle="dropdown">
+                            <div class="card-content">
+                                <p class="category">Booked today</p>
+                                <h3 class="card-title">{{data?.day.total.booked}}</h3>
+                            </div>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <div>
+                                <li style="padding: 0.6em">
+                                    <div class="row" style="padding:3px">
+                                        <span class="col-md-3 text-center" style="color:red;">Booked</span>
+                                        <span class="col-md-3 text-center" style="color:blue;">Ocupied</span>
+                                        <span class="col-md-3 text-center" style="color:magenta;">Completed</span>
+                                        <span class="col-md-3 text-center" style="color:yellow;">Expired</span>
+                                    </div>
+                                </li>
+                                <li style="padding: 0.6em">
+                                    <div class="row" style="padding:3px">
+                                        <span class="col-md-3">
+                                            <i class="umbrella_2_red_icon"></i>
+                                            <h4 class="text-center">{{data?.day?.umbrella?.booked || 0}}</h4>
+                                        </span>
+                                        <span class="col-md-3">
+                                            <i class="umbrella_2_blue_icon"></i>
+                                            <h4 class="text-center">{{data?.day?.umbrella?.occupied || 0}}</h4>
+                                        </span>
+                                        <span class="col-md-3">
+                                            <i class="umbrella_2_magenta_icon"></i>
+                                            <h4 class="text-center">{{data?.day?.umbrella?.completed || 0}}</h4>
+                                        </span>
+                                        <span class="col-md-3">
+                                            <i class="umbrella_2_yellow_icon"></i>
+                                            <h4 class="text-center">{{data?.day?.umbrella?.expired || 0}}</h4>
+                                        </span>
+                                    </div>
+                                </li>
+                                <li style="padding: 0.6em">
+                                    <div class="row" style="padding:3px">
+                                        <span class="col-md-3">
+                                            <i class="baldaquin_red_icon"></i>
+                                            <h4 class="text-center">{{data?.day?.baldaquin?.booked || 0}}</h4>
+                                        </span>
+                                        <span class="col-md-3">
+                                            <i class="baldaquin_blue_icon"></i>
+                                            <h4 class="text-center">{{data?.day?.baldaquin?.occupied || 0}}</h4>
+                                        </span>
+                                        <span class="col-md-3">
+                                            <i class="baldaquin_magenta_icon"></i>
+                                            <h4 class="text-center">{{data?.day?.baldaquin?.completed || 0}}</h4>
+                                        </span>
+                                        <span class="col-md-3">
+                                            <i class="baldaquin_yellow_icon"></i>
+                                            <h4 class="text-center">{{data?.day?.baldaquin?.expired || 0}}</h4>
+                                        </span>
+                                    </div>
+                                </li>
+                                <li style="padding: 0.6em">
+                                    <div class="row" style="padding:3px">
+                                        <span class="col-md-3">
+                                            <i class="sunbed_red_icon"></i>
+                                            <h4 class="text-center">{{data?.day?.sunbed?.booked || 0}}</h4>
+                                        </span>
+                                        <span class="col-md-3">
+                                            <i class="sunbed_blue_icon"></i>
+                                            <h4 class="text-center">{{data?.day?.sunbed?.occupied || 0}}</h4>
+                                        </span>
+                                        <span class="col-md-3">
+                                            <i class="sunbed_magenta_icon"></i>
+                                            <h4 class="text-center">{{data?.day?.sunbed?.completed || 0}}</h4>
+                                        </span>
+                                        <span class="col-md-3">
+                                            <i class="sunbed_yellow_icon"></i>
+                                            <h4 class="text-center">{{data?.day?.sunbed?.expired || 0}}</h4>
+                                        </span>
+                                    </div>
+                                </li>
+                            </div>
+                        </ul>
+                    </div>
+                    <div class="card-footer-small">
+                        <div class="col-md-5 form-group label-floating text-left" style="padding:0;margin:0">
+                            <button mat-raised-button (click)="picker1.open()" class="btn btn-white btn-simple" style="width:100%; margin:0; padding:0;">
+                                <div class="row">
+                                    <div class="col-md-3 text-center" style="padding:0">
+                                        <i class="material-icons">date_range</i>
+                                    </div>
+                                    <div class="col-md-9 text-center" style="padding:0 0 0 10px">
+                                        <mat-form-field style="width:100%">
+                                            <input class="text-left text-rose" matInput [matDatepicker]="picker1" [formControl]="date" style="max-width:50px !important">
+                                            <mat-datepicker #picker1 [startView]="'month'">
+                                            </mat-datepicker>
+                                        </mat-form-field>
+                                    </div>
+                                </div>
+                            </button>
+                        </div>
+                        <div class="col-md-7">
+                            <div>&nbsp;</div>
+                        </div>
+                    </div>
+                    <div class="card-footer">
+                        <div class="stats">
+                            <i class="material-icons">date_range</i> {{today}}
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 col-sm-6">
+                <div class="card card-stats">
+                    <div class="card-header" data-background-color="red">
+                        <i class="calendar_week"></i>
+                    </div>
+                    <div class="dropdown show-dropdown">
+                        <a href="#" data-toggle="dropdown">
+                            <div class="card-content">
+                                <p class="category">Booked this week</p>
+                                <h3 class="card-title">{{data?.week.total.booked}}</h3>
+                            </div>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <div>
+                                <li style="padding: 0.6em">
+                                    <div class="row" style="padding:3px">
+                                        <span class="col-md-3 text-center" style="color:red;">Booked</span>
+                                        <span class="col-md-3 text-center" style="color:blue;">Ocupied</span>
+                                        <span class="col-md-3 text-center" style="color:magenta;">Completed</span>
+                                        <span class="col-md-3 text-center" style="color:yellow;">Expired</span>
+                                    </div>
+                                </li>
+                                <li style="padding: 0.6em">
+                                    <div class="row" style="padding:3px">
+                                        <span class="col-md-3">
+                                            <i class="umbrella_2_red_icon"></i>
+                                            <h4 class="text-center">{{data?.week?.umbrella?.booked || 0}}</h4>
+                                        </span>
+                                        <span class="col-md-3">
+                                            <i class="umbrella_2_blue_icon"></i>
+                                            <h4 class="text-center">{{data?.week?.umbrella?.occupied || 0}}</h4>
+                                        </span>
+                                        <span class="col-md-3">
+                                            <i class="umbrella_2_magenta_icon"></i>
+                                            <h4 class="text-center">{{data?.week?.umbrella?.completed || 0}}</h4>
+                                        </span>
+                                        <span class="col-md-3">
+                                            <i class="umbrella_2_yellow_icon"></i>
+                                            <h4 class="text-center">{{data?.week?.umbrella?.expired || 0}}</h4>
+                                        </span>
+                                    </div>
+                                </li>
+                                <li style="padding: 0.6em">
+                                    <div class="row" style="padding:3px">
+                                        <span class="col-md-3">
+                                            <i class="baldaquin_red_icon"></i>
+                                            <h4 class="text-center">{{data?.week?.baldaquin?.booked || 0}}</h4>
+                                        </span>
+                                        <span class="col-md-3">
+                                            <i class="baldaquin_blue_icon"></i>
+                                            <h4 class="text-center">{{data?.week?.baldaquin?.occupied || 0}}</h4>
+                                        </span>
+                                        <span class="col-md-3">
+                                            <i class="baldaquin_magenta_icon"></i>
+                                            <h4 class="text-center">{{data?.week?.baldaquin?.completed || 0}}</h4>
+                                        </span>
+                                        <span class="col-md-3">
+                                            <i class="baldaquin_yellow_icon"></i>
+                                            <h4 class="text-center">{{data?.week?.baldaquin?.expired || 0}}</h4>
+                                        </span>
+                                    </div>
+                                </li>
+                                <li style="padding: 0.6em">
+                                    <div class="row" style="padding:3px">
+                                        <span class="col-md-3">
+                                            <i class="sunbed_red_icon"></i>
+                                            <h4 class="text-center">{{data?.week?.sunbed?.booked || 0}}</h4>
+                                        </span>
+                                        <span class="col-md-3">
+                                            <i class="sunbed_blue_icon"></i>
+                                            <h4 class="text-center">{{data?.week?.sunbed?.occupied || 0}}</h4>
+                                        </span>
+                                        <span class="col-md-3">
+                                            <i class="sunbed_magenta_icon"></i>
+                                            <h4 class="text-center">{{data?.week?.sunbed?.completed || 0}}</h4>
+                                        </span>
+                                        <span class="col-md-3">
+                                            <i class="sunbed_yellow_icon"></i>
+                                            <h4 class="text-center">{{data?.week?.sunbed?.expired || 0}}</h4>
+                                        </span>
+                                    </div>
+                                </li>
+                            </div>
+                        </ul>
+                    </div>
+                    <div class="card-footer">
+                        <div class="stats">
+                            <i class="material-icons">date_range</i> {{thisweek}}
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 col-sm-6">
+                <div class="card card-stats">
+                    <div class="card-header" data-background-color="green">
+                        <i class="calendar_month"></i>
+                    </div>
+                    <div class="dropdown show-dropdown">
+                        <a href="#" data-toggle="dropdown">
+                            <div class="card-content">
+                                <p class="category">Booked this month</p>
+                                <h3 class="card-title">{{data?.month.total.booked}}</h3>
+                            </div>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <div>
+                                <li style="padding: 0.6em">
+                                    <div class="row" style="padding:3px">
+                                        <span class="col-md-3 text-center" style="color:red;">Booked</span>
+                                        <span class="col-md-3 text-center" style="color:blue;">Ocupied</span>
+                                        <span class="col-md-3 text-center" style="color:magenta;">Completed</span>
+                                        <span class="col-md-3 text-center" style="color:yellow;">Expired</span>
+                                    </div>
+                                </li>
+                                <li style="padding: 0.6em">
+                                    <div class="row" style="padding:3px">
+                                        <span class="col-md-3">
+                                            <i class="umbrella_2_red_icon"></i>
+                                            <h4 class="text-center">{{data?.month?.umbrella?.booked || 0}}</h4>
+                                        </span>
+                                        <span class="col-md-3">
+                                            <i class="umbrella_2_blue_icon"></i>
+                                            <h4 class="text-center">{{data?.month?.umbrella?.occupied || 0}}</h4>
+                                        </span>
+                                        <span class="col-md-3">
+                                            <i class="umbrella_2_magenta_icon"></i>
+                                            <h4 class="text-center">{{data?.month?.umbrella?.completed || 0}}</h4>
+                                        </span>
+                                        <span class="col-md-3">
+                                            <i class="umbrella_2_yellow_icon"></i>
+                                            <h4 class="text-center">{{data?.month?.umbrella?.expired || 0}}</h4>
+                                        </span>
+                                    </div>
+                                </li>
+                                <li style="padding: 0.6em">
+                                    <div class="row" style="padding:3px">
+                                        <span class="col-md-3">
+                                            <i class="baldaquin_red_icon"></i>
+                                            <h4 class="text-center">{{data?.month?.baldaquin?.booked || 0}}</h4>
+                                        </span>
+                                        <span class="col-md-3">
+                                            <i class="baldaquin_blue_icon"></i>
+                                            <h4 class="text-center">{{data?.month?.baldaquin?.occupied || 0}}</h4>
+                                        </span>
+                                        <span class="col-md-3">
+                                            <i class="baldaquin_magenta_icon"></i>
+                                            <h4 class="text-center">{{data?.month?.baldaquin?.completed || 0}}</h4>
+                                        </span>
+                                        <span class="col-md-3">
+                                            <i class="baldaquin_yellow_icon"></i>
+                                            <h4 class="text-center">{{data?.month?.baldaquin?.expired || 0}}</h4>
+                                        </span>
+                                    </div>
+                                </li>
+                                <li style="padding: 0.6em">
+                                    <div class="row" style="padding:3px">
+                                        <span class="col-md-3">
+                                            <i class="sunbed_red_icon"></i>
+                                            <h4 class="text-center">{{data?.month?.sunbed?.booked || 0}}</h4>
+                                        </span>
+                                        <span class="col-md-3">
+                                            <i class="sunbed_blue_icon"></i>
+                                            <h4 class="text-center">{{data?.month?.sunbed?.occupied || 0}}</h4>
+                                        </span>
+                                        <span class="col-md-3">
+                                            <i class="sunbed_magenta_icon"></i>
+                                            <h4 class="text-center">{{data?.month?.sunbed?.completed || 0}}</h4>
+                                        </span>
+                                        <span class="col-md-3">
+                                            <i class="sunbed_yellow_icon"></i>
+                                            <h4 class="text-center">{{data?.month?.sunbed?.expired || 0}}</h4>
+                                        </span>
+                                    </div>
+                                </li>
+                            </div>
+                        </ul>
+                    </div>
+                    <div class="card-footer">
+                        <div class="stats">
+                            <i class="material-icons">date_range</i> {{thismonth}}
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 col-sm-6">
+                <div class="card card-stats">
+                    <div class="card-header" data-background-color="blue">
+                        <i class="calendar_year"></i>
+                    </div>
+                    <div class="dropdown show-dropdown">
+                        <a href="#" data-toggle="dropdown">
+                            <div class="card-content">
+                                <p class="category">Booked this year</p>
+                                <h3 class="card-title">{{data?.year.total.booked}}</h3>
+                            </div>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <div>
+                                <li style="padding: 0.6em">
+                                    <div class="row" style="padding:3px">
+                                        <span class="col-md-3 text-center" style="color:red;">Booked</span>
+                                        <span class="col-md-3 text-center" style="color:blue;">Ocupied</span>
+                                        <span class="col-md-3 text-center" style="color:magenta;">Completed</span>
+                                        <span class="col-md-3 text-center" style="color:yellow;">Expired</span>
+                                    </div>
+                                </li>
+                                <li style="padding: 0.6em">
+                                    <div class="row" style="padding:3px">
+                                        <span class="col-md-3">
+                                            <i class="umbrella_2_red_icon"></i>
+                                            <h4 class="text-center">{{data?.year?.umbrella?.booked || 0}}</h4>
+                                        </span>
+                                        <span class="col-md-3">
+                                            <i class="umbrella_2_blue_icon"></i>
+                                            <h4 class="text-center">{{data?.year?.umbrella?.occupied || 0}}</h4>
+                                        </span>
+                                        <span class="col-md-3">
+                                            <i class="umbrella_2_magenta_icon"></i>
+                                            <h4 class="text-center">{{data?.year?.umbrella?.completed || 0}}</h4>
+                                        </span>
+                                        <span class="col-md-3">
+                                            <i class="umbrella_2_yellow_icon"></i>
+                                            <h4 class="text-center">{{data?.year?.umbrella?.expired || 0}}</h4>
+                                        </span>
+                                    </div>
+                                </li>
+                                <li style="padding: 0.6em">
+                                    <div class="row" style="padding:3px">
+                                        <span class="col-md-3">
+                                            <i class="baldaquin_red_icon"></i>
+                                            <h4 class="text-center">{{data?.year?.baldaquin?.booked || 0}}</h4>
+                                        </span>
+                                        <span class="col-md-3">
+                                            <i class="baldaquin_blue_icon"></i>
+                                            <h4 class="text-center">{{data?.year?.baldaquin?.occupied || 0}}</h4>
+                                        </span>
+                                        <span class="col-md-3">
+                                            <i class="baldaquin_magenta_icon"></i>
+                                            <h4 class="text-center">{{data?.year?.baldaquin?.completed || 0}}</h4>
+                                        </span>
+                                        <span class="col-md-3">
+                                            <i class="baldaquin_yellow_icon"></i>
+                                            <h4 class="text-center">{{data?.year?.baldaquin?.expired || 0}}</h4>
+                                        </span>
+                                    </div>
+                                </li>
+                                <li style="padding: 0.6em">
+                                    <div class="row" style="padding:3px">
+                                        <span class="col-md-3">
+                                            <i class="sunbed_red_icon"></i>
+                                            <h4 class="text-center">{{data?.year?.sunbed?.booked || 0}}</h4>
+                                        </span>
+                                        <span class="col-md-3">
+                                            <i class="sunbed_blue_icon"></i>
+                                            <h4 class="text-center">{{data?.year?.sunbed?.occupied || 0}}</h4>
+                                        </span>
+                                        <span class="col-md-3">
+                                            <i class="sunbed_magenta_icon"></i>
+                                            <h4 class="text-center">{{data?.year?.sunbed?.completed || 0}}</h4>
+                                        </span>
+                                        <span class="col-md-3">
+                                            <i class="sunbed_yellow_icon"></i>
+                                            <h4 class="text-center">{{data?.year?.sunbed?.expired || 0}}</h4>
+                                        </span>
+                                    </div>
+                                </li>
+                            </div>
+                        </ul>
+                    </div>
+                    <div class="card-footer">
+                        <div class="stats">
+                            <i class="material-icons">date_range</i> {{thisyear}}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div> -->
+        <div class="row">
+            <div class="col-md-10 col-md-offset-1">
+                <div class="card card-calendar">
+                    <div class="card-content" class="ps-child">
+                        <div id="fullCalendar"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

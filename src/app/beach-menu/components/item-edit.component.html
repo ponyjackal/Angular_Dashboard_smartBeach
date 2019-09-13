@@ -1,0 +1,49 @@
+<div class="product-edit">
+  <div class="card-header">
+      <h4 translate>{{menu_item.id ? menu_item.name : 'BEACHMENU.NEW_PRODUCT'}}</h4>
+    </div>
+    <div class="card-content">
+      <div class="row">
+        <div class="col-sm-6 col-xs-12 padding-bottom">
+          <div class="label-floating">
+            <input type="text" class="form-control" [(ngModel)]="menu_item.name" name="extra" placeholder="Product name">
+          </div>
+        </div>
+        <div class="col-sm-6 col-xs-12 padding-bottom">
+          <div class="input-group">
+            <div class="label-floating">
+              <input type="number" class="form-control" [(ngModel)]="menu_item.price" name="extra" placeholder="Product price">
+            </div>
+            <span class="input-group-addon">RON</span>
+          </div>
+        </div>
+        <div class="col-lg-12 padding-bottom">
+          <div class="label-floating">
+            <input type="text" class="form-control" [(ngModel)]="menu_item.description" name="extra" placeholder="Description">
+          </div>
+        </div>
+        <div class="card-header">
+          <h4 translate>BEACHMENU.TOPPINGS_URI</h4>
+        </div>
+        <div class="card" *ngFor="let item of menu_item.toppings">
+          <div class="card-content">
+            <div class="row">
+              <div class="col-sm-6 col-xs-12">
+                <div class="label-floating">
+                  <input type="text" class="form-control" [(ngModel)]="item.name" name="extra" placeholder="Item name">
+                </div>
+              </div>
+              <div class="col-sm-6 col-xs-12">
+                <div class="input-group">
+                  <div class="label-floating">
+                    <input type="number" class="form-control" [(ngModel)]="item.price" name="extra" placeholder="Product price">
+                  </div>
+                  <span class="input-group-addon">RON</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+</div>

@@ -1,0 +1,184 @@
+<div class="wrapper wrapper-full-page">
+    <nav class="navbar navbar-primary navbar-transparent navbar-fixed-top">
+        <div class="container">
+            <div class="collapse navbar-collapse" id="menu-example">
+                <ul class="nav navbar-nav navbar-right">
+                    
+                    <li class="">
+                        <a routerLink="/register">
+                            <i class="material-icons">person_add</i>
+                            {{'PAGES.REGISTER' | translate}}
+                        </a>
+                    </li>
+                    <li class=" active ">
+                        <a routerLink="/login">
+                            <i class="material-icons">fingerprint</i>
+                            {{'PAGES.LOGIN' | translate}}
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" style="padding: 10px 20px !important;width: 103px;">
+                            <img src="assets/img/flags/{{selected_lang}}.png" alt="">
+                            <!-- <span style="padding-right: 10px;" class="no-mobile">&nbsp;{{selected_name}}</span> -->
+                            <span><b class="caret text-right"></b></span>
+                        </a>
+                        <ul class="dropdown-menu" style="min-width: 79px;padding: 0px 30px !important;
+                        background: transparent;">
+                            <li style="cursor: pointer;" *ngFor="let language of languages;let index = index;">
+                                <a class="text-uppercase" *ngIf="selected_lang !== language.name" (click)="changeLanguage(index)">
+                                    <img src="assets/img/flags/{{language.name}}.png" alt="">
+                                    <!-- <span class="no-mobile">&nbsp;{{language.long_name}}</span> -->
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="full-page login-page" filter-color="black">
+        <!--  you can change the color of the filter page using: data-color="blue | purple | green | orange | red | rose " -->
+        <div class="content">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-4 col-sm-6 col-md-offset-4 col-sm-offset-3">
+                        <div class="card card-login card-hidden">
+                            <div class="card-header text-center" data-background-color="rose">
+                                <h4 class="card-title" translate>PAGES.LOGIN</h4>
+                                <div class="beach-label">
+                                    <div class="col-md-10 col-md-offset-1"><img src="assets/img/smart-beach-label.png"></div>
+                                </div>
+                            </div>
+                            <div class="card-content card-small-height">
+                                <form [formGroup]="frmLogin" *ngIf="login_state==0">
+                                    <div class="input-group" *ngIf="login_state==0">
+                                        <span class="input-group-addon">
+                                            <i class="material-icons">email</i>
+                                        </span>
+                                        <div class="form-group label-floating" [ngClass]="displayFieldCss(frmLogin, 'email')">
+                                            <label class="control-label" translate>PAGES.EMAIL_MOBILE</label>
+                                            <input type="text" id="email" [(ngModel)]="username" class="form-control"
+                                                formControlName="email">
+                                            <!-- pattern="^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"> -->
+                                            <app-field-error-display [displayError]="isFieldValid(frmLogin, 'email')"
+                                                errorMsg="{{'PAGES.EMAIL_ERROR' | translate}}">
+                                            </app-field-error-display>
+                                        </div>
+                                    </div>
+                                    <div class="input-group" *ngIf="login_state==0">
+                                        <span class="input-group-addon">
+                                            <i class="material-icons">lock_outline</i>
+                                        </span>
+                                        <div class="form-group label-floating" [ngClass]="displayFieldCss(frmLogin, 'password')">
+                                            <label class="control-label" translate>PAGES.PASSWORD</label>
+                                            <input type="password" id="password" [(ngModel)]="password" class="form-control"
+                                            formControlName="password">
+                                            <app-field-error-display [displayError]="isFieldValid(frmLogin, 'password')"
+                                                errorMsg="{{'PAGES.PASSWORD_ERROR' | translate}}">
+                                            </app-field-error-display>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <div class="form-group label-floating text-right" *ngIf="login_state==0">
+                                            <a (click)="forgot_pass()" style="cursor:pointer" translate>PAGES.FORGOT_PASSWORD</a>
+                                        </div>
+                                    </div>
+                                </form>
+                                <form [formGroup]="frmSetEmail" *ngIf="login_state==1">
+                                    <div class="input-group" *ngIf="login_state==1">
+                                        <span class="input-group-addon">
+                                            <i class="material-icons">email</i>
+                                        </span>
+                                        <div class="form-group label-floating" [ngClass]="displayFieldCss(frmSetEmail, 'setEmail')">
+                                            <label class="control-label" translate>PAGES.EMAIL_ADDRESS</label>
+                                            <input type="text" id="setEmail" [(ngModel)]="setEmail" class="form-control"
+                                                formControlName="setEmail" pattern="^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$">
+                                            <app-field-error-display [displayError]="isFieldValid(frmSetEmail, 'setEmail')"
+                                                errorMsg="{{'PAGES.EMAIL_ERROR' | translate}}">
+                                            </app-field-error-display>
+                                            <!-- <label class="col-sm-3 label-on-right">
+                                            <code>email="true"</code>
+                                        </label> -->
+                                        </div>
+                                    </div>
+                                    <!-- <div class="row text-center" *ngIf="login_state==1">
+                                        <span class="btn btn-round btn-rose btn-just-icon" style="font-size: 12px;">OR</span>
+                                    </div>
+                                    <div class="input-group" *ngIf="login_state==1">
+                                        <span class="input-group-addon">
+                                            <i class="material-icons">call</i>
+                                        </span>
+                                        <div class="form-group label-floating" [ngClass]="displayFieldCss(frmSetEmail, 'phoneNumber')">
+                                            <label class="control-label" translate>PAGES.PHONE_NUMBER</label>
+                                            <input type="text" id="phoneNumber" [(ngModel)]="model.phone" name="phoneNumber"
+                                                class="form-control" number="true" formControlName="phoneNumber">
+                                            <app-field-error-display [displayError]="isFieldValid(frmSetEmail, 'phoneNumber')"
+                                                errorMsg="{{'ADD_PHONE_NUMBER_ERROR' || translate}}">
+                                            </app-field-error-display>
+                                        </div>
+                                    </div> -->
+                                </form>
+                                <form [formGroup]="frmConfirmPin" *ngIf="login_state==2">
+                                    <div class="input-group" *ngIf="login_state==2">
+                                        <span class="input-group-addon">
+                                            <i class="material-icons">lock_outline</i>
+                                        </span>
+                                        <div class="form-group label-floating">
+                                            <label class="control-label" translate>PAGES.PIN_CODE</label>
+                                            <input type="text" id="pinCode" [(ngModel)]="pinCode" name="pinCode" class="form-control"
+                                                formControlName="pinCode">
+                                            <app-field-error-display [displayError]="isFieldValid(frmConfirmPin, 'pinCode')"
+                                                errorMsg="{{'PAGES.ADD_PIN_ERROR' | translate}}">
+                                            </app-field-error-display>
+                                        </div>
+                                    </div>
+                                </form>
+                                <form [formGroup]="frmSetPass" *ngIf="login_state==3">
+                                    <div class="input-group" *ngIf="login_state==3">
+                                        <span class="input-group-addon">
+                                            <i class="material-icons">lock_outline</i>
+                                        </span>
+                                        <div class="form-group label-floating" [ngClass]="displayFieldCss(frmSetPass, 'setPassword')">
+                                            <label class="control-label">Type password</label>
+                                            <input type="password" id="setPassword" [(ngModel)]="setPassword" class="form-control"
+                                                formControlName="setPassword">
+                                            <app-field-error-display [displayError]="isFieldValid(frmSetPass, 'setPassword')"
+                                                errorMsg="{{'PAGES.VALID_PASSWORD_ERROR' | translate}}">
+                                            </app-field-error-display>
+                                        </div>
+                                    </div>
+                                    <div class="input-group" *ngIf="login_state==3">
+                                        <span class="input-group-addon">
+                                            <i class="material-icons">lock_outline</i>
+                                        </span>
+                                        <div class="form-group label-floating" [ngClass]="displayFieldCss(frmSetPass, 'confirmPassword')">
+                                            <label class="control-label" translate>PAGES.RETYPE_PASSWORD</label>
+                                            <input type="password" id="confirmPassword" [(ngModel)]="confirmPassword"
+                                                class="form-control" formControlName="confirmPassword">
+                                            <app-field-error-display [displayError]="isFieldValid(frmSetPass, 'confirmPassword')"
+                                                errorMsg="{{'PAGES.VALID_PASSWORD_ERROR' | translate}}">
+                                            </app-field-error-display>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                            <div class="footer text-center" *ngIf="login_state==0">
+                                <button type="button" id="login-btn" class="btn btn-rose btn-simple btn-wd btn-lg login" (click)="onLogin()" 
+                                    translate>PAGES.GO_TITLE</button>
+                            </div>
+                            <div class="footer text-center" *ngIf="login_state==1">
+                                <button type="button" class="btn btn-rose btn-simple btn-wd btn-lg" (click)="go_confirm_pin()" id="forget-pwd"
+                                    translate>PAGES.GO_TITLE</button>
+                            </div>
+                            <div class="footer text-center" *ngIf="login_state>1">
+                                <button type="button" class="btn btn-rose btn-simple btn-wd btn-lg" (click)="confirm_pin()" id="cnfrm-pin"
+                                    translate>PAGES.CONFIRM</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="full-page-background" style="background-image: url(assets/img/bg.jpg) "></div>
+    </div>
+</div>

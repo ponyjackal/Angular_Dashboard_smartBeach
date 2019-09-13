@@ -1,0 +1,2415 @@
+{
+    "front": [
+        {
+            "type": "umbrella",
+            "combination_id": "umbrella__df073f1d-5693-4ba9-a9ac-d4587bd0b176__df073f1d-5693-4ba9-a9ac-d4587bd0b179__df073f1d-5693-4ba9-a9ac-d4587bd0b175",
+            "index": 0,
+            "number": 1,
+            "status": {
+                "a": [
+                    "available",
+                    "available"
+                ],
+                "b": [
+                    "available",
+                    "available",
+                    "available"
+                ]
+            },
+            "seats": 2,
+            "sides": 2,
+            "image": "b/11+111.png",
+            "status_icon": "",
+            "coords": {
+                "x": 5,
+                "y": 5
+            },
+            "collide": false,
+            "info": {
+                "mapElement": {
+                    "list": {
+                        "left": [
+                            {
+                                "src": "assets/img/elements/sunbed-1.png",
+                                "x": 0,
+                                "y": 0
+                            },
+                            {
+                                "src": "assets/img/elements/sunbed-1.png",
+                                "x": 31,
+                                "y": 0
+                            }
+                        ],
+                        "right": [
+                            {
+                                "src": "assets/img/elements/sunbed-1.png",
+                                "x": 74.4,
+                                "y": 0
+                            },
+                            {
+                                "src": "assets/img/elements/sunbed-1.png",
+                                "x": 105.4,
+                                "y": 0
+                            },
+                            {
+                                "src": "assets/img/elements/sunbed-1.png",
+                                "x": 136.4,
+                                "y": 0
+                            }
+                        ],
+                        "top": [],
+                        "bottom": [],
+                        "center": [],
+                        "umbrella": [
+                            {
+                                "src": "assets/img/elements/1.png",
+                                "x": 31.200000000000003,
+                                "y": 12
+                            }
+                        ],
+                        "all": [
+                            {
+                                "src": "assets/img/elements/sunbed-1.png",
+                                "x": 0,
+                                "y": 0
+                            },
+                            {
+                                "src": "assets/img/elements/sunbed-1.png",
+                                "x": 31,
+                                "y": 0
+                            },
+                            {
+                                "src": "assets/img/elements/sunbed-1.png",
+                                "x": 74.4,
+                                "y": 0
+                            },
+                            {
+                                "src": "assets/img/elements/sunbed-1.png",
+                                "x": 105.4,
+                                "y": 0
+                            },
+                            {
+                                "src": "assets/img/elements/sunbed-1.png",
+                                "x": 136.4,
+                                "y": 0
+                            },
+                            {
+                                "src": "assets/img/elements/1.png",
+                                "x": 31.200000000000003,
+                                "y": 12
+                            }
+                        ]
+                    },
+                    "size": {
+                        "width": 85.7,
+                        "height": 43,
+                        "adjusted": true
+                    },
+                    "umbrella": {
+                        "center": 67,
+                        "leftOffset": 39.08984830805134
+                    },
+                    "pos": {
+                        "widthLeftOuter": 39.08984830805134,
+                        "widthRightOuter": 60.91015169194866,
+                        "widthLeftInner": 255.8208955223881,
+                        "widthRightInner": 164.17624521072796,
+                        "marginLeftOffset": -64.17624521072796
+                    },
+                    "seatCount": 5,
+                    "widthPercentage": 100,
+                    "type": "umbrella",
+                    "seatGridWidth": 82.5,
+                    "structure": {
+                        "id": "df073f1d-5693-4ba9-a9ac-d4587bd0b176",
+                        "img": "assets/img/structure/6.png",
+                        "type": "umbrella",
+                        "priority": 1,
+                        "seat": {
+                            "a": [
+                                "available",
+                                "available"
+                            ],
+                            "b": [
+                                "available",
+                                "available",
+                                "available"
+                            ]
+                        },
+                        "active": true
+                    },
+                    "element": {
+                        "umbrella": {
+                            "id": "df073f1d-5693-4ba9-a9ac-d4587bd0b179",
+                            "img": "assets/img/elements/1.png",
+                            "type": "umbrella",
+                            "priority": 1
+                        },
+                        "sunbed": {
+                            "id": "df073f1d-5693-4ba9-a9ac-d4587bd0b175",
+                            "img": "assets/img/elements/sunbed-1.png",
+                            "type": "sunbed",
+                            "priority": 2
+                        }
+                    },
+                    "image": "b/11+111.png"
+                },
+                "mapElementIndex": 6,
+                "index": 1
+            }
+        },
+        {
+            "type": "static",
+            "combination_id": "static__other",
+            "index": -1,
+            "number": 0,
+            "status": {},
+            "seats": 0,
+            "sides": 0,
+            "image": "assets/img/elements/static/tree.png",
+            "status_icon": "",
+            "coords": {
+                "x": 313.83,
+                "y": 6
+            },
+            "collide": true,
+            "info": {
+                "mapElement": {
+                    "id": "13",
+                    "img": "assets/img/elements/static/tree.png",
+                    "priority": 4,
+                    "type": "static",
+                    "size": {
+                        "width": 50,
+                        "height": 50,
+                        "adjusted": true
+                    },
+                    "objectType": "other",
+                    "collide": true,
+                    "b64": "assets/img/elements/static/tree.png",
+                    "image": "assets/img/elements/static/tree.png"
+                },
+                "mapElementIndex": 12,
+                "index": -1
+            }
+        },
+        {
+            "type": "static",
+            "combination_id": "static__other",
+            "index": -1,
+            "number": 0,
+            "status": {},
+            "seats": 0,
+            "sides": 0,
+            "image": "assets/img/elements/static/tree.png",
+            "status_icon": "",
+            "coords": {
+                "x": 370.9,
+                "y": 6
+            },
+            "collide": true,
+            "info": {
+                "mapElement": {
+                    "id": "13",
+                    "img": "assets/img/elements/static/tree.png",
+                    "priority": 4,
+                    "type": "static",
+                    "size": {
+                        "width": 50,
+                        "height": 50,
+                        "adjusted": true
+                    },
+                    "objectType": "other",
+                    "collide": true,
+                    "b64": "assets/img/elements/static/tree.png",
+                    "image": "assets/img/elements/static/tree.png"
+                },
+                "mapElementIndex": 12,
+                "index": -1
+            }
+        },
+        {
+            "type": "static",
+            "combination_id": "static__other",
+            "index": -1,
+            "number": 0,
+            "status": {},
+            "seats": 0,
+            "sides": 0,
+            "image": "assets/img/elements/static/tree.png",
+            "status_icon": "",
+            "coords": {
+                "x": 146.16,
+                "y": 10
+            },
+            "collide": true,
+            "info": {
+                "mapElement": {
+                    "id": "13",
+                    "img": "assets/img/elements/static/tree.png",
+                    "priority": 4,
+                    "type": "static",
+                    "size": {
+                        "width": 50,
+                        "height": 50,
+                        "adjusted": true
+                    },
+                    "objectType": "other",
+                    "collide": true,
+                    "b64": "assets/img/elements/static/tree.png",
+                    "image": "assets/img/elements/static/tree.png"
+                },
+                "mapElementIndex": 12,
+                "index": -1
+            }
+        },
+        {
+            "type": "static",
+            "combination_id": "static__other",
+            "index": -1,
+            "number": 0,
+            "status": {},
+            "seats": 0,
+            "sides": 0,
+            "image": "assets/img/elements/static/tree.png",
+            "status_icon": "",
+            "coords": {
+                "x": 196.16,
+                "y": 10
+            },
+            "collide": true,
+            "info": {
+                "mapElement": {
+                    "id": "13",
+                    "img": "assets/img/elements/static/tree.png",
+                    "priority": 4,
+                    "type": "static",
+                    "size": {
+                        "width": 50,
+                        "height": 50,
+                        "adjusted": true
+                    },
+                    "objectType": "other",
+                    "collide": true,
+                    "b64": "assets/img/elements/static/tree.png",
+                    "image": "assets/img/elements/static/tree.png"
+                },
+                "mapElementIndex": 12,
+                "index": -1
+            }
+        },
+        {
+            "type": "umbrella",
+            "combination_id": "umbrella__df073f1d-5693-4ba9-a9ac-d4587bd0b178__df073f1d-5693-4ba9-a9ac-d4587bd0b177__df073f1d-5693-4ba9-a9ac-d4587bd0b176",
+            "index": 1,
+            "number": 2,
+            "status": {
+                "n": [
+                    "available"
+                ]
+            },
+            "seats": 2,
+            "sides": 1,
+            "image": "a/1_2.png",
+            "status_icon": "",
+            "coords": {
+                "x": 103.66,
+                "y": 13
+            },
+            "collide": false,
+            "info": {
+                "mapElement": {
+                    "list": {
+                        "left": [],
+                        "right": [],
+                        "top": [],
+                        "bottom": [],
+                        "center": [
+                            {
+                                "src": "assets/img/elements/sunbed-2-2.png",
+                                "x": 12.25,
+                                "y": 0
+                            }
+                        ],
+                        "umbrella": [
+                            {
+                                "src": "assets/img/elements/2.png",
+                                "x": -2,
+                                "y": 12
+                            }
+                        ],
+                        "all": [
+                            {
+                                "src": "assets/img/elements/sunbed-2-2.png",
+                                "x": 12.25,
+                                "y": 0
+                            },
+                            {
+                                "src": "assets/img/elements/2.png",
+                                "x": -2,
+                                "y": 12
+                            }
+                        ]
+                    },
+                    "size": {
+                        "width": 68.57142857142857,
+                        "height": 43,
+                        "adjusted": true
+                    },
+                    "umbrella": {
+                        "center": 34,
+                        "leftOffset": 28.333333333333332
+                    },
+                    "pos": {
+                        "widthLeftOuter": 28.333333333333332,
+                        "widthRightOuter": 71.66666666666667,
+                        "widthLeftInner": 352.9411764705883,
+                        "widthRightInner": 139.53488372093022,
+                        "marginLeftOffset": -39.53488372093023
+                    },
+                    "seatCount": 0,
+                    "widthPercentage": 80,
+                    "type": "umbrella",
+                    "seatGridWidth": 42.5,
+                    "structure": {
+                        "id": "df073f1d-5693-4ba9-a9ac-d4587bd0b178",
+                        "img": "assets/img/structure/8.png",
+                        "type": "umbrella",
+                        "priority": 1,
+                        "seat": {
+                            "n": [
+                                "available"
+                            ]
+                        },
+                        "active": true
+                    },
+                    "element": {
+                        "umbrella": {
+                            "id": "df073f1d-5693-4ba9-a9ac-d4587bd0b177",
+                            "img": "assets/img/elements/2.png",
+                            "type": "umbrella",
+                            "priority": 1
+                        },
+                        "sunbed": {
+                            "id": "df073f1d-5693-4ba9-a9ac-d4587bd0b176",
+                            "img": "assets/img/elements/sunbed-2.png",
+                            "type": "sunbed",
+                            "priority": 2
+                        }
+                    },
+                    "image": "a/1_2.png"
+                },
+                "mapElementIndex": 8,
+                "index": 2
+            }
+        },
+        {
+            "type": "umbrella",
+            "combination_id": "umbrella__df073f1d-5693-4ba9-a9ac-d4587bd0b178__df073f1d-5693-4ba9-a9ac-d4587bd0b179__df073f1d-5693-4ba9-a9ac-d4587bd0b175",
+            "index": 2,
+            "number": 3,
+            "status": {
+                "n": [
+                    "available"
+                ]
+            },
+            "seats": 2,
+            "sides": 1,
+            "image": "b/1_2.png",
+            "status_icon": "",
+            "coords": {
+                "x": 441.59000000000003,
+                "y": 13
+            },
+            "collide": false,
+            "info": {
+                "mapElement": {
+                    "list": {
+                        "left": [],
+                        "right": [],
+                        "top": [],
+                        "bottom": [],
+                        "center": [
+                            {
+                                "src": "assets/img/elements/sunbed-1-2.png",
+                                "x": 12.25,
+                                "y": 0
+                            }
+                        ],
+                        "umbrella": [
+                            {
+                                "src": "assets/img/elements/1.png",
+                                "x": -2,
+                                "y": 12
+                            }
+                        ],
+                        "all": [
+                            {
+                                "src": "assets/img/elements/sunbed-1-2.png",
+                                "x": 12.25,
+                                "y": 0
+                            },
+                            {
+                                "src": "assets/img/elements/1.png",
+                                "x": -2,
+                                "y": 12
+                            }
+                        ]
+                    },
+                    "size": {
+                        "width": 68.57142857142857,
+                        "height": 43,
+                        "adjusted": true
+                    },
+                    "umbrella": {
+                        "center": 34,
+                        "leftOffset": 28.333333333333332
+                    },
+                    "pos": {
+                        "widthLeftOuter": 28.333333333333332,
+                        "widthRightOuter": 71.66666666666667,
+                        "widthLeftInner": 352.9411764705883,
+                        "widthRightInner": 139.53488372093022,
+                        "marginLeftOffset": -39.53488372093023
+                    },
+                    "seatCount": 0,
+                    "widthPercentage": 80,
+                    "type": "umbrella",
+                    "seatGridWidth": 42.5,
+                    "structure": {
+                        "id": "df073f1d-5693-4ba9-a9ac-d4587bd0b178",
+                        "img": "assets/img/structure/8.png",
+                        "type": "umbrella",
+                        "priority": 1,
+                        "seat": {
+                            "n": [
+                                "available"
+                            ]
+                        },
+                        "active": true
+                    },
+                    "element": {
+                        "umbrella": {
+                            "id": "df073f1d-5693-4ba9-a9ac-d4587bd0b179",
+                            "img": "assets/img/elements/1.png",
+                            "type": "umbrella",
+                            "priority": 1
+                        },
+                        "sunbed": {
+                            "id": "df073f1d-5693-4ba9-a9ac-d4587bd0b175",
+                            "img": "assets/img/elements/sunbed-1.png",
+                            "type": "sunbed",
+                            "priority": 2
+                        }
+                    },
+                    "image": "b/1_2.png"
+                },
+                "mapElementIndex": 4,
+                "index": 4
+            }
+        },
+        {
+            "type": "umbrella",
+            "combination_id": "umbrella__df073f1d-5693-4ba9-a9ac-d4587bd0b177__df073f1d-5693-4ba9-a9ac-d4587bd0b179__df073f1d-5693-4ba9-a9ac-d4587bd0b175",
+            "index": 3,
+            "number": 4,
+            "status": {
+                "m": [
+                    "available"
+                ]
+            },
+            "seats": 1,
+            "sides": 1,
+            "image": "b/1_1.png",
+            "status_icon": "",
+            "coords": {
+                "x": 497.22,
+                "y": 13
+            },
+            "collide": false,
+            "info": {
+                "mapElement": {
+                    "list": {
+                        "left": [],
+                        "right": [],
+                        "top": [],
+                        "bottom": [],
+                        "center": [
+                            {
+                                "src": "assets/img/elements/sunbed-1.png",
+                                "x": 19.5,
+                                "y": 0
+                            }
+                        ],
+                        "umbrella": [
+                            {
+                                "src": "assets/img/elements/1.png",
+                                "x": -2,
+                                "y": 12
+                            }
+                        ],
+                        "all": [
+                            {
+                                "src": "assets/img/elements/sunbed-1.png",
+                                "x": 19.5,
+                                "y": 0
+                            },
+                            {
+                                "src": "assets/img/elements/1.png",
+                                "x": -2,
+                                "y": 12
+                            }
+                        ]
+                    },
+                    "size": {
+                        "width": 60,
+                        "height": 43,
+                        "adjusted": true
+                    },
+                    "umbrella": {
+                        "center": 34,
+                        "leftOffset": 28.333333333333332
+                    },
+                    "pos": {
+                        "widthLeftOuter": 28.333333333333332,
+                        "widthRightOuter": 71.66666666666667,
+                        "widthLeftInner": 352.9411764705883,
+                        "widthRightInner": 139.53488372093022,
+                        "marginLeftOffset": -39.53488372093023
+                    },
+                    "seatCount": 0,
+                    "widthPercentage": 70,
+                    "type": "umbrella",
+                    "seatGridWidth": 37.5,
+                    "structure": {
+                        "id": "df073f1d-5693-4ba9-a9ac-d4587bd0b177",
+                        "img": "assets/img/structure/7.png",
+                        "type": "umbrella",
+                        "priority": 1,
+                        "seat": {
+                            "m": [
+                                "available"
+                            ]
+                        },
+                        "active": true
+                    },
+                    "element": {
+                        "umbrella": {
+                            "id": "df073f1d-5693-4ba9-a9ac-d4587bd0b179",
+                            "img": "assets/img/elements/1.png",
+                            "type": "umbrella",
+                            "priority": 1
+                        },
+                        "sunbed": {
+                            "id": "df073f1d-5693-4ba9-a9ac-d4587bd0b175",
+                            "img": "assets/img/elements/sunbed-1.png",
+                            "type": "sunbed",
+                            "priority": 2
+                        }
+                    },
+                    "image": "b/1_1.png"
+                },
+                "mapElementIndex": 5,
+                "index": 5
+            }
+        },
+        {
+            "type": "umbrella",
+            "combination_id": "umbrella__df073f1d-5693-4ba9-a9ac-d4587bd0b179__df073f1d-5693-4ba9-a9ac-d4587bd0b177__df073f1d-5693-4ba9-a9ac-d4587bd0b176",
+            "index": 4,
+            "number": 5,
+            "status": {
+                "o": [
+                    "available"
+                ]
+            },
+            "seats": 4,
+            "sides": 1,
+            "image": "a/1_4.png",
+            "status_icon": "",
+            "coords": {
+                "x": 548.8599999999999,
+                "y": 13
+            },
+            "collide": false,
+            "info": {
+                "mapElement": {
+                    "list": {
+                        "left": [],
+                        "right": [],
+                        "top": [],
+                        "bottom": [],
+                        "center": [
+                            {
+                                "src": "assets/img/elements/sunbed-2-4.png",
+                                "x": -2.25,
+                                "y": 0
+                            }
+                        ],
+                        "umbrella": [
+                            {
+                                "src": "assets/img/elements/2.png",
+                                "x": -2,
+                                "y": 12
+                            }
+                        ],
+                        "all": [
+                            {
+                                "src": "assets/img/elements/sunbed-2-4.png",
+                                "x": -2.25,
+                                "y": 0
+                            },
+                            {
+                                "src": "assets/img/elements/2.png",
+                                "x": -2,
+                                "y": 12
+                            }
+                        ]
+                    },
+                    "size": {
+                        "width": 85.71428571428571,
+                        "height": 43,
+                        "adjusted": true
+                    },
+                    "umbrella": {
+                        "center": 34,
+                        "leftOffset": 28.333333333333332
+                    },
+                    "pos": {
+                        "widthLeftOuter": 28.333333333333332,
+                        "widthRightOuter": 71.66666666666667,
+                        "widthLeftInner": 352.9411764705883,
+                        "widthRightInner": 139.53488372093022,
+                        "marginLeftOffset": -39.53488372093023
+                    },
+                    "seatCount": 0,
+                    "widthPercentage": 100,
+                    "type": "umbrella",
+                    "seatGridWidth": 50,
+                    "structure": {
+                        "id": "df073f1d-5693-4ba9-a9ac-d4587bd0b179",
+                        "img": "assets/img/structure/9.png",
+                        "type": "umbrella",
+                        "priority": 1,
+                        "seat": {
+                            "o": [
+                                "available"
+                            ]
+                        },
+                        "active": true
+                    },
+                    "element": {
+                        "umbrella": {
+                            "id": "df073f1d-5693-4ba9-a9ac-d4587bd0b177",
+                            "img": "assets/img/elements/2.png",
+                            "type": "umbrella",
+                            "priority": 1
+                        },
+                        "sunbed": {
+                            "id": "df073f1d-5693-4ba9-a9ac-d4587bd0b176",
+                            "img": "assets/img/elements/sunbed-2.png",
+                            "type": "sunbed",
+                            "priority": 2
+                        }
+                    },
+                    "image": "a/1_4.png"
+                },
+                "mapElementIndex": 7,
+                "index": 6
+            }
+        },
+        {
+            "type": "static",
+            "combination_id": "static__alway",
+            "index": -1,
+            "number": 0,
+            "status": {},
+            "seats": 0,
+            "sides": 0,
+            "image": "assets/img/elements/static/alway_1.png",
+            "status_icon": "",
+            "coords": {
+                "x": 281.5199999999999,
+                "y": 22.140000000000008
+            },
+            "collide": true,
+            "info": {
+                "mapElement": {
+                    "id": "2",
+                    "img": "assets/img/elements/static/alway_1.png",
+                    "priority": 4,
+                    "type": "static",
+                    "size": {
+                        "width": 12.5,
+                        "height": 60,
+                        "adjusted": true
+                    },
+                    "objectType": "alway",
+                    "collide": true,
+                    "b64": "assets/img/elements/static/alway_1.png",
+                    "image": "assets/img/elements/static/alway_1.png"
+                },
+                "mapElementIndex": 1,
+                "index": -1
+            }
+        },
+        {
+            "type": "static",
+            "combination_id": "static__alway",
+            "index": -1,
+            "number": 0,
+            "status": {},
+            "seats": 0,
+            "sides": 0,
+            "image": "assets/img/elements/static/alway_1.png",
+            "status_icon": "",
+            "coords": {
+                "x": 282.91,
+                "y": 80.72000000000001
+            },
+            "collide": true,
+            "info": {
+                "mapElement": {
+                    "id": "2",
+                    "img": "assets/img/elements/static/alway_1.png",
+                    "priority": 4,
+                    "type": "static",
+                    "size": {
+                        "width": 12.5,
+                        "height": 60,
+                        "adjusted": true
+                    },
+                    "objectType": "alway",
+                    "collide": true,
+                    "b64": "assets/img/elements/static/alway_1.png",
+                    "image": "assets/img/elements/static/alway_1.png"
+                },
+                "mapElementIndex": 1,
+                "index": -1
+            }
+        },
+        {
+            "type": "umbrella",
+            "combination_id": "umbrella__df073f1d-5693-4ba9-a9ac-d4587bd0b179__df073f1d-5693-4ba9-a9ac-d4587bd0b179__df073f1d-5693-4ba9-a9ac-d4587bd0b175",
+            "index": 5,
+            "number": 6,
+            "status": {
+                "o": [
+                    "available"
+                ]
+            },
+            "seats": 4,
+            "sides": 1,
+            "image": "b/1_4.png",
+            "status_icon": "",
+            "coords": {
+                "x": 548.8599999999999,
+                "y": 85.76000000000002
+            },
+            "collide": false,
+            "info": {
+                "mapElement": {
+                    "list": {
+                        "left": [],
+                        "right": [],
+                        "top": [],
+                        "bottom": [],
+                        "center": [
+                            {
+                                "src": "assets/img/elements/sunbed-1-4.png",
+                                "x": -2.25,
+                                "y": 0
+                            }
+                        ],
+                        "umbrella": [
+                            {
+                                "src": "assets/img/elements/1.png",
+                                "x": -2,
+                                "y": 12
+                            }
+                        ],
+                        "all": [
+                            {
+                                "src": "assets/img/elements/sunbed-1-4.png",
+                                "x": -2.25,
+                                "y": 0
+                            },
+                            {
+                                "src": "assets/img/elements/1.png",
+                                "x": -2,
+                                "y": 12
+                            }
+                        ]
+                    },
+                    "size": {
+                        "width": 85.71428571428571,
+                        "height": 43,
+                        "adjusted": true
+                    },
+                    "umbrella": {
+                        "center": 34,
+                        "leftOffset": 28.333333333333332
+                    },
+                    "pos": {
+                        "widthLeftOuter": 28.333333333333332,
+                        "widthRightOuter": 71.66666666666667,
+                        "widthLeftInner": 352.9411764705883,
+                        "widthRightInner": 139.53488372093022,
+                        "marginLeftOffset": -39.53488372093023
+                    },
+                    "seatCount": 0,
+                    "widthPercentage": 100,
+                    "type": "umbrella",
+                    "seatGridWidth": 50,
+                    "structure": {
+                        "id": "df073f1d-5693-4ba9-a9ac-d4587bd0b179",
+                        "img": "assets/img/structure/9.png",
+                        "type": "umbrella",
+                        "priority": 1,
+                        "seat": {
+                            "o": [
+                                "available"
+                            ]
+                        },
+                        "active": true
+                    },
+                    "element": {
+                        "umbrella": {
+                            "id": "df073f1d-5693-4ba9-a9ac-d4587bd0b179",
+                            "img": "assets/img/elements/1.png",
+                            "type": "umbrella",
+                            "priority": 1
+                        },
+                        "sunbed": {
+                            "id": "df073f1d-5693-4ba9-a9ac-d4587bd0b175",
+                            "img": "assets/img/elements/sunbed-1.png",
+                            "type": "sunbed",
+                            "priority": 2
+                        }
+                    },
+                    "image": "b/1_4.png"
+                },
+                "mapElementIndex": 3,
+                "index": 3
+            }
+        },
+        {
+            "type": "static",
+            "combination_id": "static__other",
+            "index": -1,
+            "number": 0,
+            "status": {},
+            "seats": 0,
+            "sides": 0,
+            "image": "assets/img/elements/static/toilet.png",
+            "status_icon": "",
+            "coords": {
+                "x": 71.63999999999989,
+                "y": 89.36000000000004
+            },
+            "collide": false,
+            "info": {
+                "mapElement": {
+                    "id": "12",
+                    "img": "assets/img/elements/static/toilet.png",
+                    "priority": 4,
+                    "type": "static",
+                    "size": {
+                        "width": 112.00000000000001,
+                        "height": 60,
+                        "adjusted": true
+                    },
+                    "objectType": "other",
+                    "b64": "assets/img/elements/static/toilet.png",
+                    "image": "assets/img/elements/static/toilet.png"
+                },
+                "mapElementIndex": 11,
+                "index": -1
+            }
+        },
+        {
+            "type": "static",
+            "combination_id": "static__other",
+            "index": -1,
+            "number": 0,
+            "status": {},
+            "seats": 0,
+            "sides": 0,
+            "image": "assets/img/elements/static/bar.png",
+            "status_icon": "",
+            "coords": {
+                "x": 405.68999999999994,
+                "y": 89.36000000000004
+            },
+            "collide": false,
+            "info": {
+                "mapElement": {
+                    "id": "9",
+                    "img": "assets/img/elements/static/bar.png",
+                    "priority": 4,
+                    "type": "static",
+                    "size": {
+                        "width": 90,
+                        "height": 60,
+                        "adjusted": true
+                    },
+                    "objectType": "other",
+                    "b64": "assets/img/elements/static/bar.png",
+                    "image": "assets/img/elements/static/bar.png"
+                },
+                "mapElementIndex": 8,
+                "index": -1
+            }
+        },
+        {
+            "type": "static",
+            "combination_id": "static__other",
+            "index": -1,
+            "number": 0,
+            "status": {},
+            "seats": 0,
+            "sides": 0,
+            "image": "assets/img/elements/static/tree.png",
+            "status_icon": "",
+            "coords": {
+                "x": 316.40000000000003,
+                "y": 99.36000000000004
+            },
+            "collide": true,
+            "info": {
+                "mapElement": {
+                    "id": "13",
+                    "img": "assets/img/elements/static/tree.png",
+                    "priority": 4,
+                    "type": "static",
+                    "size": {
+                        "width": 50,
+                        "height": 50,
+                        "adjusted": true
+                    },
+                    "objectType": "other",
+                    "collide": true,
+                    "b64": "assets/img/elements/static/tree.png",
+                    "image": "assets/img/elements/static/tree.png"
+                },
+                "mapElementIndex": 12,
+                "index": -1
+            }
+        },
+        {
+            "type": "static",
+            "combination_id": "static__alway",
+            "index": -1,
+            "number": 0,
+            "status": {},
+            "seats": 0,
+            "sides": 0,
+            "image": "assets/img/elements/static/alway_5.png",
+            "status_icon": "",
+            "coords": {
+                "x": 287.33000000000004,
+                "y": 129.70000000000002
+            },
+            "collide": true,
+            "info": {
+                "mapElement": {
+                    "id": "6",
+                    "img": "assets/img/elements/static/alway_5.png",
+                    "priority": 4,
+                    "type": "static",
+                    "size": {
+                        "width": 60,
+                        "height": 47.5,
+                        "adjusted": true
+                    },
+                    "objectType": "alway",
+                    "collide": true,
+                    "b64": "assets/img/elements/static/alway_5.png",
+                    "image": "assets/img/elements/static/alway_5.png"
+                },
+                "mapElementIndex": 5,
+                "index": -1
+            }
+        },
+        {
+            "type": "static",
+            "combination_id": "static__other",
+            "index": -1,
+            "number": 0,
+            "status": {},
+            "seats": 0,
+            "sides": 0,
+            "image": "assets/img/elements/static/tree.png",
+            "status_icon": "",
+            "coords": {
+                "x": 275.3700000000001,
+                "y": 156.97000000000006
+            },
+            "collide": true,
+            "info": {
+                "mapElement": {
+                    "id": "13",
+                    "img": "assets/img/elements/static/tree.png",
+                    "priority": 4,
+                    "type": "static",
+                    "size": {
+                        "width": 50,
+                        "height": 50,
+                        "adjusted": true
+                    },
+                    "objectType": "other",
+                    "collide": true,
+                    "b64": "assets/img/elements/static/tree.png",
+                    "image": "assets/img/elements/static/tree.png"
+                },
+                "mapElementIndex": 12,
+                "index": -1
+            }
+        },
+        {
+            "type": "static",
+            "combination_id": "static__alway",
+            "index": -1,
+            "number": 0,
+            "status": {},
+            "seats": 0,
+            "sides": 0,
+            "image": "assets/img/elements/static/alway_1.png",
+            "status_icon": "",
+            "coords": {
+                "x": 335.21000000000004,
+                "y": 167.07000000000005
+            },
+            "collide": true,
+            "info": {
+                "mapElement": {
+                    "id": "2",
+                    "img": "assets/img/elements/static/alway_1.png",
+                    "priority": 4,
+                    "type": "static",
+                    "size": {
+                        "width": 12.5,
+                        "height": 60,
+                        "adjusted": true
+                    },
+                    "objectType": "alway",
+                    "collide": true,
+                    "b64": "assets/img/elements/static/alway_1.png",
+                    "image": "assets/img/elements/static/alway_1.png"
+                },
+                "mapElementIndex": 1,
+                "index": -1
+            }
+        },
+        {
+            "type": "static",
+            "combination_id": "static__other",
+            "index": -1,
+            "number": 0,
+            "status": {},
+            "seats": 0,
+            "sides": 0,
+            "image": "assets/img/elements/static/tree.png",
+            "status_icon": "",
+            "coords": {
+                "x": 5,
+                "y": 181.05000000000015
+            },
+            "collide": true,
+            "info": {
+                "mapElement": {
+                    "id": "13",
+                    "img": "assets/img/elements/static/tree.png",
+                    "priority": 4,
+                    "type": "static",
+                    "size": {
+                        "width": 50,
+                        "height": 50,
+                        "adjusted": true
+                    },
+                    "objectType": "other",
+                    "collide": true,
+                    "b64": "assets/img/elements/static/tree.png",
+                    "image": "assets/img/elements/static/tree.png"
+                },
+                "mapElementIndex": 12,
+                "index": -1
+            }
+        },
+        {
+            "type": "static",
+            "combination_id": "static__other",
+            "index": -1,
+            "number": 0,
+            "status": {},
+            "seats": 0,
+            "sides": 0,
+            "image": "assets/img/elements/static/tree.png",
+            "status_icon": "",
+            "coords": {
+                "x": 55,
+                "y": 181.07000000000002
+            },
+            "collide": true,
+            "info": {
+                "mapElement": {
+                    "id": "13",
+                    "img": "assets/img/elements/static/tree.png",
+                    "priority": 4,
+                    "type": "static",
+                    "size": {
+                        "width": 50,
+                        "height": 50,
+                        "adjusted": true
+                    },
+                    "objectType": "other",
+                    "collide": true,
+                    "b64": "assets/img/elements/static/tree.png",
+                    "image": "assets/img/elements/static/tree.png"
+                },
+                "mapElementIndex": 12,
+                "index": -1
+            }
+        }
+    ],
+    "middle": [
+        {
+            "type": "static",
+            "combination_id": "static__alway",
+            "index": -1,
+            "number": 0,
+            "status": {},
+            "seats": 0,
+            "sides": 0,
+            "image": "assets/img/elements/static/alway_1.png",
+            "status_icon": "",
+            "coords": {
+                "x": 335.59000000000015,
+                "y": 222.62000000000006
+            },
+            "collide": true,
+            "info": {
+                "mapElement": {
+                    "id": "2",
+                    "img": "assets/img/elements/static/alway_1.png",
+                    "priority": 4,
+                    "type": "static",
+                    "size": {
+                        "width": 12.5,
+                        "height": 60,
+                        "adjusted": true
+                    },
+                    "objectType": "alway",
+                    "collide": true,
+                    "b64": "assets/img/elements/static/alway_1.png",
+                    "image": "assets/img/elements/static/alway_1.png"
+                },
+                "mapElementIndex": 1,
+                "index": -1
+            }
+        },
+        {
+            "type": "static",
+            "combination_id": "static__other",
+            "index": -1,
+            "number": 0,
+            "status": {},
+            "seats": 0,
+            "sides": 0,
+            "image": "assets/img/elements/static/untitled.png",
+            "status_icon": "",
+            "coords": {
+                "x": 146.16,
+                "y": 223.63000000000005
+            },
+            "collide": false,
+            "info": {
+                "mapElement": {
+                    "id": "14",
+                    "img": "assets/img/elements/static/untitled.png",
+                    "priority": 4,
+                    "type": "static",
+                    "size": {
+                        "width": 160,
+                        "height": 110.00000000000001,
+                        "adjusted": true
+                    },
+                    "objectType": "other",
+                    "b64": "assets/img/elements/static/untitled.png",
+                    "image": "assets/img/elements/static/untitled.png"
+                },
+                "mapElementIndex": 13,
+                "index": -1
+            }
+        },
+        {
+            "type": "static",
+            "combination_id": "static__other",
+            "index": -1,
+            "number": 0,
+            "status": {},
+            "seats": 0,
+            "sides": 0,
+            "image": "assets/img/elements/static/info_office.png",
+            "status_icon": "",
+            "coords": {
+                "x": 548.8599999999999,
+                "y": 237.7500000000001
+            },
+            "collide": false,
+            "info": {
+                "mapElement": {
+                    "id": "11",
+                    "img": "assets/img/elements/static/info_office.png",
+                    "priority": 4,
+                    "type": "static",
+                    "size": {
+                        "width": 112.00000000000001,
+                        "height": 60,
+                        "adjusted": true
+                    },
+                    "objectType": "other",
+                    "b64": "assets/img/elements/static/info_office.png",
+                    "image": "assets/img/elements/static/info_office.png"
+                },
+                "mapElementIndex": 10,
+                "index": -1
+            }
+        },
+        {
+            "type": "baldaquin",
+            "combination_id": "baldaquin__df073f1d-5693-4ba9-a9ac-d4587bd0b183__df073f1d-5693-4ba9-a9ac-d4587bd0b174",
+            "index": 6,
+            "number": 7,
+            "status": {
+                "y": [
+                    "available"
+                ]
+            },
+            "seats": 3,
+            "sides": 1,
+            "image": "1_3.png",
+            "status_icon": "",
+            "coords": {
+                "x": 464.61,
+                "y": 239.61999999999995
+            },
+            "collide": false,
+            "info": {
+                "mapElement": {
+                    "list": [
+                        {
+                            "x": 0,
+                            "y": 0
+                        }
+                    ],
+                    "size": {
+                        "height": 43,
+                        "width": 49.50000000000001,
+                        "adjusted": true
+                    },
+                    "umbrella": {},
+                    "pos": {},
+                    "maxWidthPercentage": 120,
+                    "seatWidthPer": 30,
+                    "maxSeatCount": 4,
+                    "seatCount": 3,
+                    "widthPercentageGrid": 90,
+                    "widthPercentage": 75,
+                    "type": "baldaquin",
+                    "seatGridWidth": 37.5,
+                    "structure": {
+                        "id": "df073f1d-5693-4ba9-a9ac-d4587bd0b183",
+                        "img": "assets/img/structure/13.png",
+                        "type": "baldaquin",
+                        "priority": 1,
+                        "seat": {
+                            "y": [
+                                "available"
+                            ]
+                        },
+                        "active": true
+                    },
+                    "element": {
+                        "baldaquin": {
+                            "id": "df073f1d-5693-4ba9-a9ac-d4587bd0b174",
+                            "img": "assets/img/elements/baldaquin.png",
+                            "type": "baldaquin",
+                            "priority": 3,
+                            "active": true
+                        }
+                    },
+                    "image": "1_3.png"
+                },
+                "mapElementIndex": 1,
+                "index": 9
+            }
+        },
+        {
+            "type": "baldaquin",
+            "combination_id": "baldaquin__df073f1d-5693-4ba9-a9ac-d4587bd0b184__df073f1d-5693-4ba9-a9ac-d4587bd0b174",
+            "index": 7,
+            "number": 8,
+            "status": {
+                "z": [
+                    "available"
+                ]
+            },
+            "seats": 4,
+            "sides": 1,
+            "image": "1_4.png",
+            "status_icon": "",
+            "coords": {
+                "x": 383.46000000000004,
+                "y": 239.62
+            },
+            "collide": false,
+            "info": {
+                "mapElement": {
+                    "list": [
+                        {
+                            "x": 0,
+                            "y": 0
+                        }
+                    ],
+                    "size": {
+                        "height": 43,
+                        "width": 66,
+                        "adjusted": true
+                    },
+                    "umbrella": {},
+                    "pos": {},
+                    "maxWidthPercentage": 120,
+                    "seatWidthPer": 30,
+                    "maxSeatCount": 4,
+                    "seatCount": 4,
+                    "widthPercentageGrid": 120,
+                    "widthPercentage": 100,
+                    "type": "baldaquin",
+                    "seatGridWidth": 37.5,
+                    "structure": {
+                        "id": "df073f1d-5693-4ba9-a9ac-d4587bd0b184",
+                        "img": "assets/img/structure/14.png",
+                        "type": "baldaquin",
+                        "priority": 1,
+                        "seat": {
+                            "z": [
+                                "available"
+                            ]
+                        },
+                        "active": true
+                    },
+                    "element": {
+                        "baldaquin": {
+                            "id": "df073f1d-5693-4ba9-a9ac-d4587bd0b174",
+                            "img": "assets/img/elements/baldaquin.png",
+                            "type": "baldaquin",
+                            "priority": 3,
+                            "active": true
+                        }
+                    },
+                    "image": "1_4.png"
+                },
+                "mapElementIndex": 2,
+                "index": 8
+            }
+        },
+        {
+            "type": "baldaquin",
+            "combination_id": "baldaquin__df073f1d-5693-4ba9-a9ac-d4587bd0b182__df073f1d-5693-4ba9-a9ac-d4587bd0b174",
+            "index": 8,
+            "number": 9,
+            "status": {
+                "x": [
+                    "available"
+                ]
+            },
+            "seats": 2,
+            "sides": 1,
+            "image": "1_2.png",
+            "status_icon": "",
+            "coords": {
+                "x": 21.200000000000045,
+                "y": 254.75000000000006
+            },
+            "collide": false,
+            "info": {
+                "mapElement": {
+                    "list": [
+                        {
+                            "x": 0,
+                            "y": 0
+                        }
+                    ],
+                    "size": {
+                        "height": 43,
+                        "width": 33,
+                        "adjusted": true
+                    },
+                    "umbrella": {},
+                    "pos": {},
+                    "maxWidthPercentage": 120,
+                    "seatWidthPer": 30,
+                    "maxSeatCount": 4,
+                    "seatCount": 2,
+                    "widthPercentageGrid": 60,
+                    "widthPercentage": 50,
+                    "type": "baldaquin",
+                    "seatGridWidth": 37.5,
+                    "structure": {
+                        "id": "df073f1d-5693-4ba9-a9ac-d4587bd0b182",
+                        "img": "assets/img/structure/12.png",
+                        "type": "baldaquin",
+                        "priority": 1,
+                        "seat": {
+                            "x": [
+                                "available"
+                            ]
+                        },
+                        "active": true
+                    },
+                    "element": {
+                        "baldaquin": {
+                            "id": "df073f1d-5693-4ba9-a9ac-d4587bd0b174",
+                            "img": "assets/img/elements/baldaquin.png",
+                            "type": "baldaquin",
+                            "priority": 3,
+                            "active": true
+                        }
+                    },
+                    "image": "1_2.png"
+                },
+                "mapElementIndex": 0,
+                "index": 7
+            }
+        },
+        {
+            "type": "baldaquin",
+            "combination_id": "baldaquin__df073f1d-5693-4ba9-a9ac-d4587bd0b182__df073f1d-5693-4ba9-a9ac-d4587bd0b174",
+            "index": 9,
+            "number": 10,
+            "status": {
+                "x": [
+                    "available"
+                ]
+            },
+            "seats": 2,
+            "sides": 1,
+            "image": "1_2.png",
+            "status_icon": "",
+            "coords": {
+                "x": 73.70000000000005,
+                "y": 254.75000000000017
+            },
+            "collide": false,
+            "info": {
+                "mapElement": {
+                    "list": [
+                        {
+                            "x": 0,
+                            "y": 0
+                        }
+                    ],
+                    "size": {
+                        "height": 43,
+                        "width": 33,
+                        "adjusted": true
+                    },
+                    "umbrella": {},
+                    "pos": {},
+                    "maxWidthPercentage": 120,
+                    "seatWidthPer": 30,
+                    "maxSeatCount": 4,
+                    "seatCount": 2,
+                    "widthPercentageGrid": 60,
+                    "widthPercentage": 50,
+                    "type": "baldaquin",
+                    "seatGridWidth": 37.5,
+                    "structure": {
+                        "id": "df073f1d-5693-4ba9-a9ac-d4587bd0b182",
+                        "img": "assets/img/structure/12.png",
+                        "type": "baldaquin",
+                        "priority": 1,
+                        "seat": {
+                            "x": [
+                                "available"
+                            ]
+                        },
+                        "active": true
+                    },
+                    "element": {
+                        "baldaquin": {
+                            "id": "df073f1d-5693-4ba9-a9ac-d4587bd0b174",
+                            "img": "assets/img/elements/baldaquin.png",
+                            "type": "baldaquin",
+                            "priority": 3,
+                            "active": true
+                        }
+                    },
+                    "image": "1_2.png"
+                },
+                "mapElementIndex": 0,
+                "index": 14
+            }
+        },
+        {
+            "type": "static",
+            "combination_id": "static__alway",
+            "index": -1,
+            "number": 0,
+            "status": {},
+            "seats": 0,
+            "sides": 0,
+            "image": "assets/img/elements/static/alway_7.png",
+            "status_icon": "",
+            "coords": {
+                "x": 334.98999999999995,
+                "y": 273.63000000000005
+            },
+            "collide": true,
+            "info": {
+                "mapElement": {
+                    "id": "8",
+                    "img": "assets/img/elements/static/alway_7.png",
+                    "priority": 4,
+                    "type": "static",
+                    "size": {
+                        "width": 47.5,
+                        "height": 60,
+                        "adjusted": true
+                    },
+                    "objectType": "alway",
+                    "collide": true,
+                    "b64": "assets/img/elements/static/alway_7.png",
+                    "image": "assets/img/elements/static/alway_7.png"
+                },
+                "mapElementIndex": 7,
+                "index": -1
+            }
+        },
+        {
+            "type": "static",
+            "combination_id": "static__other",
+            "index": -1,
+            "number": 0,
+            "status": {},
+            "seats": 0,
+            "sides": 0,
+            "image": "assets/img/elements/static/tree.png",
+            "status_icon": "",
+            "coords": {
+                "x": 441.59000000000003,
+                "y": 294.7000000000001
+            },
+            "collide": true,
+            "info": {
+                "mapElement": {
+                    "id": "13",
+                    "img": "assets/img/elements/static/tree.png",
+                    "priority": 4,
+                    "type": "static",
+                    "size": {
+                        "width": 50,
+                        "height": 50,
+                        "adjusted": true
+                    },
+                    "objectType": "other",
+                    "collide": true,
+                    "b64": "assets/img/elements/static/tree.png",
+                    "image": "assets/img/elements/static/tree.png"
+                },
+                "mapElementIndex": 12,
+                "index": -1
+            }
+        },
+        {
+            "type": "static",
+            "combination_id": "static__other",
+            "index": -1,
+            "number": 0,
+            "status": {},
+            "seats": 0,
+            "sides": 0,
+            "image": "assets/img/elements/static/tree.png",
+            "status_icon": "",
+            "coords": {
+                "x": 405.68999999999994,
+                "y": 296.1700000000001
+            },
+            "collide": true,
+            "info": {
+                "mapElement": {
+                    "id": "13",
+                    "img": "assets/img/elements/static/tree.png",
+                    "priority": 4,
+                    "type": "static",
+                    "size": {
+                        "width": 50,
+                        "height": 50,
+                        "adjusted": true
+                    },
+                    "objectType": "other",
+                    "collide": true,
+                    "b64": "assets/img/elements/static/tree.png",
+                    "image": "assets/img/elements/static/tree.png"
+                },
+                "mapElementIndex": 12,
+                "index": -1
+            }
+        },
+        {
+            "type": "static",
+            "combination_id": "static__alway",
+            "index": -1,
+            "number": 0,
+            "status": {},
+            "seats": 0,
+            "sides": 0,
+            "image": "assets/img/elements/static/alway_3.png",
+            "status_icon": "",
+            "coords": {
+                "x": 362.61,
+                "y": 314.47
+            },
+            "collide": true,
+            "info": {
+                "mapElement": {
+                    "id": "4",
+                    "img": "assets/img/elements/static/alway_3.png",
+                    "priority": 4,
+                    "type": "static",
+                    "size": {
+                        "width": 60,
+                        "height": 60,
+                        "adjusted": true
+                    },
+                    "objectType": "alway",
+                    "collide": true,
+                    "b64": "assets/img/elements/static/alway_3.png",
+                    "image": "assets/img/elements/static/alway_3.png"
+                },
+                "mapElementIndex": 3,
+                "index": -1
+            }
+        },
+        {
+            "type": "umbrella",
+            "combination_id": "umbrella__df073f1d-5693-4ba9-a9ac-d4587bd0b176__df073f1d-5693-4ba9-a9ac-d4587bd0b177__df073f1d-5693-4ba9-a9ac-d4587bd0b176",
+            "index": 10,
+            "number": 11,
+            "status": {
+                "a": [
+                    "available",
+                    "available"
+                ],
+                "b": [
+                    "available",
+                    "available",
+                    "available"
+                ]
+            },
+            "seats": 2,
+            "sides": 2,
+            "image": "a/11+111.png",
+            "status_icon": "",
+            "coords": {
+                "x": 588.1399999999999,
+                "y": 349.67
+            },
+            "collide": false,
+            "info": {
+                "mapElement": {
+                    "list": {
+                        "left": [
+                            {
+                                "src": "assets/img/elements/sunbed-2.png",
+                                "x": 0,
+                                "y": 0
+                            },
+                            {
+                                "src": "assets/img/elements/sunbed-2.png",
+                                "x": 31,
+                                "y": 0
+                            }
+                        ],
+                        "right": [
+                            {
+                                "src": "assets/img/elements/sunbed-2.png",
+                                "x": 74.4,
+                                "y": 0
+                            },
+                            {
+                                "src": "assets/img/elements/sunbed-2.png",
+                                "x": 105.4,
+                                "y": 0
+                            },
+                            {
+                                "src": "assets/img/elements/sunbed-2.png",
+                                "x": 136.4,
+                                "y": 0
+                            }
+                        ],
+                        "top": [],
+                        "bottom": [],
+                        "center": [],
+                        "umbrella": [
+                            {
+                                "src": "assets/img/elements/2.png",
+                                "x": 31.200000000000003,
+                                "y": 12
+                            }
+                        ],
+                        "all": [
+                            {
+                                "src": "assets/img/elements/sunbed-2.png",
+                                "x": 0,
+                                "y": 0
+                            },
+                            {
+                                "src": "assets/img/elements/sunbed-2.png",
+                                "x": 31,
+                                "y": 0
+                            },
+                            {
+                                "src": "assets/img/elements/sunbed-2.png",
+                                "x": 74.4,
+                                "y": 0
+                            },
+                            {
+                                "src": "assets/img/elements/sunbed-2.png",
+                                "x": 105.4,
+                                "y": 0
+                            },
+                            {
+                                "src": "assets/img/elements/sunbed-2.png",
+                                "x": 136.4,
+                                "y": 0
+                            },
+                            {
+                                "src": "assets/img/elements/2.png",
+                                "x": 31.200000000000003,
+                                "y": 12
+                            }
+                        ]
+                    },
+                    "size": {
+                        "width": 85.7,
+                        "height": 43,
+                        "adjusted": true
+                    },
+                    "umbrella": {
+                        "center": 67,
+                        "leftOffset": 39.08984830805134
+                    },
+                    "pos": {
+                        "widthLeftOuter": 39.08984830805134,
+                        "widthRightOuter": 60.91015169194866,
+                        "widthLeftInner": 255.8208955223881,
+                        "widthRightInner": 164.17624521072796,
+                        "marginLeftOffset": -64.17624521072796
+                    },
+                    "seatCount": 5,
+                    "widthPercentage": 100,
+                    "type": "umbrella",
+                    "seatGridWidth": 82.5,
+                    "structure": {
+                        "id": "df073f1d-5693-4ba9-a9ac-d4587bd0b176",
+                        "img": "assets/img/structure/6.png",
+                        "type": "umbrella",
+                        "priority": 1,
+                        "seat": {
+                            "a": [
+                                "available",
+                                "available"
+                            ],
+                            "b": [
+                                "available",
+                                "available",
+                                "available"
+                            ]
+                        },
+                        "active": true
+                    },
+                    "element": {
+                        "umbrella": {
+                            "id": "df073f1d-5693-4ba9-a9ac-d4587bd0b177",
+                            "img": "assets/img/elements/2.png",
+                            "type": "umbrella",
+                            "priority": 1
+                        },
+                        "sunbed": {
+                            "id": "df073f1d-5693-4ba9-a9ac-d4587bd0b176",
+                            "img": "assets/img/elements/sunbed-2.png",
+                            "type": "sunbed",
+                            "priority": 2
+                        }
+                    },
+                    "image": "a/11+111.png"
+                },
+                "mapElementIndex": 10,
+                "index": 10
+            }
+        },
+        {
+            "type": "umbrella",
+            "combination_id": "umbrella__df073f1d-5693-4ba9-a9ac-d4587bd0b177__df073f1d-5693-4ba9-a9ac-d4587bd0b177__df073f1d-5693-4ba9-a9ac-d4587bd0b176",
+            "index": 11,
+            "number": 12,
+            "status": {
+                "m": [
+                    "available"
+                ]
+            },
+            "seats": 1,
+            "sides": 1,
+            "image": "a/1_1.png",
+            "status_icon": "",
+            "coords": {
+                "x": 519.1399999999999,
+                "y": 349.6700000000001
+            },
+            "collide": false,
+            "info": {
+                "mapElement": {
+                    "list": {
+                        "left": [],
+                        "right": [],
+                        "top": [],
+                        "bottom": [],
+                        "center": [
+                            {
+                                "src": "assets/img/elements/sunbed-2.png",
+                                "x": 19.5,
+                                "y": 0
+                            }
+                        ],
+                        "umbrella": [
+                            {
+                                "src": "assets/img/elements/2.png",
+                                "x": -2,
+                                "y": 12
+                            }
+                        ],
+                        "all": [
+                            {
+                                "src": "assets/img/elements/sunbed-2.png",
+                                "x": 19.5,
+                                "y": 0
+                            },
+                            {
+                                "src": "assets/img/elements/2.png",
+                                "x": -2,
+                                "y": 12
+                            }
+                        ]
+                    },
+                    "size": {
+                        "width": 60,
+                        "height": 43,
+                        "adjusted": true
+                    },
+                    "umbrella": {
+                        "center": 34,
+                        "leftOffset": 28.333333333333332
+                    },
+                    "pos": {
+                        "widthLeftOuter": 28.333333333333332,
+                        "widthRightOuter": 71.66666666666667,
+                        "widthLeftInner": 352.9411764705883,
+                        "widthRightInner": 139.53488372093022,
+                        "marginLeftOffset": -39.53488372093023
+                    },
+                    "seatCount": 0,
+                    "widthPercentage": 70,
+                    "type": "umbrella",
+                    "seatGridWidth": 37.5,
+                    "structure": {
+                        "id": "df073f1d-5693-4ba9-a9ac-d4587bd0b177",
+                        "img": "assets/img/structure/7.png",
+                        "type": "umbrella",
+                        "priority": 1,
+                        "seat": {
+                            "m": [
+                                "available"
+                            ]
+                        },
+                        "active": true
+                    },
+                    "element": {
+                        "umbrella": {
+                            "id": "df073f1d-5693-4ba9-a9ac-d4587bd0b177",
+                            "img": "assets/img/elements/2.png",
+                            "type": "umbrella",
+                            "priority": 1
+                        },
+                        "sunbed": {
+                            "id": "df073f1d-5693-4ba9-a9ac-d4587bd0b176",
+                            "img": "assets/img/elements/sunbed-2.png",
+                            "type": "sunbed",
+                            "priority": 2
+                        }
+                    },
+                    "image": "a/1_1.png"
+                },
+                "mapElementIndex": 9,
+                "index": 11
+            }
+        },
+        {
+            "type": "umbrella",
+            "combination_id": "umbrella__df073f1d-5693-4ba9-a9ac-d4587bd0b178__df073f1d-5693-4ba9-a9ac-d4587bd0b179__df073f1d-5693-4ba9-a9ac-d4587bd0b175",
+            "index": 12,
+            "number": 13,
+            "status": {
+                "n": [
+                    "available"
+                ]
+            },
+            "seats": 2,
+            "sides": 1,
+            "image": "b/1_2.png",
+            "status_icon": "",
+            "coords": {
+                "x": 21.200000000000045,
+                "y": 349.67000000000013
+            },
+            "collide": false,
+            "info": {
+                "mapElement": {
+                    "list": {
+                        "left": [],
+                        "right": [],
+                        "top": [],
+                        "bottom": [],
+                        "center": [
+                            {
+                                "src": "assets/img/elements/sunbed-1-2.png",
+                                "x": 12.25,
+                                "y": 0
+                            }
+                        ],
+                        "umbrella": [
+                            {
+                                "src": "assets/img/elements/1.png",
+                                "x": -2,
+                                "y": 12
+                            }
+                        ],
+                        "all": [
+                            {
+                                "src": "assets/img/elements/sunbed-1-2.png",
+                                "x": 12.25,
+                                "y": 0
+                            },
+                            {
+                                "src": "assets/img/elements/1.png",
+                                "x": -2,
+                                "y": 12
+                            }
+                        ]
+                    },
+                    "size": {
+                        "width": 68.57142857142857,
+                        "height": 43,
+                        "adjusted": true
+                    },
+                    "umbrella": {
+                        "center": 34,
+                        "leftOffset": 28.333333333333332
+                    },
+                    "pos": {
+                        "widthLeftOuter": 28.333333333333332,
+                        "widthRightOuter": 71.66666666666667,
+                        "widthLeftInner": 352.9411764705883,
+                        "widthRightInner": 139.53488372093022,
+                        "marginLeftOffset": -39.53488372093023
+                    },
+                    "seatCount": 0,
+                    "widthPercentage": 80,
+                    "type": "umbrella",
+                    "seatGridWidth": 42.5,
+                    "structure": {
+                        "id": "df073f1d-5693-4ba9-a9ac-d4587bd0b178",
+                        "img": "assets/img/structure/8.png",
+                        "type": "umbrella",
+                        "priority": 1,
+                        "seat": {
+                            "n": [
+                                "available"
+                            ]
+                        },
+                        "active": true
+                    },
+                    "element": {
+                        "umbrella": {
+                            "id": "df073f1d-5693-4ba9-a9ac-d4587bd0b179",
+                            "img": "assets/img/elements/1.png",
+                            "type": "umbrella",
+                            "priority": 1
+                        },
+                        "sunbed": {
+                            "id": "df073f1d-5693-4ba9-a9ac-d4587bd0b175",
+                            "img": "assets/img/elements/sunbed-1.png",
+                            "type": "sunbed",
+                            "priority": 2
+                        }
+                    },
+                    "image": "b/1_2.png"
+                },
+                "mapElementIndex": 4,
+                "index": 12
+            }
+        },
+        {
+            "type": "umbrella",
+            "combination_id": "umbrella__df073f1d-5693-4ba9-a9ac-d4587bd0b178__df073f1d-5693-4ba9-a9ac-d4587bd0b179__df073f1d-5693-4ba9-a9ac-d4587bd0b175",
+            "index": 13,
+            "number": 14,
+            "status": {
+                "n": [
+                    "available"
+                ]
+            },
+            "seats": 2,
+            "sides": 1,
+            "image": "b/1_2.png",
+            "status_icon": "",
+            "coords": {
+                "x": 73.70000000000005,
+                "y": 349.6700000000002
+            },
+            "collide": false,
+            "info": {
+                "mapElement": {
+                    "list": {
+                        "left": [],
+                        "right": [],
+                        "top": [],
+                        "bottom": [],
+                        "center": [
+                            {
+                                "src": "assets/img/elements/sunbed-1-2.png",
+                                "x": 12.25,
+                                "y": 0
+                            }
+                        ],
+                        "umbrella": [
+                            {
+                                "src": "assets/img/elements/1.png",
+                                "x": -2,
+                                "y": 12
+                            }
+                        ],
+                        "all": [
+                            {
+                                "src": "assets/img/elements/sunbed-1-2.png",
+                                "x": 12.25,
+                                "y": 0
+                            },
+                            {
+                                "src": "assets/img/elements/1.png",
+                                "x": -2,
+                                "y": 12
+                            }
+                        ]
+                    },
+                    "size": {
+                        "width": 68.57142857142857,
+                        "height": 43,
+                        "adjusted": true
+                    },
+                    "umbrella": {
+                        "center": 34,
+                        "leftOffset": 28.333333333333332
+                    },
+                    "pos": {
+                        "widthLeftOuter": 28.333333333333332,
+                        "widthRightOuter": 71.66666666666667,
+                        "widthLeftInner": 352.9411764705883,
+                        "widthRightInner": 139.53488372093022,
+                        "marginLeftOffset": -39.53488372093023
+                    },
+                    "seatCount": 0,
+                    "widthPercentage": 80,
+                    "type": "umbrella",
+                    "seatGridWidth": 42.5,
+                    "structure": {
+                        "id": "df073f1d-5693-4ba9-a9ac-d4587bd0b178",
+                        "img": "assets/img/structure/8.png",
+                        "type": "umbrella",
+                        "priority": 1,
+                        "seat": {
+                            "n": [
+                                "available"
+                            ]
+                        },
+                        "active": true
+                    },
+                    "element": {
+                        "umbrella": {
+                            "id": "df073f1d-5693-4ba9-a9ac-d4587bd0b179",
+                            "img": "assets/img/elements/1.png",
+                            "type": "umbrella",
+                            "priority": 1
+                        },
+                        "sunbed": {
+                            "id": "df073f1d-5693-4ba9-a9ac-d4587bd0b175",
+                            "img": "assets/img/elements/sunbed-1.png",
+                            "type": "sunbed",
+                            "priority": 2
+                        }
+                    },
+                    "image": "b/1_2.png"
+                },
+                "mapElementIndex": 4,
+                "index": 13
+            }
+        },
+        {
+            "type": "static",
+            "combination_id": "static__alway",
+            "index": -1,
+            "number": 0,
+            "status": {},
+            "seats": 0,
+            "sides": 0,
+            "image": "assets/img/elements/static/alway_3.png",
+            "status_icon": "",
+            "coords": {
+                "x": 405.68999999999994,
+                "y": 354.87000000000006
+            },
+            "collide": true,
+            "info": {
+                "mapElement": {
+                    "id": "4",
+                    "img": "assets/img/elements/static/alway_3.png",
+                    "priority": 4,
+                    "type": "static",
+                    "size": {
+                        "width": 60,
+                        "height": 60,
+                        "adjusted": true
+                    },
+                    "objectType": "alway",
+                    "collide": true,
+                    "b64": "assets/img/elements/static/alway_3.png",
+                    "image": "assets/img/elements/static/alway_3.png"
+                },
+                "mapElementIndex": 3,
+                "index": -1
+            }
+        },
+        {
+            "type": "static",
+            "combination_id": "static__other",
+            "index": -1,
+            "number": 0,
+            "status": {},
+            "seats": 0,
+            "sides": 0,
+            "image": "assets/img/elements/static/cabin_change.png",
+            "status_icon": "",
+            "coords": {
+                "x": 169.60999999999987,
+                "y": 391.31000000000006
+            },
+            "collide": false,
+            "info": {
+                "mapElement": {
+                    "id": "10",
+                    "img": "assets/img/elements/static/cabin_change.png",
+                    "priority": 4,
+                    "type": "static",
+                    "size": {
+                        "width": 112.00000000000001,
+                        "height": 60,
+                        "adjusted": true
+                    },
+                    "objectType": "other",
+                    "b64": "assets/img/elements/static/cabin_change.png",
+                    "image": "assets/img/elements/static/cabin_change.png"
+                },
+                "mapElementIndex": 9,
+                "index": -1
+            }
+        },
+        {
+            "type": "static",
+            "combination_id": "static__other",
+            "index": -1,
+            "number": 0,
+            "status": {},
+            "seats": 0,
+            "sides": 0,
+            "image": "assets/img/elements/static/tree.png",
+            "status_icon": "",
+            "coords": {
+                "x": 287.33000000000004,
+                "y": 391.31000000000006
+            },
+            "collide": true,
+            "info": {
+                "mapElement": {
+                    "id": "13",
+                    "img": "assets/img/elements/static/tree.png",
+                    "priority": 4,
+                    "type": "static",
+                    "size": {
+                        "width": 50,
+                        "height": 50,
+                        "adjusted": true
+                    },
+                    "objectType": "other",
+                    "collide": true,
+                    "b64": "assets/img/elements/static/tree.png",
+                    "image": "assets/img/elements/static/tree.png"
+                },
+                "mapElementIndex": 12,
+                "index": -1
+            }
+        },
+        {
+            "type": "static",
+            "combination_id": "static__alway",
+            "index": -1,
+            "number": 0,
+            "status": {},
+            "seats": 0,
+            "sides": 0,
+            "image": "assets/img/elements/static/alway_3.png",
+            "status_icon": "",
+            "coords": {
+                "x": 441.59000000000003,
+                "y": 391.3100000000001
+            },
+            "collide": true,
+            "info": {
+                "mapElement": {
+                    "id": "4",
+                    "img": "assets/img/elements/static/alway_3.png",
+                    "priority": 4,
+                    "type": "static",
+                    "size": {
+                        "width": 60,
+                        "height": 60,
+                        "adjusted": true
+                    },
+                    "objectType": "alway",
+                    "collide": true,
+                    "b64": "assets/img/elements/static/alway_3.png",
+                    "image": "assets/img/elements/static/alway_3.png"
+                },
+                "mapElementIndex": 3,
+                "index": -1
+            }
+        }
+    ],
+    "back": [
+        {
+            "type": "static",
+            "combination_id": "static__other",
+            "index": -1,
+            "number": 0,
+            "status": {},
+            "seats": 0,
+            "sides": 0,
+            "image": "assets/img/elements/static/tree.png",
+            "status_icon": "",
+            "coords": {
+                "x": 103.66,
+                "y": 401.31
+            },
+            "collide": true,
+            "info": {
+                "mapElement": {
+                    "id": "13",
+                    "img": "assets/img/elements/static/tree.png",
+                    "priority": 4,
+                    "type": "static",
+                    "size": {
+                        "width": 50,
+                        "height": 50,
+                        "adjusted": true
+                    },
+                    "objectType": "other",
+                    "collide": true,
+                    "b64": "assets/img/elements/static/tree.png",
+                    "image": "assets/img/elements/static/tree.png"
+                },
+                "mapElementIndex": 12,
+                "index": -1
+            }
+        },
+        {
+            "type": "static",
+            "combination_id": "static__alway",
+            "index": -1,
+            "number": 0,
+            "status": {},
+            "seats": 0,
+            "sides": 0,
+            "image": "assets/img/elements/static/alway_0.png",
+            "status_icon": "",
+            "coords": {
+                "x": 548.8599999999999,
+                "y": 438.81000000000006
+            },
+            "collide": true,
+            "info": {
+                "mapElement": {
+                    "id": "1",
+                    "img": "assets/img/elements/static/alway_0.png",
+                    "priority": 4,
+                    "type": "static",
+                    "size": {
+                        "width": 60,
+                        "height": 12.5,
+                        "adjusted": true
+                    },
+                    "objectType": "alway",
+                    "collide": true,
+                    "b64": "assets/img/elements/static/alway_0.png",
+                    "image": "assets/img/elements/static/alway_0.png"
+                },
+                "mapElementIndex": 0,
+                "index": -1
+            }
+        },
+        {
+            "type": "static",
+            "combination_id": "static__alway",
+            "index": -1,
+            "number": 0,
+            "status": {},
+            "seats": 0,
+            "sides": 0,
+            "image": "assets/img/elements/static/alway_0.png",
+            "status_icon": "",
+            "coords": {
+                "x": 497.22,
+                "y": 438.8100000000001
+            },
+            "collide": true,
+            "info": {
+                "mapElement": {
+                    "id": "1",
+                    "img": "assets/img/elements/static/alway_0.png",
+                    "priority": 4,
+                    "type": "static",
+                    "size": {
+                        "width": 60,
+                        "height": 12.5,
+                        "adjusted": true
+                    },
+                    "objectType": "alway",
+                    "collide": true,
+                    "b64": "assets/img/elements/static/alway_0.png",
+                    "image": "assets/img/elements/static/alway_0.png"
+                },
+                "mapElementIndex": 0,
+                "index": -1
+            }
+        }
+    ]
+}

@@ -1,0 +1,64 @@
+<div class="main-content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header card-header-icon" data-background-color="red">
+                        <i class="material-icons">assignment</i>
+                    </div>
+                    <h4 class="col-md-2 card-header card-title" translate>EMPLOYEE.TITLE</h4>
+                    <div class="card-header text-right">
+                        <button class="btn btn-rose" id="bt-employee-add" (click)="openDialog({})" translate>EMPLOYEE.ADD_EMPLOYEE</button>
+                    </div>
+                    <div class="card-content">
+                        <!-- <div class="toolbar">
+                                       Here you can write extra buttons/actions for the toolbar             
+                            </div> -->
+                        <div class="material-datatables table-responsive">
+                            <table id="datatables" class="table table-striped table-no-bordered table-hover" cellspacing="0" width="100%" style="width:100%">
+                                <thead>
+                                    <tr>
+                                        <th *ngFor="let header of tableHeader; let i = index;">
+                                            <div class="{{i === (tableHeader.length - 1) ? 'text-center' : 'text-left'}}" translate>{{ header }}</div>
+                                        </th>
+                                    </tr>
+                                </thead>
+                                <tfoot>
+                                    <tr>
+                                        <th *ngFor="let header of tableHeader; let i = index;">
+                                            <div class="{{i === (tableHeader.length - 1) ? 'text-center' : 'text-left'}}" translate>{{ header }}</div>
+                                        </th>
+                                    </tr>
+                                </tfoot>
+                                <tbody>
+                                    <tr *ngFor="let employee of employees">
+                                        <td>{{employee.name}}</td>
+                                        <td>{{employee.type.name}}</td>
+                                        <td class="center">
+                                            <div class="round-rectangle" [style.backgroundColor]="employee.color">
+                                                <span>&nbsp;</span>
+                                            </div>
+                                        </td>
+                                        <td>{{employee.phone}}</td>
+                                        <td>{{employee.unlock_code}}</td>
+                                        <td>{{employee.verified ? 'YES' : 'NO'}}</td>
+                                        <td>{{employee.created_at.split('T')[0]}}</td>
+                                        <td class="text-center">
+                                            <button class="btn btn-simple btn-warning btn-icon edit" [attr.employee-id]="employee.id">
+                                                <i class="material-icons">dvr</i>
+                                            </button>
+                                            <button class="btn btn-simple btn-danger btn-icon remove" [attr.employee-id]="employee.id" *ngIf="employee.type.id === 2">
+                                                <i class="material-icons">close</i>
+                                            </button>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- end row -->
+    </div>
+</div>

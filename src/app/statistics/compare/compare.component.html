@@ -1,0 +1,647 @@
+<div class="main-content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-3 col-md-6 col-sm-6">
+                <div class="card card-stats">
+
+                    <div
+                        class="card-header"
+                        data-background-color="orange"
+                    >
+                        <i class="calendar_day"></i>
+                    </div>
+
+                    <div class="dropdown show-dropdown">
+                        <a
+                            href="#"
+                            data-toggle="dropdown"
+                        >
+                            <div class="card-content">
+                                <p class="category">Per day</p>
+                                <h3 class="card-title">Customers</h3>
+                            </div>
+                        </a>
+                    </div>
+
+                    <div class="card-footer-small">
+                        <div
+                            class="col-md-5 form-group label-floating text-left"
+                            style="padding:0;margin:0"
+                        >
+                            <button
+                                mat-raised-button
+                                (click)="picker1.open()"
+                                class="btn btn-white btn-simple"
+                                style="width:100%"
+                            >
+                                <div class="row">
+                                    <div
+                                        class="col-md-2 text-center"
+                                        style="padding:0"
+                                    >
+                                        <i class="material-icons">date_range</i>
+                                    </div>
+                                    <div
+                                        class="col-md-9 text-center"
+                                        style="padding:0 0 0 10px"
+                                    >
+                                        <mat-form-field style="width:100%">
+                                            <input
+                                                class="text-left text-rose"
+                                                matInput
+                                                [matDatepicker]="picker1"
+                                                [(ngModel)]="dailyLeftSideValue"
+                                                style="max-width:50px !important"
+                                                (ngModelChange)="onDailyLeftSideChange()"
+                                            >
+                                            <mat-datepicker
+                                                #picker1
+                                                [startView]="'month'"
+                                            >
+                                            </mat-datepicker>
+                                        </mat-form-field>
+                                    </div>
+                                </div>
+                                <h3 style="margin:0">{{dayChart.leftSide.total}}</h3>
+                            </button>
+                        </div>
+
+                        <div class="col-md-2">
+                            <div>&nbsp;</div>
+                        </div>
+
+                        <div
+                            class="col-md-5 form-group label-floating text-right"
+                            style="padding:0;margin:0"
+                        >
+                            <button
+                                mat-raised-button
+                                (click)="picker2.open()"
+                                class="btn btn-white btn-simple"
+                                style="width:100%"
+                            >
+                                <div class="row">
+                                    <div
+                                        class="col-md-2 text-right"
+                                        style="padding:0"
+                                    >
+                                        <i class="material-icons">date_range</i>
+                                    </div>
+                                    <div
+                                        class="col-md-9 text-right"
+                                        style="padding:0 0 0 10px"
+                                    >
+                                        <mat-form-field style="width:100%">
+                                            <input
+                                                class="text-left text-rose"
+                                                matInput
+                                                [matDatepicker]="picker2"
+                                                [(ngModel)]="dailyRightSideValue"
+                                                style="max-width:50px !important"
+                                                (ngModelChange)="onDailyRightSideChange()"
+                                            >
+                                            <mat-datepicker
+                                                #picker2
+                                                [startView]="'month'"
+                                            >
+                                            </mat-datepicker>
+                                        </mat-form-field>
+                                    </div>
+                                </div>
+                                <h3 style="margin:0">{{dayChart.rightSide.total}}</h3>
+                            </button>
+                        </div>
+                    </div>
+
+                    <ul style="padding-left: 0px;list-style: none;">
+                        <div>
+                            <li
+                                class="col-md-6"
+                                style="padding: 0.6em;"
+                            >
+                                <div
+                                    data-background-color="orange"
+                                    style="margin:0; padding:0"
+                                >
+                                    <div
+                                        id="MultipleBarChart1"
+                                        class="ct-chart"
+                                    ></div>
+                                </div>
+                            </li>
+                            <li
+                                class="col-md-6"
+                                style="padding: 0.6em"
+                            >
+                                <div
+                                    data-background-color="orange"
+                                    style="margin:0; padding:0"
+                                >
+                                    <div
+                                        id="MultipleBarChart2"
+                                        class="ct-chart"
+                                    ></div>
+                                </div>
+                            </li>
+                            <li
+                                class="adjustments-line"
+                                style="padding:5px; "
+                            >
+                                <div
+                                    class="col-md-12"
+                                    style="background-color:orange; padding:3px;margin-bottom: 10px;"
+                                >
+                                    <span class="col-md-2">
+                                        <div class="round-rectangle round-rectangle-online">&nbsp;</div>
+                                    </span>
+                                    <span
+                                        class="col-md-3"
+                                        style="color:rgba(71, 47, 191, 1); margin:2px"
+                                    >
+                                        Offline
+                                    </span>
+                                    <span class="col-md-2">
+                                        <div class="round-rectangle round-rectangle-white">&nbsp;</div>
+                                    </span>
+                                    <span
+                                        class="col-md-2"
+                                        style="color:white; margin:2px"
+                                    >
+                                        Online
+                                    </span>
+                                </div>
+                            </li>
+                        </div>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 col-sm-6">
+
+                <div class="card card-stats">
+
+                    <div
+                        class="card-header"
+                        data-background-color="red"
+                    >
+                        <i class="calendar_week"></i>
+                    </div>
+
+                    <div class="card-content">
+                        <p class="category">Per week</p>
+                        <h3 class="card-title">Customers</h3>
+                    </div>
+
+                    <div class="card-footer-small">
+                        <div
+                            class="col-md-5 form-group label-floating text-left"
+                            style="padding:0;margin:0"
+                        >
+                            <button
+                                mat-raised-button
+                                (click)="picker3.open()"
+                                class="btn btn-white btn-simple"
+                                style="width:100%"
+                            >
+                                <div class="row">
+                                    <div
+                                        class="col-md-2 text-center"
+                                        style="padding:0"
+                                    >
+                                        <i class="material-icons">date_range</i>
+                                    </div>
+                                    <div
+                                        class="col-md-9 text-center"
+                                        style="padding:0 0 0 10px"
+                                    >
+                                        <mat-form-field style="width:100%">
+                                            <input
+                                                class="text-left text-rose"
+                                                matInput
+                                                [matDatepicker]="picker3"
+                                                style="max-width:50px !important"
+                                                [(ngModel)]="weeklyLeftSideValue"
+                                                (ngModelChange)="onWeeklyLeftSideChange()"
+                                            >
+                                            <mat-datepicker
+                                                #picker3
+                                                [startView]="'week'"
+                                            >
+                                            </mat-datepicker>
+                                        </mat-form-field>
+                                    </div>
+                                </div>
+                                <h3 style="margin:0">{{weekChart.leftSide.total}}</h3>
+                            </button>
+                        </div>
+                        <div class="col-md-2">
+                            <div>&nbsp;</div>
+                        </div>
+                        <div
+                            class="col-md-5 form-group label-floating text-right"
+                            style="padding:0;margin:0"
+                        >
+                            <button
+                                mat-raised-button
+                                (click)="picker4.open()"
+                                class="btn btn-white btn-simple"
+                                style="width:100%"
+                            >
+                                <div class="row">
+                                    <div
+                                        class="col-md-2 text-right"
+                                        style="padding:0"
+                                    >
+                                        <i class="material-icons">date_range</i>
+                                    </div>
+                                    <div
+                                        class="col-md-9 text-right"
+                                        style="padding:0 0 0 10px"
+                                    >
+                                        <mat-form-field style="width:100%">
+                                            <input
+                                                class="text-left text-rose"
+                                                matInput
+                                                [matDatepicker]="picker4"
+                                                style="max-width:50px !important"
+                                                [(ngModel)]="weeklyRightSideValue"
+                                                (ngModelChange)="onWeeklyRightSideChange()"
+                                            >
+                                            <mat-datepicker
+                                                #picker4
+                                                [startView]="'week'"
+                                            >
+                                            </mat-datepicker>
+                                        </mat-form-field>
+                                    </div>
+                                </div>
+                                <h3 style="margin:0">{{weekChart.rightSide.total}}</h3>
+                            </button>
+                        </div>
+                    </div>
+
+                    <ul style="padding-left: 0px;list-style: none;">
+                        <div>
+                            <li
+                                class="col-md-6"
+                                style="padding: 0.6em;"
+                            >
+                                <div
+                                    data-background-color="orange"
+                                    style="margin:0; padding:0"
+                                >
+                                    <div
+                                        id="MultipleBarChart3"
+                                        class="ct-chart"
+                                    ></div>
+                                </div>
+                            </li>
+                            <li
+                                class="col-md-6"
+                                style="padding: 0.6em"
+                            >
+                                <div
+                                    data-background-color="orange"
+                                    style="margin:0; padding:0"
+                                >
+                                    <div
+                                        id="MultipleBarChart4"
+                                        class="ct-chart"
+                                    ></div>
+                                </div>
+                            </li>
+                            <li
+                                class="adjustments-line"
+                                style="padding:5px; "
+                            >
+                                <div
+                                    class="col-md-12"
+                                    style="background-color:orange; padding:3px;margin-bottom: 10px;"
+                                >
+                                    <span class="col-md-2">
+                                        <div class="round-rectangle round-rectangle-online">&nbsp;</div>
+                                    </span>
+                                    <span
+                                        class="col-md-3"
+                                        style="color:rgba(71, 47, 191, 1); margin:2px"
+                                    >
+                                        Offline
+                                    </span>
+                                    <span class="col-md-2">
+                                        <div class="round-rectangle round-rectangle-white">&nbsp;</div>
+                                    </span>
+                                    <span
+                                        class="col-md-2"
+                                        style="color:white; margin:2px"
+                                    >
+                                        Online
+                                    </span>
+                                </div>
+                            </li>
+                        </div>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 col-sm-6">
+                <div class="card card-stats">
+
+                    <div
+                        class="card-header"
+                        data-background-color="green"
+                    >
+                        <i class="calendar_month"></i>
+                    </div>
+
+                    <div class="card-content">
+                        <p class="category">Per month</p>
+                        <h3 class="card-title">Customers</h3>
+                    </div>
+
+                    <div class="card-footer-small">
+                        <div
+                            class="col-md-5 form-group label-floating text-left"
+                            style="padding:0;margin:0"
+                        >
+                            <button
+                                mat-raised-button
+                                class="btn btn-white btn-simple"
+                                style="width:100%"
+                            >
+                                <div class="row">
+                                    <div
+                                        class="col-md-9 text-center"
+                                        style="margin-left: -30px"
+                                    >
+                                        <app-year-month-input
+                                            [year]="lastMonth.year"
+                                            [month]="lastMonth.month"
+                                            (getValue)="onMonthlyLeftSideChange($event)"
+                                        ></app-year-month-input>
+                                    </div>
+                                </div>
+                                <h3 style="margin:0">{{monthChart.leftSide.total}}</h3>
+                            </button>
+                        </div>
+                        <div class="col-md-2">
+                            <div>&nbsp;</div>
+                        </div>
+                        <div
+                            class="col-md-5 form-group label-floating text-right"
+                            style="padding:0;margin:0"
+                        >
+                            <button
+                                mat-raised-button
+                                class="btn btn-white btn-simple"
+                                style="width:100%"
+                            >
+                                <div class="row">
+                                    <div
+                                        class="col-md-9 text-right"
+                                        style="margin-left: -30px"
+                                    >
+                                        <app-year-month-input
+                                            [year]="yearlyRightSideValue"
+                                            [month]="currentMonth"
+                                            (getValue)="onMonthlyRightSideChange($event)"
+                                        ></app-year-month-input>
+                                    </div>
+                                </div>
+                                <h3 style="margin:0">{{monthChart.rightSide.total}}</h3>
+                            </button>
+                        </div>
+                    </div>
+                    <ul style="padding-left: 0px;list-style: none;">
+                        <div>
+                            <li
+                                class="col-md-6"
+                                style="padding: 0.6em;"
+                            >
+                                <div
+                                    data-background-color="orange"
+                                    style="margin:0; padding:0"
+                                >
+                                    <div
+                                        id="MultipleBarChart5"
+                                        class="ct-chart"
+                                    ></div>
+                                </div>
+                            </li>
+                            <li
+                                class="col-md-6"
+                                style="padding: 0.6em"
+                            >
+                                <div
+                                    data-background-color="orange"
+                                    style="margin:0; padding:0"
+                                >
+                                    <div
+                                        id="MultipleBarChart6"
+                                        class="ct-chart"
+                                    ></div>
+                                </div>
+                            </li>
+                            <li
+                                class="adjustments-line"
+                                style="padding:5px; "
+                            >
+                                <div
+                                    class="col-md-12"
+                                    style="background-color:orange; padding:3px;margin-bottom: 10px;"
+                                >
+                                    <span class="col-md-2">
+                                        <div class="round-rectangle round-rectangle-online">&nbsp;</div>
+                                    </span>
+                                    <span
+                                        class="col-md-3"
+                                        style="color:rgba(71, 47, 191, 1); margin:2px"
+                                    >
+                                        Offline
+                                    </span>
+                                    <span class="col-md-2">
+                                        <div class="round-rectangle round-rectangle-white">&nbsp;</div>
+                                    </span>
+                                    <span
+                                        class="col-md-3"
+                                        style="color:white; margin:2px"
+                                    >
+                                        Online
+                                    </span>
+                                </div>
+                            </li>
+                        </div>
+                    </ul>
+                </div>
+            </div>
+
+
+
+
+            <div class="col-lg-3 col-md-6 col-sm-6">
+
+
+
+
+
+
+
+
+                <div class="card card-stats">
+
+
+
+
+
+
+
+
+                    <div
+                        class="card-header"
+                        data-background-color="blue"
+                    >
+                        <i class="calendar_year"></i>
+                    </div>
+
+
+
+
+
+
+
+
+                    <div class="card-content">
+                        <p class="category">Per year</p>
+                        <h3 class="card-title">Customers</h3>
+                    </div>
+
+
+
+
+
+
+
+
+                    <div class="card-footer-small">
+                        <div
+                            class="col-md-5 form-group label-floating text-left"
+                            style="padding:0;margin:0"
+                        >
+                            <button
+                                mat-raised-button
+                                class="btn btn-white btn-simple"
+                                style="width:100%"
+                            >
+                                <div class="row">
+
+
+
+
+
+
+
+                                    <div
+                                        class="col-md-9 text-center"
+                                        style="padding:0 20px 0 0"
+                                    >
+                                        <app-number-input
+                                            [value]="yearlyLeftSideValue"
+                                            (getValue)="onYearlyLeftSideChange($event)"
+                                        ></app-number-input>
+                                    </div>
+                                </div>
+                                <h3 style="margin:0">{{yearChart.leftSide.total}}</h3>
+                            </button>
+                        </div>
+                        <div class="col-md-2">
+                            <div>&nbsp;</div>
+                        </div>
+                        <div
+                            class="col-md-5 form-group label-floating text-right"
+                            style="padding:0;margin:0"
+                        >
+                            <button
+                                mat-raised-button
+                                class="btn btn-white btn-simple"
+                                style="width:100%"
+                            >
+                                <div class="row">
+                                    <app-number-input
+                                        [value]="yearlyRightSideValue"
+                                        (getValue)="onYearlyRightSideChange($event)"
+                                    ></app-number-input>
+                                </div>
+                                <h3 style="margin:0">{{yearChart.rightSide.total}}</h3>
+                            </button>
+                        </div>
+                    </div>
+                    <ul style="padding-left: 0px;list-style: none;">
+                        <div>
+                            <li
+                                class="col-md-6"
+                                style="padding: 0.6em;"
+                            >
+                                <div
+                                    data-background-color="orange"
+                                    style="margin:0; padding:0"
+                                >
+                                    <div
+                                        id="MultipleBarChart7"
+                                        class="ct-chart"
+                                    ></div>
+                                </div>
+                            </li>
+                            <li
+                                class="col-md-6"
+                                style="padding: 0.6em"
+                            >
+                                <div
+                                    data-background-color="orange"
+                                    style="margin:0; padding:0"
+                                >
+                                    <div
+                                        id="MultipleBarChart8"
+                                        class="ct-chart"
+                                    ></div>
+                                </div>
+                            </li>
+                            <li
+                                class="adjustments-line"
+                                style="padding:5px; "
+                            >
+                                <div
+                                    class="col-md-12"
+                                    style="background-color:orange; padding:3px;margin-bottom: 10px;"
+                                >
+                                    <span class="col-md-2">
+                                        <div class="round-rectangle round-rectangle-online">&nbsp;</div>
+                                    </span>
+                                    <span
+                                        class="col-md-3"
+                                        style="color:rgba(71, 47, 191, 1); margin:2px"
+                                    >
+                                        Offline
+                                    </span>
+                                    <span class="col-md-2">
+                                        <div class="round-rectangle round-rectangle-white">&nbsp;</div>
+                                    </span>
+                                    <span
+                                        class="col-md-3"
+                                        style="color:white; margin:2px"
+                                    >
+                                        Online
+                                    </span>
+                                </div>
+                            </li>
+                        </div>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+
+
+
+
+
+
+
+    </div>
+</div>

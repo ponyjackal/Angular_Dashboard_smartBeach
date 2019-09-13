@@ -1,0 +1,17 @@
+<div class="background" style="background-image: url(assets/img/bg.jpg); position: fixed; left: 0; top: 0; width: 100vw; height: 100vh;"></div>
+<div class="wrapper">
+    <div class="sidebar" data-active-color="red" data-background-color="red" data-image="assets/img/sidebar-1.jpg">
+        <div class="overlay"></div>
+        <app-sidebar-cmp></app-sidebar-cmp>
+        <div class="sidebar-background"></div>
+        <!-- <div class="sidebar-background" style="background-image: url(assets/img/sidebar-1.jpg)"></div> -->
+    </div>
+    <div class="main-panel" detect-scroll (onScroll)="handleScroll($event)">
+        <app-navbar-cmp></app-navbar-cmp>
+        <router-outlet></router-outlet>
+        <div *ngIf="!isMap()">
+            <!-- <app-footer-cmp></app-footer-cmp> -->
+        </div>
+    </div>
+    <!-- <app-fixedplugin></app-fixedplugin> -->
+</div>

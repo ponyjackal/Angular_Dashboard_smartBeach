@@ -1,0 +1,189 @@
+<div class="item-container">
+    <div class="panel-body panel-body-item" *ngIf="!menu_item || matched">
+        <div style="width: 180px; float: left; margin-right: 15px;">
+            <div class="product-place-image fileinput fileinput-{{menu_item.image ? 'exists' : 'new'}} text-center"
+                data-provides="fileinput">
+                <div class="fileinput-new thumbnail">
+                    <img src="assets/img/image_placeholder.jpg" alt="...">
+                </div>
+                <!-- <div style="margin-bottom: 8%">
+                <div class="fileinput-preview fileinput-exists thumbnail" *ngIf="menu_item.image">
+                    <img src="{{menu_item.image}}" alt="..." *ngIf="menu_item.image">
+                </div>
+               </div> -->
+
+                <div class="main-card" *ngIf="menu_item.image">
+                    <div class="img-card">
+                        <div class="fileinput-preview fileinput-exists thumbnail">
+
+
+                            <img class="menu-img" src="{{menu_item.image}}" alt="..." *ngIf="menu_item.image">
+                        </div>
+
+                    </div>
+                </div>
+
+                <div>
+                    <span class="btn btn-rose btn-round btn-file select-image" *ngIf="editable">
+                        <span class="fileinput-new" translate>BEACHMENU.SELECT_IMAGE</span>
+                        <span class="fileinput-exists" translate>BEACHMENU.CHANGE_IMAGE</span>
+                        <input type="file" name="..." (change)="changeImage($event)"
+                            accept="image/png,image/jpg,image/jpeg" />
+                    </span>
+                    <a href="#pablo" class="btn btn-danger btn-round fileinput-exists" data-dismiss="fileinput"
+                        (click)="removePhoto()"><i class="fa fa-times"></i>
+                        <span translate>REMOVE</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div style="width: calc(100% - 215px); float: right;">
+            <div class="row">
+                <div class="col-xs-7 col-xs-12">
+
+                    <!---- Menu Name Part---->
+                    <div class="card-description row">
+                        <h4 *ngIf="false" style="margin-top: 6px;float: left; min-width: 100px;font-weight: 900;">
+                            {{menu_item.name}}</h4>
+                        <input (input)="dataChanges()" type="text" class="form-control" [(ngModel)]="menu_item.name"
+                            name="product_name" placeholder="Product name">
+                    </div>
+
+                    <!---- Menu Description Part---->
+                    <div class="card-description row">
+                        <span *ngIf="false"
+                            style="margin-top: 8px;float: left; padding-left: 15px;min-width: 200px;">{{menu_item.description}}</span>
+                        <input (input)="dataChanges()" type="text" class="form-control"
+                            [(ngModel)]="menu_item.description" name="product_description"
+                            placeholder="Product description">
+                    </div>
+
+                    <!---- Menu Toppings Part---->
+                    <div class="card-description row">
+                        <h4 class="card-description" style="font-style: italic; font-weight: 900;" translate>
+                            BEACHMENU.TOPPINGS_URI</h4>
+                        <div class="col-xs-12">
+                            <!--label *ngFor="let topping of menu_item.toppings; let index = index;">
+                                {{topping.name}}({{topping.price}} {{currency}}),&nbsp;&nbsp;
+                            </label-->
+                            <table>
+                                <!--tr *ngFor="let topping of menu_item.toppings_copy; let index = index;">
+                                    <td>
+                                        <ng-container *ngIf="!menu_item.toppings[index].edit">
+                                            {{menu_item.toppings[index].name || ''}}
+                                        </ng-container>
+                                        <input *ngIf="menu_item.toppings[index].edit" type="text" class="form-control"
+                                            [(ngModel)]="menu_item.toppings[index].editName" name="topping_name_{{index}}"
+                                            placeholder="Name">
+                                    </td>
+                                    <td>
+                                        <ng-container *ngIf="!menu_item.toppings[index].edit">
+                                            {{menu_item.toppings[index].price || ''}}
+                                        </ng-container>
+                                        <input *ngIf="menu_item.toppings[index].edit" type="number" class="form-control menu-item-input input-price"
+                                            [(ngModel)]="menu_item.toppings[index].editPrice" name="topping_price_{{index}}"
+                                            placeholder="Price">
+                                    </td>
+                                    <td>
+                                        <button *ngIf="!menu_item.toppings[index].edit" (click)="editToppingItem(index)">
+                                            <i class="material-icons">edit</i>
+                                        </button>
+                                        <button *ngIf="menu_item.toppings[index].edit" (click)="updateToppingItem(index)">
+                                            <i class="material-icons">done</i>
+                                        </button>
+
+                                        <button (click)="deleteToppingItem(index)">
+                                            <i class="material-icons">close</i>
+                                        </button>
+
+                                    </td>
+                                </tr-->
+                                <tr *ngFor="let topping of menu_item.toppings_copy; let index = index;">
+                                    <td style="padding: 0 7px;">
+                                        <input type="text" class="form-control" (input)="onToppingContentChanged(index)"
+                                            [(ngModel)]="menu_item.toppings_copy[index].name"
+                                            name="topping_name_{{index}}" placeholder="Name">
+
+                                    </td>
+                                    <td style="padding: 0 7px;">
+
+                                        <input (input)="onToppingContentChanged(index)" type="number"
+                                            class="form-control menu-item-input input-price mt-9"
+                                            [(ngModel)]="menu_item.toppings_copy[index].price"
+                                            name="topping_price_{{index}}" placeholder="Price">
+                                    </td>
+                                    <td>
+
+                                        <button class="btn btn-danger btn-simple"
+                                            *ngIf="!(index+1>=menu_item.toppings_copy.length)"
+                                            (click)="deleteToppingItem(index)">
+                                            <i class="material-icons">close</i>
+                                        </button>
+
+                                    </td>
+                                </tr>
+                                <tr *ngIf="!menu_item.toppings_copy.length">
+                                    <td>
+                                        <input type="text" (input)="onToppingContentChanged(index)" class="form-control"
+                                            [(ngModel)]="newToppingItem.name" name="newToppingItem_name"
+                                            placeholder="Name">
+                                    </td>
+                                    <td>
+                                        <input type="number" (input)="onToppingContentChanged(index)"
+                                            class="form-control menu-item-input input-price"
+                                            [(ngModel)]="newToppingItem.price" name="newToppingItem_price"
+                                            placeholder="Price">
+                                    </td>
+                                    <td>
+                                        <button>
+                                            <i class="material-icons" (click)="addNewTopping()">done</i>
+                                        </button>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-5 col-xs-12">
+                    <div class="row">
+                        <button class="btn btn-simple btn-danger btn-icon remove btn-small-size pull-right"
+                            *ngIf="editable" (click)="removeMenuItem()">
+                            <i class="material-icons">close</i>
+                        </button>
+                    </div>
+                    <div class="row" *ngIf="editable">
+                        <button *ngIf="!saving" [disabled]="!dataChanged || !menu_item.name || !menu_item.price"
+                            class="btn btn-rose" style="float: right;width:120px" (click)="saveMenuItem()"
+                            translate>SAVE</button>
+                        <button *ngIf="saving" [disabled]="true" class="btn btn-rose"
+                            style="float: right;width:120px ">Saving</button>
+                    </div>
+                    <div class="row" *ngIf="!editable">
+                        <button class="btn btn-primary" style="float: right; width:120px"
+                            *ngIf="menu_item.status === 'active'" (click)="suspendMenuItem()"
+                            translate>PUBLISHED</button>
+                        <button class="btn btn-secondary"
+                            style="background-color: #836f8b;float: right;width:120px"
+                            *ngIf="menu_item.status !== 'active'" (click)="publishMenuItem()"
+                            translate>SUSPENDED</button>
+                    </div>
+                    <div class="row" style="margin-top: 30px;">
+                        <div style="float: right; margin-right: 5px;">
+                            <div style="border: solid 1px #e91e63; border-radius: 23px;float: right; padding: 0 9px;">
+                                <span style="margin-right: 5px; float: left;">
+                                    <h4 *ngIf="false" style="text-align: center;">{{menu_item.price}} &nbsp;</h4>
+                                    <input type="number" class="form-control menu-item-input input-price"
+                                        (input)="dataChanges()" [(ngModel)]="menu_item.price" name="product_price"
+                                        placeholder="Price">
+                                </span>
+                                <span style="float: right;">
+                                    <h4>{{currency}}</h4>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

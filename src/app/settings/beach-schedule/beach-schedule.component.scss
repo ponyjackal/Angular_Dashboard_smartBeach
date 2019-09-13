@@ -1,0 +1,48 @@
+input.select-btn {
+    cursor: pointer !important;
+}
+md-calendar {
+    width: 300px;
+}
+h4{
+    font-weight: 600;
+}
+.card{
+    padding-bottom: 20px;
+}
+.price {
+    margin-top: -10px;
+}
+.checkbox{
+    width: 39px;
+    height: 25px;
+    float: left;
+    margin: 0 auto;
+}
+.price-check{
+    padding-top: 2%;
+}
+.same-label{
+    font-size: 16px;
+    font-weight: 500;
+}
+
+@media only screen and (max-width: 988px){
+    .days{
+       // float:left
+    }
+    .mob-price{
+        width: calc(100% - 13px);
+        float: left;
+}
+    
+    .currency{
+        float:left;
+        span{
+            padding: 0px 2px;
+
+        }
+    }
+
+    
+}

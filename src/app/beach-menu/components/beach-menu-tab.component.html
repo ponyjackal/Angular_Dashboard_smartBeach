@@ -1,0 +1,30 @@
+<a href="#{{tab_id}}" class="{{editable ? 'title editable' : 'title'}} 
+        text-uppercase {{ ismain === 1 ? 'active' : ''}}"
+    [attr.aria-expanded]="ismain === 1"
+    data-toggle="tab"
+    *ngIf="!editing">{{(beach_menu ? tab_title : empty_title) | translate}}
+</a>
+<div class="edit-buttons" *ngIf="!editing && editable">
+    <div class="row">
+        <button class="btn btn-simple btn-success btn-icon edit btn-small-size" (click)="editing = true">
+            <i class="material-icons">edit</i>
+        </button>
+        <button class="btn btn-simple btn-danger btn-icon remove btn-small-size" *ngIf="ismain !== 1 && beach_menu && removable" (click)="removeMenu()">
+            <i class="material-icons">close</i>
+        </button>
+    </div>
+</div>
+<div class="edit-title" *ngIf="editing">
+    <mat-form-field>
+        <mat-select class="text-uppercase" placeholder="Choose Language" name="language_{{tab_id}}" [(ngModel)]="new_lang">
+            <mat-option *ngFor="let language of languages;" [value]="language.name">
+                <span class="text-uppercase" *ngIf="language.name !== tab_title">{{ language.long_name | translate }}</span>
+            </mat-option>
+        </mat-select>
+    </mat-form-field>
+</div>
+<div class="edit-buttons" *ngIf="editing">
+    <button class="row btn btn-simple btn-success btn-icon edit btn-small-size" (click)="save()">
+        <i class="material-icons">done</i>
+    </button>
+</div>

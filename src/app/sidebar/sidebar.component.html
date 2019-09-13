@@ -1,0 +1,46 @@
+<div class="logo">
+    <div class="logo-normal" *ngIf="client_type !== 'superadmin'">
+        <a routerLink="/plans" class="simple-text">{{beach.name || ''}}</a>
+    </div>
+    <div class="logo-normal" *ngIf="client_type === 'superadmin'">
+            <a routerLink="/plans" class="simple-text">SUPER ADMIN</a>
+        </div>
+
+    <!-- <div class="logo-img">
+        <a routerLink="/plans"><img src="assets/img/beachmap-logo.png" /></a>
+    </div> -->
+</div>
+
+<div class="nav-side mobile"><i class="material-icons" style="font-size: 20pt;">list</i></div>
+<div class="sidebar-wrapper">
+    <div class="nav-container">
+        <ul class="nav">
+            <li routerLinkActive="active" *ngFor="let menuitem of menuItems">
+                <!--If is a single link-->
+                <a [routerLink]="[menuitem.path]" *ngIf="menuitem.type === 'link'">
+                    <i class="material-icons">{{menuitem.icontype}}</i>
+                    <p translate>{{menuitem.title}}</p>
+                </a>
+                <!--If it have a submenu-->
+                <a data-toggle="collapse" href="#{{menuitem.collapse}}" *ngIf="menuitem.type === 'sub'" (click)="updatePS()">
+                    <i class="material-icons">{{menuitem.icontype}}</i>
+                    <p translate>{{menuitem.title}}
+                        <b class="caret"></b>
+                    </p>
+                </a>
+
+                <!--Display the submenu items-->
+                <div id="{{menuitem.collapse}}" class="collapse" *ngIf="menuitem.type === 'sub'">
+                    <ul class="nav">
+                        <li routerLinkActive="active" *ngFor="let childitem of menuitem.children">
+                            <a [routerLink]="[menuitem.path, childitem.path]">
+                                <span class="sidebar-mini">{{childitem.ab}}</span>
+                                <span class="sidebar-normal" translate>{{childitem.title}}</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </li>
+        </ul>
+    </div>
+</div>

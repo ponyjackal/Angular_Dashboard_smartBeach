@@ -1,0 +1,108 @@
+/* You can add global styles to this file, and also import other style files */
+.product-edit h4 {
+  text-align: center;
+}
+.product-edit .card-content {
+  padding: 15px;
+  max-height: 60vh;
+  overflow-y: auto;
+}
+.padding-bottom {
+  padding-bottom: 20px;
+}
+.dataTables_empty {
+    display: none;
+}
+.fileinput.product-place-image {
+    max-width: 180px;
+}
+.fileinput.product-place-image .select-image {
+    max-width: 180px;
+}
+.sidebar .overlay {
+    display: none;
+}
+.sidebar.opened .overlay {
+    width: 100vw;
+    height: 100vh;
+    opacity: 0.6;
+    background-color: black;
+    position: fixed;
+    left: 0;
+    top: 0;
+    display: block;
+}
+.nav-side {
+    position: fixed;
+    left: 0;
+    top: 0;
+}
+.nav-side i {
+    padding: 10px;
+}
+.panel-collapse.collapse.in {
+    max-width: 100%;
+}
+beach-menu-category{
+    display: block;
+}
+beach-menu-item {
+    display: inline-block;
+    overflow-x: auto;
+    width: 100%;
+}
+.item-container {
+    display: block;
+    min-width: 650px;
+}
+#mappanel .konvajs-content {
+	overflow: hidden !important;
+}
+.label.label-yellow {
+    background: #EECE36;
+}
+.label.label-green-yellow {
+    background: #BCCE00;
+}
+
+.top-nav {
+  float: right;
+  padding: 0px;
+}
+.top-nav > li {
+  float: left;
+  list-style: none;
+  margin: 0 6px;
+  padding: 10px 0;
+  text-transform: uppercase;
+  position: relative;
+}
+
+.top-nav > li a {
+  font-weight: 600;
+  color: #636363;
+}
+@media (min-width: 991px) {
+  .mobile {
+    display: none !important;
+  }
+}
+.filter.btn {
+  min-width: 120px;
+}
+@media (max-width: 991px) {
+  .no-mobile {
+    display: none !important;
+  }
+  .small-padding.btn {
+    padding: 12px 10px;
+  }
+  .filter.btn {
+    min-width: 80px;
+  }
+}
+.clear-fix::after {
+  content: ' ';
+  clear: both;
+  display: block;
+}
